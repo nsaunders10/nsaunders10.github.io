@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head><title>Frequence Generator</title></head>
+<body onload="Sine()">
+<div><button onclick="Sine()">Sine</button>
+<button onclick="Square()">Square</button>
+<button onclick="Sawtooth()">Sawtooth</button>
+<button onclick="Triangle()">Triangle</button>
+</div>
+
+<div id="slideContainer">
+<p>Volume: <span id="volume"></span></p>
+  <input type="range" min="0" max="100" value="50" class="slider" id="volumeSlider"> 
+</div>
+<div>Frequence: <span id="frequency"></span></div>
+<div>
+    <ul>
+        <li>Space - on/off</li>
+        <li>Q - Frequency+++</li>
+        <li>W - Frequency---</li>
+        <li>E - Frequency++</li>
+        <li>R - Frequency--</li>
+        <li>T - Frequency+</li>
+        <li>Y - Frequency-</li>
+    </ul>
+</div>
+<script type="text/javascript">
+
+
+var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+var oscillatorNode = audioCtx.createOscillator();
+var gainNode = audioCtx.createGain();
+var mute = true;
+var frequency = 500;
+var direction = "";
+var volume = 0.5;
+var speed = 1;
+var grossTune = 5;
+var mediumTune = 0.5;
+var fineTune = 0.05;
+
+var slider = document.getElementById("volumeSlider");
+var output = document.getElementById("volume");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+  if(!mute)
+  gainNode.gain.value = this.value/100;
+  volume = this.value/100;
+}
+
+var keys = [
+    {key:81, direction:"down", tune:grossTune}, //q
+    {key:87, direction:"up", tune:grossTune},   //w
+    {key:69, direction:"down", tune:mediumTune},//e
+    {key:82, direction:"up", tune:mediumTune},  //r
+    {key:84, direction:"down", tune:fineTune},  //t
+    {key:89, direction:"up", tune:fineTune}     //y
+];
+oscillatorNode.connect(gainNode);
+gainNode.connect(audioCtx.destination);
+oscillatorNode.start();
+oscillatorNode.frequency.value = frequency;
+gainNode.gain.value = 0;
+
+
+(function manualLoop() {
+    setTimeout(function() {
+        manualLoop();         
+        if (direction == "up"){
+            frequency += speed;              
+        }      
+        if (direction == "down"){
+            frequency -= speed;             
+        }
+        oscillatorNode.frequency.value = frequency;       
+        document.getElementById('frequency').innerHTML = frequency.toFixed(2);
+    }, 40)
+}());
+document.addEventListener('keydown', function(event) {
+    if (event.keyCode == 32) { // space bar
+        if (mute) {            
+            gainNode.gain.value = volume;
+            mute = false;
+        } else {
+            gainNode.gain.value = 0;
+            mute = true;
+        }
+    }
+    for (var i = keys.length - 1; i >= 0; i--) {
+        if(event.keyCode == keys[i].key) {
+            direction = keys[i].direction;
+            speed = keys[i].tune; 
+        } 
+    }
+});
+document.addEventListener('keyup', function(event) {
+    direction = "";
+});
+
+function Sine(){
+oscillatorNode.type = "sine";
+}
+function Square(){
+oscillatorNode.type = "square";
+}
+function Sawtooth(){
+oscillatorNode.type = "sawtooth";
+}
+function Triangle(){
+oscillatorNode.type = "triangle";
+}
+/*
+var analyser = audioCtx.createAnalyser();
+source = oscillatorNode;
+source.connect(analyser);
+//analyser.connect(distortion);
+//distortion.connect(audioCtx.destination);
+analyser.fftSize = 2048;
+var bufferLength = analyser.frequencyBinCount;
+var dataArray = new Uint8Array(bufferLength);
+analyser.getByteTimeDomainData(dataArray);
+analyser.fftSize = 2048;
+var bufferLength = analyser.frequencyBinCount;
+var dataArray = new Uint8Array(bufferLength);
+canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
+function draw() {
+drawVisual = requestAnimationFrame(draw);
+analyser.getByteTimeDomainData(dataArray);
+canvasCtx.fillStyle = 'rgb(200, 200, 200)';
+      canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
+canvasCtx.lineWidth = 2;
+      canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
+
+      canvasCtx.beginPath();
+var sliceWidth = WIDTH * 1.0 / bufferLength;
+      var x = 0;
+for(var i = 0; i < bufferLength; i++) {
+   
+        var v = dataArray[i] / 128.0;
+        var y = v * HEIGHT/2;
+
+        if(i === 0) {
+          canvasCtx.moveTo(x, y);
+        } else {
+          canvasCtx.lineTo(x, y);
+        }
+
+        x += sliceWidth;
+      }
+canvasCtx.lineTo(canvas.width, canvas.height/2);
+      canvasCtx.stroke();
+    };
+draw();*/
+</script>
+</body>
+</html>

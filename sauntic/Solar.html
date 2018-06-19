@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="http://www.visineat.com/devs/dev5/NicholasSaunders/indexStyle.css">
+<link rel="icon" type="image/png" href="http://www.visineat.com/devs/dev5/NicholasSaunders/nicholas/planets/Jupiter.jpg"/>
+<title>Solar System Demo Info</title>
+<script type="text/javascript" src="http://www.visineat.com/js/vn-1.8.js"></script></head>
+<text  id="text"></text>
+<body class="body" style="background-color:#ADD1AD;margin:0px;width:100%;height:100%;position:absolute;top:0px;bottom:0px;right:0px;" onload="vn.run(Main);">
+
+<div class="body" id="page" style="width:100%;height:100%; position:absolute; top:0px; right:0px;" >
+<div class="top"></div>
+<div class="center" onclick="Home()" style="cursor: pointer;right:0;left:0;margin-right:auto;margin-left:auto;height:0px;position:relative;top:0px;margin:auto;text-align:center;z-index:100"><p>Solar System Demo</p></div>
+
+
+<div style="background-color:#3f3f3f;width:70%;position:relative;top:100px;height:900px;margin:auto;text-align:center; box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);">
+
+<div style="background-color:#3f3f3f;width:100%; position:relative; ">
+<p class="wrap">WebGL Solar System: Created a WebGL application for Intel in the Systems Design Colloquium at U.F. Intel supplied computers and Android tablets to create a web application using their API, Javascript, and WebGL.
+</p>
+</div>
+<div style="width:100%;height:85%;position:relative">
+<iframe id="SolarSystem" src="http://visineat.com/devs/dev5/NicholasSaunders/nicholas/" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+</div>
+</div>
+
+</div>
+<script type="text/javascript">
+var page=document.getElementById("page");
+var webGL=document.getElementById("div_container");
+
+	function Main(){
+
+	}
+	function CodingProjects(){
+	window.location.href = "http://www.visineat.com/devs/dev5/NicholasSaunders/CodingProjects.html";
+	}
+	function Home(){
+	window.location.href = "http://www.visineat.com/devs/dev5/sauntic";
+	}
+</script>
+</body>
+</html>

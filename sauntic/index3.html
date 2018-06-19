@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Crappy Bird Home Page</title></head>
+<style>
+@font-face {
+    font-family: ComicSans;
+    src:url("http://www.visineat.com/devs/dev5/Fonts/ComicSans.ttf");
+}
+.dreamloLBTable{
+background: rgba(255,255,255,.8);
+margin: 0 auto;
+font-size: 30px;
+font-family: ComicSans;
+color: #82571f;
+border-radius:25px;
+}
+h1{
+background: rgba(255,255,255,.8);
+text-align:center;
+font-family: ComicSans;
+color: #82571f;
+border-radius:25px;
+
+}
+.title{
+background: rgba(255,255,255,.8);
+text-align:center;
+font-family: ComicSans;
+color: #82571f;
+border-radius:25px;
+width: 400px;
+position: absolute;
+top:0px;
+left: 50%;
+margin-left: -200px
+}
+.button{
+background: rgba(255,255,255,.8);
+text-align:center;
+font-family: ComicSans;
+color: #82571f;
+border-radius:25px;
+width: 100%;
+height:100%;
+font-size:30px;
+position:absolute;
+}
+</style>
+<body>
+<div style="border-radius:25px;right:0;left:0;margin-right:auto;margin-left:auto;position:absolute;left:0px;top:0px;width:100%;height:100px;background-color:#82571f;z-index:1;">
+<h1 class="title">Crappy Bird Home Page</h1>
+<div style="background-color:#82571f;width:20%;position:absolute;left:0px;top:0px;height:100px;border-radius:25px;"><button class="button" onclick="Play()">Play Online!</button></div>
+<div style="background-color:#82571f;width:20%;position:absolute;right:0px;top:0px;height:100px;border-radius:25px;"><button class="button" onclick="Store()">Play On Android!</button></div></div>
+<div id="page" style="background-image:url('http://www.visineat.com/devs/dev5/sauntic/crappy/blue_tile.jpg');position:relative;top:85px;width:100%;height:100%;">
+<h1>Crappy Bird High Scores!!!1</h1>
+
+<script src="http://dreamlo.com/lb/58adcadb68fc111e8082ec0e/js" type="text/javascript" ></script>
+<style type="text/css">
+.dreamloLBTable { border-collapse:collapse;text-align:center;width: 200px; }
+.dreamloLBTable th { border-bottom: 5px solid black;font-weight:bold;margin:0;padding:4px; }
+.dreamloLBTable td { border-bottom: 5px solid black;margin:0;padding:4px; }
+</style>
+</div>
+
+
+</body>
+
+<script>
+function Play(){
+
+window.location.href ="http://www.visineat.com/devs/dev5/sauntic/crappy/play/";
+
+}
+function Store(){
+window.location.href ="https://play.google.com/store/apps/details?id=com.Sauntic.CrappyBird";
+}
+</script>
+
+</html>

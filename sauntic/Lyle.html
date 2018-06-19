@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="http://www.visineat.com/devs/dev5/NicholasSaunders/indexStyle.css">
+<link rel="icon" type="image/png" href="http://www.visineat.com/devs/dev5/Images/CodingProject/Lyle/lyle1.png"/>
+<title>Lyle's Journey Info</title>
+<script type="text/javascript" src="http://www.visineat.com/js/vn-1.8.js"></script></head>
+<text  id="text"></text>
+<body class="body" style="background-color:#add1c1;margin:0px;width:100%;height:100%;position:absolute;top:0px;bottom:0px;right:0px;" onload="vn.run(Main);">
+
+<div class="body" id="page" style="width:100%;height:100%; position:absolute; top:0px; right:0px;" >
+<div class="top"></div>
+<div class="center" onclick="Home()" style="cursor: pointer;right:0;left:0;margin-right:auto;margin-left:auto;height:0px;position:relative;top:0px;margin:auto;text-align:center;z-index:100"><p>Lyle's Journey</p></div>
+
+
+<div style="background-color:#3f3f3f;width:70%;position:relative;top:100px;height:90%;margin:auto;text-align:center; box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);">
+<button class="butt button2" onclick="Play()">Play the Lyle's Journey Demo Online!<!--<br><p>(Requires a lot of RAM...)--></p></button> 
+<div style="background-color:#3f3f3f;width:100%; position:relative; ">
+
+<p class="wrap" style="padding:20px;">Lyle's Journey was a project made using Unity3D as a final project for my Storytelling in Interactive Media class. For this final project we had to create a piece of interactive media that told a story as the player progressed. The demo for Lyle's Journey is available to play online above and the full game is available for download below!</p>
+</div>
+<div style="width:100%;height:60%;position:relative">
+<div class="grid grid1" style="width:90%;height:50%;">
+<img class="img2" style="height:100%;" src="http://www.visineat.com/devs/dev5/Images/CodingProjects/Lyle/lyle1"></img>
+<img class="img2" style="height:100%;" src="http://www.visineat.com/devs/dev5/Images/CodingProjects/Lyle/lyle5"></img>
+<img class="img2" style="height:100%;" src="http://www.visineat.com/devs/dev5/Images/CodingProjects/Lyle/lyle6"></img>
+<img class="img2" style="height:100%;" src="http://www.visineat.com/devs/dev5/Images/CodingProjects/Lyle/lyle2"></img>
+
+</div>
+</div>
+<button class="butt button2" onclick="Download()">Download the Full Lyle's Journey!</button> 
+</div>
+
+</div>
+<script type="text/javascript">
+var page=document.getElementById("page");
+var webGL=document.getElementById("div_container");
+
+	function Main(){
+
+	}
+	function Play(){
+	window.location.href = "http://www.visineat.com/devs/dev5/sauntic/lyle";
+	}
+	function Download(){
+	window.location.href = "http://www.visineat.com/devs/dev5/sauntic/lyle/Lyle's_Journey.zip";
+	}
+	function Home(){
+	window.location.href = "http://www.visineat.com/devs/dev5/sauntic";
+	}
+</script>
+</body>
+</html>

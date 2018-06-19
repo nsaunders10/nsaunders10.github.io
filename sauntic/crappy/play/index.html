@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Crappy Bird Play Online!</title>
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <script src="TemplateData/UnityProgress.js"></script>
+	<style>
+	@font-face {
+    font-family: ComicSans;
+    src:url("http://www.visineat.com/devs/dev5/Fonts/ComicSans.ttf");
+}
+h1{
+background: rgba(255,255,255,.8);
+text-align:center;
+font-family: ComicSans;
+color: #82571f;
+border-radius:25px;
+
+}
+.title{
+background: rgba(255,255,255,.8);
+text-align:center;
+font-family: ComicSans;
+color: #82571f;
+border-radius:25px;
+width: 400px;
+position: absolute;
+top:0px;
+left: 50%;
+margin-left: -200px
+}
+.button{
+background: rgba(255,255,255,.8);
+text-align:center;
+font-family: ComicSans;
+color: #82571f;
+border-radius:25px;
+width: 100%;
+height:100%;
+font-size:30px;
+position:absolute;
+}
+	</style>
+  </head>
+  <body class="template">
+  
+  <div style="border-radius:25px;right:0;left:0;margin-right:auto;margin-left:auto;position:absolute;left:0px;top:0px;width:100%;height:100px;background-color:#82571f;z-index:1;">
+<h1 class="title">Play Crappy Bird Online</h1>
+<div style="background-color:#82571f;width:20%;position:absolute;left:0px;top:0px;height:100px;border-radius:25px;"><button class="button" onclick="Play()">View High Scores!</button></div>
+<div style="background-color:#82571f;width:20%;position:absolute;right:0px;top:0px;height:100px;border-radius:25px;"><button class="button" onclick="Store()">Play On Android!</button></div>
+</div>
+  
+  <div class="template-wrap clear">
+      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" style="top:70px;position:relative;" height="600px" width="960px"></canvas>
+      <br>
+      <div class="fullscreen"><img src="TemplateData/fullscreen.png" width="38" height="38" alt="Fullscreen" title="Fullscreen" onclick="SetFullscreen(1);" /></div>
+    </div>
+    <script type='text/javascript'>
+  var Module = {
+    TOTAL_MEMORY: 268435456,
+    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+    compatibilitycheck: null,
+    backgroundColor: "#222C36",
+    splashStyle: "Light",
+    dataUrl: "Release/Crappy WebGL.data",
+    codeUrl: "Release/Crappy WebGL.js",
+    asmUrl: "Release/Crappy WebGL.asm.js",
+    memUrl: "Release/Crappy WebGL.mem",
+  };
+  function Play(){
+
+window.location.href ="http://www.visineat.com/devs/dev5/sauntic/crappy/";
+
+}
+ 
+</script>
+<script src="Release/UnityLoader.js"></script>
+
+  </body>
+</html>
