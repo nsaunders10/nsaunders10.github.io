@@ -3,11 +3,7 @@
 </hmtl>
 @font-face{
 font-family: 'Montserrat', sans-serif;
-//src:url("http://www.sauntic.com/Fonts/Montserrat-Light.otf");
-}
-@font-face{
-font-family: 'Montserrat', sans-serif;
-s//rc:url("http://www.sauntic.com/Fonts/Montserrat-UltraLight.otf");
+src:url("https://fonts.googleapis.com/css?family=Montserrat");
 }
 .tab{
     border: 0px solid black;
