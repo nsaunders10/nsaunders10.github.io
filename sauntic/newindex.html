@@ -16,26 +16,32 @@ body, html {
 }
 /* Full height image header */
 .bgimg-1 {
-    background-position: center;
-    background-size: cover;
+	background-position: 50% 100px;
+	background-top: 100px;
+    background-size: 500px;
+	background-repeat: no-repeat;
     background-image: url("http://sauntic.com/sauntic/images/logoWithText.png");
-    min-height: 50%;
-	top:80px;
+    min-height: 30%;
+	top:0px;
 	
 }
 .w3-bar .w3-button {
     padding: 16px;
 }
+.w3-hover-opacity{
+box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
+
+}
 </style>
 <body>
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
+  <div class="w3-bar w3-white w3-card" style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);" id="myNavbar">
   
-    <a href="http://sauntic.com/" class=" w3-button"></a>
+    <a href="#home" class=" w3-button"></a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-	  <a href="http://sauntic.com/sauntic/newindex.html" class="w3-bar-item w3-button"><i><image style="position:relative;width:25px;" src="http://sauntic.com/sauntic/images/logo.png"></i> SAUNTIC</a>
+	  <a href="#home" class="w3-bar-item w3-button"><i><image style="position:relative;width:25px;" src="http://sauntic.com/sauntic/images/logo.png"></i> SAUNTIC</a>
         <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-user-o "></i>  ABOUT</a>
  <!--    <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>-->
       <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-folder-o"></i>  Projects</a>
@@ -81,8 +87,8 @@ body, html {
 </header>
 
 <!-- About Section -->
-<div class="w3-container" style="padding:128px 16px;" id="about">
-  <h3 class="w3-center w3-light-grey">ABOUT ME</h3>
+<div class="w3-container" style="padding:40px 16px;" id="about">
+  <h3 class="w3-center w3-light-grey" style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);">ABOUT ME</h3>
   <p class="w3-center w3-large">My specialty is virtual and augmented reality development with the Unity 3D engine, but I also enjoy creating any kind of interactive experience for all platforms.</p>
   <div class="w3-row-padding w3-center" style="margin-top:64px">
     <div class="w3-quarter">
@@ -202,7 +208,7 @@ body, html {
 </div>
 
 <!-- Promo Section "Statistics" -->
-<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
+<div style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);" class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
   <div class="w3-quarter">
     <span class="w3-xxlarge">14+</span>
     <br>Partners
@@ -223,37 +229,37 @@ body, html {
 
 <!-- Work Section -->
 <div class="w3-container" style="padding:60px 16px" id="work">
-  <h3 class="w3-center">Client Projects</h3>
-  <p class="w3-center w3-large">Work I have done for clients</p>
+  <h3 class="w3-center w3-light-grey" style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);">Client Projects</h3>
+ <!-- <p class="w3-center w3-large">Work I have done for clients</p>-->
 
   <div class="w3-row-padding" style="margin-top:10px">
     <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/drone.gif" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A microphone">
+      <img src="http://sauntic.com/sauntic/images/drone.gif" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Hololens">
     </div>
     <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/drone.gif" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A phone">
+      <img src="http://sauntic.com/sauntic/images/drone.gif" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Money Grab">
     </div>
     <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/drone.gif" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A drone">
+      <img src="http://sauntic.com/sauntic/images/drone.gif" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="AR Interactive Experiance">
     </div>
     <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/drone.gif" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Soundbox">
+      <img src="http://sauntic.com/sauntic/images/drone.gif" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Virtual Reality Chair">
     </div>
   </div>
-	<h3 class="w3-center">Personal Projects </h3>
-	<p class="w3-center w3-large">Work I have done by myself and with friends</p>
+	<h3 class="w3-center w3-light-grey" style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);">Personal Projects </h3>
+<!--	<p class="w3-center w3-large">Work I have done by myself and with friends</p>-->
   <div class="w3-row-padding w3-section">
     <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/logo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tablet">
+      <img src="http://sauntic.com/sauntic/images/logo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Insdrawments">
     </div>
     <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/logo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A camera">
+      <img src="http://sauntic.com/sauntic/images/logo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Neighbors">
     </div>
     <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/logo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A typewriter">
+      <img src="http://sauntic.com/sauntic/images/logo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sombri">
     </div>
     <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/logo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tableturner">
+      <img src="http://sauntic.com/sauntic/images/logo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Lyle's Journey">
     </div>
   </div>
 </div>
@@ -326,8 +332,8 @@ body, html {
 </div>
 
 <!-- Contact Section -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
-  <h3 class="w3-center">CONTACT</h3>
+<div class="w3-container w3-light-grey" style="padding:18px 16px" id="contact">
+  <h3 class="w3-center w3-light-grey">CONTACT</h3>
   <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
   <div class="w3-row-padding" style="margin-top:64px">
     <div class="w3-half">
@@ -349,8 +355,6 @@ body, html {
     </div>
     <div class="w3-half">
       <!-- Add Google Maps -->
-      <div id="googleMap" class="w3-greyscale-max" style="width:100%;height:510px;"></div>
-    </div>
   </div>
 </div>
 
