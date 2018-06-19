@@ -1,10 +1,10 @@
 @font-face{
 font-family: Montserrat-Light;
-src:url("https://www.sauntic.com/Fonts/Montserrat-Light.otf");
+src:url("http://www.sauntic.com/Fonts/Montserrat-Light.otf");
 }
 @font-face{
 font-family: Montserrat-UltraLight;
-src:url("https://www.sauntic.com/Fonts/Montserrat-UltraLight.otf");
+src:url("http://www.sauntic.com/Fonts/Montserrat-UltraLight.otf");
 }
 .tab{
     border: 0px solid black;
