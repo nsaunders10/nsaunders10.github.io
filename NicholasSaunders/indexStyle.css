@@ -81,7 +81,7 @@ cursor: pointer;
     font-size: 50px;
     margin: 0px 0px;
 	white-space:nowrap;
-	font-family: Montserrat-Light;
+	font-family: 'Montserrat', sans-serif;
 	 -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
@@ -142,7 +142,7 @@ cursor: pointer;
     transition-duration: 0.4s;
 	overflow:hidden;
 	white-space:nowrap;
-	font-family: Montserrat-UltraLight;
+	font-family: 'Montserrat', sans-serif;
 }
 .butt {
 	position: relative;	
@@ -160,7 +160,7 @@ cursor: pointer;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 	overflow:hidden;
-	font-family: Montserrat-UltraLight;
+	font-family: 'Montserrat', sans-serif;
 	box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
 }
 .button1:hover {
@@ -183,14 +183,14 @@ p{
     font-size: 50px;
     margin: 0px 0px;
 	white-space:nowrap;
-	font-family: Montserrat-Light;
+	font-family: 'Montserrat', sans-serif;
 }
 .wrap{
 	font-size: 30px;
 	text-align: left;
 	text-indent: 50px;
 	white-space:normal;
-	font-family: Montserrat-UltraLight;
+	font-family: 'Montserrat', sans-serif;
 }
 p1{
     color: white;
@@ -200,7 +200,7 @@ p1{
     margin: 0px 0px;
 	//overflow:wrap;
 	//white-space:nowrap;
-	font-family: Montserrat-Light;
+	font-family: 'Montserrat', sans-serif;
 }
 .h3h:hover {
    // box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
