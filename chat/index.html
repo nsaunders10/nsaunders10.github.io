@@ -1,0 +1,198 @@
+<html>
+<head>
+<title>Online Chat</title>
+<script src="http://www.visineat.com/js/vn-1.8.js"></script></head>
+<script src="src/main.js"></script>
+<script src="src/chat.js"></script>
+<script src="src/extras.js"></script>
+<text  id="text"></text>
+<style>
+p{
+margin: 0 auto;
+text-align:center;
+}
+</style>
+</head>
+<body onload="vn.run(myFunction);">
+<div id="page" style="position:absolute;top:0px;bottom:0px;left:0px;right:0px;background:#ADD1AD;">
+<p>Please refresh the page if the chat window does not load.</p>
+</div>
+
+<script>
+	var page=document.getElementById("page");
+	
+function myFunction() {
+
+	var me=null;
+	var message=null;
+	var counter=null;
+	var chatLine = -20;
+	var color1=false;
+	var url = null;
+	var position = null;
+	var player = null;
+
+		var server=new VNServer();
+		
+		server.connect('Chat',{capacity:10,releaseSeats:false}).then(function(my_session){	
+			me=server.me();
+			var my_session=server.getSession();
+			var user = null;
+				
+			counter=my_session.variable('counter');
+			counter.changeBy(1);
+			counter.whenValueChanged().then(function(variable,initiator)
+			{	
+				console.log('Users In Room: '+counter.value());
+				console.log(me);
+			});
+			
+			position=my_session.variable('position');
+			position.changeBy(1);
+			position.whenValueChanged().then(function(variable,initiator)
+			{	
+			//MakePlayer();
+			});
+			
+			chatLine=my_session.variable('chatLine');
+			chatLine.whenValueChanged().then(function(variable,initiator)
+			{	
+				console.log(chatLine.value());
+			});
+			
+			color1=my_session.variable('color1');
+			color1.whenValueChanged().then(function(variable,initiator)
+			{	
+				if(color1.value()==0){chatColor = "rgb(200,250,250)"}else chatColor='lightblue';
+			});
+			
+			message=my_session.variable('message');
+			message.set('');
+			message.whenValueChanged().then(function(user,variable,initiator)
+			{	
+				Test();
+				chatHolder.scrollTop = chatHolder.scrollHeight;
+				if(message.value() == "ohshitwaddup")
+				Datboi();
+				if(message.value().startsWith('url=')){
+				url = (message.value().slice(4));
+				var w=new VNBrowserWindow(wm,{url:url});
+				}
+			});
+			
+		server.whenConnected().then(function(session){
+
+		});
+		
+	var textValue = null;
+	var chatValue = null;
+	var chatColor=null;
+	var wm=new WindowManager(page);
+	wm.setPresetStyle('mac');
+	var win=wm.createWindow({top:50,left:50,width:600,height:600,title:'Chat Window'});
+	var winDiv=win.getContentDiv();
+	
+	var background=document.createElement("div");
+	vn.set(background.style,{
+	position:'absolute',
+	width:'100%',
+	height:'100%',
+	bottom:'0px',
+	backgroundColor:'white'
+	});
+	winDiv.appendChild(background);
+	
+	var chatHolder=document.createElement("div");
+	vn.set(chatHolder.style,{
+	position:'absolute',
+	width:'100%',
+	top: '0px',
+	bottom: '25px',
+	overflow: 'scroll',
+	backgroundColor:'white'
+	});
+	background.appendChild(chatHolder);
+	
+	var bottomBar=document.createElement("div");
+	vn.set(bottomBar.style,{
+	position:'absolute',
+	width:'100%',
+	height:'20px',
+	bottom:'0px',
+	backgroundColor:'lightgray'
+	});
+	background.appendChild(bottomBar);
+	
+	//textValue = "Type Here";
+	var x = document.createElement("INPUT");
+	vn.set(x.style,{
+	position:'absolute',
+	bottom:'0px',
+	width:'100%',
+	border: 'none',
+	backgroundColor:'lightgray',
+	fontSize:'20px',
+	fontColor:'gray',
+	overflow:'scroll',
+	});
+	x.placeholder = "Type Here"
+    x.setAttribute("type", "text");
+ //   x.setAttribute("value", textValue);
+	bottomBar.appendChild(x);
+	
+	function MakePlayer(){
+	console.log('player '+position.value());
+	player=document.createElement("div");
+	vn.set(player.style,{
+	position:'absolute',
+	width:'100px',
+	height:'100px',
+	top: '0px',
+	backgroundColor:'white'
+	});
+	page.appendChild(player);
+	}
+	
+	document.getElementById("page").onkeydown = function(event) {
+	if(event.keyCode == 13 && color1.value()==1)color1.set(0);
+	if(event.keyCode == 13 && color1.value()==0)color1.set(1);
+	if(event.keyCode == 13){chatValue=x.value; message.set(chatValue); chatLine.changeBy(20);} 
+	if(color1.value()==0){chatColor = "rgb(200,250,250)"}else chatColor='lightblue'; 
+	if (event.keyCode == 37) {
+	console.log("Left Arrow Key");
+	player.style.left+=-10;
+	}
+	};
+	document.getElementById("page").onkeyup = function(event) {if(event.keyCode == 13){x.value = "";} }; 
+
+	function Test(){
+	var chatBar=document.createElement("div");
+	vn.set(chatBar.style,{
+	position:'absolute',
+	width:'100%',
+	height:'20px',
+	top: chatLine.value()+'px',
+	backgroundColor:chatColor
+	});
+	chatHolder.appendChild(chatBar);
+
+	var text =  document.createElement("text");
+	text.innerHTML = message.value();
+	vn.set(text.style,{
+	position:'absolute',
+	bottom:'0px',
+	width:'100%',
+	border: 'none',
+	backgroundColor:'rgba(0,0,0,0)',
+	fontSize:'20px'
+	});
+	chatBar.appendChild(text);
+	
+	}
+		});
+}
+
+</script>
+</body>
+
+</html>

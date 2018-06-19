@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="indexStyle.css">
+<title>Nicholas Saunders Home Page</title>
+<script type="text/javascript" src="http://www.visineat.com/js/vn-1.8.js"></script></head>
+<text  id="text"></text>
+<body style="background-color:#ADD1AD;margin:0px;width:100%;height:100%;position:absolute;top:0px;bottom:0px;right:0px;" onload="vn.run(Main);">
+
+<div id="page" style="background-color:#ADD1AD;width:100%;height:100%; position:absolute; top:0px; right:0px; background-size:50px;" >
+
+<div class="center" style="cursor: pointer;right:0;left:0;margin-right:auto;margin-left:auto;height:60px;position:fixed;top:0px;margin:auto;text-align:center;z-index:100" onclick="Home()"><p>Nicholas Saunders</p></div>
+
+<div class="center" style=" right:0;left:0;margin-right:auto;margin-left:auto;background-color:grey;width:60%;height:100px;position:fixed;top:80px;margin:auto;text-align:center;z-index:100">
+
+<button class="button button1" onclick="CodingProjects()">Coding Projects</button>
+<button class="button button1" onclick="DigitalMedia()">Digital Media</button>
+<button class="button button1" onclick="Resume()">Resume</button>
+
+</div>
+
+
+<div style="overflow: scroll;background-color:grey;width:90%;position:relative;top:200px;height:80%;margin:auto;text-align:center; box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);">
+<div style="width:40%;height:100px;top:10px;margin:auto;position:relative;"><p>Digital Media</p></div>
+<div style="background:white;width:90%;height:100%;top:0px;position:relative;margin:auto;">
+
+<image onclick="Pears()" style="height:20%;width:18%;top:0px;position:relative;"src="http://www.visineat.com/devs/dev5/Images/DigitalMedia/fruitbowlfinal.jpg"></image>
+<image onclick="Multiple()" style="height:20%;width:20%;top:0px;position:relative;"src="http://www.visineat.com/devs/dev5/Images/DigitalMedia/MultipleExposure.jpg"></image>
+<image onclick="Reggie()" style="height:20%;width:10%;top:0px;position:relative;"src="http://www.visineat.com/devs/dev5/Images/DigitalMedia/ReggieWattFinal.jpg"></image>
+<image onclick="Turtle()" style="height:20%;width:12%;top:0px;position:relative;"src="http://www.visineat.com/devs/dev5/Images/DigitalMedia/turtleclothes.jpg"></image>
+</div>
+</div>
+
+</div>
+
+
+
+<script type="text/javascript">
+var page=document.getElementById("page");
+var webGL=document.getElementById("div_container");
+
+	function Main(){
+
+	}
+	
+	function Resume(){
+	window.open("https://www.visineat.com/devs/dev5/NicholasSaunders/NicholasSaundersResume.pdf");
+	}
+	function CodingProjects(){
+	window.location.href = "http://www.visineat.com/devs/dev5/NicholasSaunders/CodingProjects.html";
+	}
+	function DigitalMedia(){
+	window.location.href = "http://www.visineat.com/devs/dev5/NicholasSaunders/DigitalMedia.html";
+	}
+	function Home(){
+	window.location.href = "http://www.visineat.com/devs/dev5";
+	}
+	function Pears(){
+	var wm=new WindowManager(page);
+	wm.setPresetStyle('win10');
+	var win=wm.createWindow({top:200,left:600,width:900,height:900,title:""});
+	var winDiv=win.getContentDiv();
+	
+	var image=document.createElement("div");
+	vn.set(image.style,{
+	position:'absolute',
+	width:'100%',
+	height:'100%',
+	backgroundColor:'white',
+	backgroundImage: 'url(http://www.visineat.com/devs/dev5/Images/DigitalMedia/fruitbowlfinal.jpg)',
+	backgroundSize: '100%',
+	backgroundRepeat: 'no-repeat'
+	});
+	winDiv.appendChild(image);
+	
+	}
+	function Multiple(){
+	var wm=new WindowManager(page);
+	wm.setPresetStyle('win10');
+	var win=wm.createWindow({top:200,left:700,width:900,height:900,title:""});
+	var winDiv=win.getContentDiv();
+	
+	var image=document.createElement("div");
+	vn.set(image.style,{
+	position:'absolute',
+	width:'100%',
+	height:'100%',
+	backgroundColor:'white',
+	backgroundImage: 'url(http://www.visineat.com/devs/dev5/Images/DigitalMedia/MultipleExposure.jpg)',
+	backgroundSize: '100%',
+	backgroundRepeat: 'no-repeat'
+	});
+	winDiv.appendChild(image);
+	}
+	function Reggie(){
+	var wm=new WindowManager(page);
+	wm.setPresetStyle('win10');
+	var win=wm.createWindow({top:200,left:800,width:900,height:900,title:""});
+	var winDiv=win.getContentDiv();
+	
+	var image=document.createElement("div");
+	vn.set(image.style,{
+	position:'absolute',
+	width:'100%',
+	height:'100%',
+	backgroundColor:'white',
+	backgroundImage: 'url(http://www.visineat.com/devs/dev5/Images/DigitalMedia/ReggieWattFinal)',
+	backgroundSize: '100%',
+	backgroundRepeat: 'no-repeat'
+	});
+	winDiv.appendChild(image);
+	}
+	function Turtle(){
+	var wm=new WindowManager(page);
+	wm.setPresetStyle('win10');
+	var win=wm.createWindow({top:200,left:900,width:900,height:900,title:""});
+	var winDiv=win.getContentDiv();
+	
+	var image=document.createElement("div");
+	vn.set(image.style,{
+	position:'absolute',
+	width:'100%',
+	height:'100%',
+	backgroundColor:'white',
+	backgroundImage: 'url(http://www.visineat.com/devs/dev5/Images/DigitalMedia/turtleclothes.jpg)',
+	backgroundSize: '100%',
+	backgroundRepeat: 'no-repeat'
+	});
+	winDiv.appendChild(image);
+	}
+</script>
+</body>
+</html>

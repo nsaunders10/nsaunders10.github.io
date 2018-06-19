@@ -1,0 +1,211 @@
+@font-face{
+font-family: Montserrat-Light;
+src:url("http://www.visineat.com/devs/dev5/Fonts/Montserrat-Light.otf");
+}
+@font-face{
+font-family: Montserrat-UltraLight;
+src:url("http://www.visineat.com/devs/dev5/Fonts/Montserrat-UltraLight.otf");
+}
+.tab{
+    border: 0px solid black;
+	width:90%;
+	//background-color: green;
+	position: relative;	
+	margin: auto;	
+}
+@media only screen and (min-width: 400px) {
+    .img2 {
+		//border: 5px solid black;
+		width:30%;
+		//background-color: green;
+		//position: relative;	
+	//	margin: auto;	
+    }
+}/*
+@media only screen and (min-width: 768px) {
+    .tab {
+		border: 0px solid black;
+		width:90%;
+		//background-color: green;
+		position: relative;	
+		margin: auto;	
+    }
+}*/
+th{
+    border: 0px solid black;
+	width:50%;
+	padding: 10px;
+}
+
+
+.img1{
+	//position:relative;
+	height:100%;
+	width:49.5%;	
+}
+.img2{
+	//position:relative;
+	height:49.5%;
+	width:49.5%;	
+}
+.kinImg{
+	//position:relative;
+	height:45%;
+	width:24.6%;	
+	
+}
+.grid,.click{
+	position: relative;	
+	//top: 2px;
+    background-color: black;
+    border: none;
+	width: 100%;
+	margin: auto;	
+	height:400px;
+	 -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+	box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
+	
+}
+.click{
+	opacity:1;
+}
+
+.click1:hover{
+opacity:.6;
+cursor: pointer;
+}
+.title{
+	color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 50px;
+    margin: 0px 0px;
+	white-space:nowrap;
+	font-family: Montserrat-Light;
+	 -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.title1:hover :before{
+
+}
+.grey{
+	box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
+}
+.grey,.bottom,.top{
+	
+  background: grey; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #919191, #7a7a7a); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #919191, #7a7a7a); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #919191, #7a7a7a); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #919191, #7a7a7a); /* Standard syntax */
+	
+}
+.bottom{
+	position: absolute;
+	bottom: 0px;
+	height: 50px;
+	width: 100%;
+}
+.top{
+	position: absolute;
+	top: 0px;
+	height: 70px;
+	width: 100%;	
+	box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
+}
+.body{
+	
+  background:#ADD1AD;
+  background: -webkit-linear-gradient(right bottom, #add1c1, #ADD1AD); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(top left, #add1c1, #ADD1AD); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(top left, #add1c1, #ADD1AD); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to top left, #add1c1, #ADD1AD); /* Standard syntax */
+	
+}
+
+}
+.button {
+	position: relative;	
+	top: 5px;
+    background-color: white;
+    border: none;
+	width: 32.5%;
+    color: grey;
+    padding: 20px 0px;
+    text-align: center;
+    text-decoration: none;
+   // display: inline-block;
+    font-size: 40px;
+    margin: 0px 0px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+	overflow:hidden;
+	white-space:nowrap;
+	font-family: Montserrat-UltraLight;
+}
+.butt {
+	position: relative;	
+	//top: 2px;
+    background-color: white;
+    border: none;
+	width: 100%;
+    color: #3f3f3f;
+	padding: 10px 0px;
+	margin: 10px 0px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 35px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+	overflow:hidden;
+	font-family: Montserrat-UltraLight;
+	box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
+}
+.button1:hover {
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
+	//text-shadow: 2px 2px 8px black;
+	background-color: grey;
+	color: white;
+}
+.button2:hover {
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
+	//text-shadow: 2px 2px 8px black;
+	background-color: lightgray;
+	color: white;
+}
+p{
+    color: white;
+   // padding: 20px 0px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 50px;
+    margin: 0px 0px;
+	white-space:nowrap;
+	font-family: Montserrat-Light;
+}
+.wrap{
+	font-size: 30px;
+	text-align: left;
+	text-indent: 50px;
+	white-space:normal;
+	font-family: Montserrat-UltraLight;
+}
+p1{
+    color: white;
+    text-align: left;
+    text-decoration: none;
+    font-size: 35px;
+    margin: 0px 0px;
+	//overflow:wrap;
+	//white-space:nowrap;
+	font-family: Montserrat-Light;
+}
+.h3h:hover {
+   // box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
+	//text-shadow: 2px 2px 8px black;
+	//background-color: lightgray;
+	color: white;
+}
