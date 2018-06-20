@@ -16,12 +16,11 @@ body, html {
 }
 /* Full height image header */
 .bgimg-1 {
-	background-position: 50% 100px;
-	background-top: 100px;
-    background-size: 500px;
+	background-position: 50% 110px;
+    background-size: 600px;
 	background-repeat: no-repeat;
     background-image: url("http://sauntic.com/sauntic/images/logoWithText.png");
-    min-height: 30%;
+    min-height: 40%;
 	top:0px;
 	
 }
@@ -36,20 +35,16 @@ box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
 <body>
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-card" style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);" id="myNavbar">
-  
+  <div class="w3-bar w3-white w3-card" style="box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);" id="myNavbar">
     <a href="#home" class=" w3-button"></a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-	  <a href="#home" class="w3-bar-item w3-button"><i><image style="position:relative;width:25px;" src="http://sauntic.com/sauntic/images/logo.png"></i> SAUNTIC</a>
-        <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-user-o "></i>  ABOUT</a>
- <!--    <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>-->
+	  <a href="#home" class="w3-bar-item w3-button"><i><image style="position:relative;width:25px;" src="http://sauntic.com/sauntic/images/logo.png"></i> HOME</a>
+        <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-user-o "></i>  EXPERIENCE</a>
       <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-folder-o"></i>  Projects</a>
-<!--      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>-->
       <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope-o"></i>  CONTACT</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
       <i class="fa fa-bars"></i>
     </a>
@@ -59,149 +54,81 @@ box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-  <!--<a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>-->
+  <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button">HOME</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">EXPERIENCE</a>
   <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-<!--   <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>-->
   <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
 </nav>
 
 <!-- Header with full-height image -->
 <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-<div style="background-position: center; top:80px; min-height: 100%; background-image:('http://sauntic.com/sauntic/images/logo.png'); width:100%;"></div>
-
   <div class="w3-display-left w3-text-white" style="padding:60px">
-<!--    <span class="w3-jumbo w3-hide-small">Start something that matters</span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
-    <span class="w3-large">Stop wasting valuable time with projects that just isn't you.</span>
-    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p>-->
   </div> 
   <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
-<!--    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>-->
   </div>
 </header>
 
-<!-- About Section -->
-<div class="w3-container" style="padding:40px 16px;" id="about">
-  <h3 class="w3-center w3-light-grey" style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);">ABOUT ME</h3>
-  <p class="w3-center w3-large">My specialty is virtual and augmented reality development with the Unity 3D engine, but I also enjoy creating any kind of interactive experience for all platforms.</p>
-  <div class="w3-row-padding w3-center" style="margin-top:64px">
+<!-- Experiance Section -->
+<div class="w3-container" style="padding:60px 0px;" id="about">
+  <h3 class="w3-center w3-light-grey" style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);">MY EXPERIENCE</h3>
+  <p class="w3-center w3-large">As a software engineer of research and development, I have had many chances to get my hands on a long list of hardware and software. This has allowed me to dig into the latest tech and see what they have to offer. My specialty is virtual and augmented reality development with the Unity 3D engine, but I also enjoy creating any kind of interactive experience for all platforms. </p>
+  
+<div class="w3-row-padding w3-center" style="margin-top:64px">
     <div class="w3-quarter">
       <i class="w3-margin-bottom w3-jumbo"><image style="position:relative;" src="http://sauntic.com/sauntic/images/mobile.png"></i>
       <p class="w3-large">Mobile</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>Experience developing for all mobile platforms: Android, iOS, and Universal Windows Platform.</p>
     </div>
     <div class="w3-quarter">
       <i class="w3-margin-bottom w3-jumbo"><image style="position:relative;" src="http://sauntic.com/sauntic/images/vr.png"></i>
       <p class="w3-large">Virtual Reality</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>Hands on experience with the Vive / Vive Pro, Oculus, GearVR, and Google Daydream.</p>
     </div>
     <div class="w3-quarter">
       <i class="w3-margin-bottom w3-jumbo"><image style="position:relative;" src="http://sauntic.com/sauntic/images/ar.png"></i>
       <p class="w3-large">Augmented Reality</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>Extensive AR development experience with the Vuforia API and the Unity3D engine for all platforms including the Microsoft Hololens.</p>
     </div>
     <div class="w3-quarter">
       <i class=" w3-margin-bottom w3-jumbo"><image style="position:relative;" src="http://sauntic.com/sauntic/images/controller.png"></i>
       <p class="w3-large">Games / Interactive</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>Mechanic driven game design and interactive story telling.</p>
     </div>
   </div>
 </div>
 
 <!-- Skills Section -->
-<div class="w3-container  w3-light-grey  w3-padding-64">
+<div class="w3-container  w3-light-grey" style="padding:40px 0px;">
   <div class="w3-row-padding">
-    <div class="w3-col m6">
-      <h3>Skills.</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>
-      tempor incididunt ut labore et dolore.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>
-      tempor incididunt ut labore et dolore.</p>
+   <h3  class="w3-center">Skills</h3>
+    <div class="w3-col m6" style="padding:20px 20px;">
+      <h3  class="w3-center w3-grey" >Technical</h3>
+	  <p class="w3-wide"><i class=""><image style="position:relative;width:25px;" src="http://sauntic.com/sauntic/images/logo.png"></i>   Unity3D Engine</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:100%">100%</div>
+      </div>
+      <p class="w3-wide"><i><image style="position:relative;width:25px;" src="http://sauntic.com/sauntic/images/logo.png"></i>   C#</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:95%">95%</div>
+      </div>
+	  <p class="w3-wide"><i><image style="position:relative;width:25px;" src="http://sauntic.com/sauntic/images/logo.png"></i>   Javascript</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:85%">80%</div>
+      </div>
     </div>
-    <div class="w3-col m6">
-      <p class="w3-wide"><i class="fa fa-camera w3-margin-right"></i>Unity Engine</p>
+    <div class="w3-col m6" style="padding:20px 20px;">
+	 <h3 class="w3-center w3-grey">Artistic</h3>
+	   <p class="w3-wide"><i><image style="position:relative;width:25px;" src="http://sauntic.com/sauntic/images/logo.png"></i>   Adobe Suite</p>
       <div class="w3-grey">
-        <div class="w3-container w3-dark-grey w3-center" style="width:90%">90%</div>
+        <div class="w3-container w3-dark-grey w3-center" style="width:80%">80%</div>
       </div>
-      <p class="w3-wide"><i class="fa fa-desktop w3-margin-right"></i>Web Design</p>
-      <div class="w3-grey">
-        <div class="w3-container w3-dark-grey w3-center" style="width:85%">85%</div>
-      </div>
-      <p class="w3-wide"><i class="fa fa-photo w3-margin-right"></i>Photoshop</p>
+	  <p class="w3-wide"><i><image style="position:relative;width:25px;" src="http://sauntic.com/sauntic/images/logo.png"></i>   Maya</p>
       <div class="w3-grey">
         <div class="w3-container w3-dark-grey w3-center" style="width:75%">75%</div>
       </div>
-    </div>
-  </div>
-</div>
-
-<!-- Promo Section - "We know design" 
-<div class="w3-container w3-light-grey" style="padding:128px 16px">
-  <div class="w3-row-padding">
-    <div class="w3-col m6">
-      <h3>We know design.</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore.</p>
-      <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View Our Works</a></p>
-    </div>
-    <div class="w3-col m6">
-      <img class="w3-image w3-round-large" src="/w3images/phone_buildings.jpg" alt="Buildings" width="700" height="394">
-    </div>
-  </div>
-</div>
-
-<!-- Team Section 
-<div class="w3-container" style="padding:128px 16px" id="team">
-  <h3 class="w3-center">THE TEAM</h3>
-  <p class="w3-center w3-large">The ones who runs this company</p>
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="/w3images/team2.jpg" alt="John" style="width:100%">
-        <div class="w3-container">
-          <h3>John Doe</h3>
-          <p class="w3-opacity">CEO & Founder</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
-        <div class="w3-container">
-          <h3>Anja Doe</h3>
-          <p class="w3-opacity">Art Director</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">
-        <div class="w3-container">
-          <h3>Mike Ross</h3>
-          <p class="w3-opacity">Web Designer</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="/w3images/team4.jpg" alt="Dan" style="width:100%">
-        <div class="w3-container">
-          <h3>Dan Star</h3>
-          <p class="w3-opacity">Designer</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
+      <p class="w3-wide"><i><image style="position:relative;width:25px;" src="http://sauntic.com/sauntic/images/logo.png"></i>   Super Smash Bros Melee</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:65%">65%</div>
       </div>
     </div>
   </div>
@@ -232,7 +159,7 @@ box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
   <h3 class="w3-center w3-light-grey" style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);">Client Projects</h3>
  <!-- <p class="w3-center w3-large">Work I have done for clients</p>-->
 
-  <div class="w3-row-padding" style="margin-top:10px">
+  <div class="w3-row-padding" style="margin-top:30px">
     <div class="w3-col l3 m6">
       <img src="http://sauntic.com/sauntic/images/drone.gif" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Hololens">
     </div>
@@ -248,12 +175,12 @@ box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
   </div>
 	<h3 class="w3-center w3-light-grey" style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);">Personal Projects </h3>
 <!--	<p class="w3-center w3-large">Work I have done by myself and with friends</p>-->
-  <div class="w3-row-padding w3-section">
+  <div class="w3-row-padding w3-section" style="margin-top:30px">
     <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/logo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Insdrawments">
+      <img src="http://sauntic.com/Images/dolphin.gif" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Insdrawments">
     </div>
     <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/logo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Neighbors">
+      <img src="http://sauntic.com/Images/Dat_boi.gif" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Neighbors">
     </div>
     <div class="w3-col l3 m6">
       <img src="http://sauntic.com/sauntic/images/logo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sombri">
