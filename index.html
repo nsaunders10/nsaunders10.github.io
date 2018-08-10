@@ -19,7 +19,7 @@ body, html {
 	background-position: 50% 110px;
     background-size: 600px;
 	background-repeat: no-repeat;
-    background-image: url("http://sauntic.com/sauntic/images/logoWithText.png");
+ //   background-image: url("http://sauntic.com/sauntic/images/logoWithText.png");
     min-height: 40%;
 	top:0px;
 	
@@ -42,7 +42,7 @@ box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
 	  <a href="#home" class="w3-bar-item w3-button"><i><image style="position:relative;width:25px;" src="http://sauntic.com/sauntic/images/logo.png"></i> HOME</a>
         <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-user-o "></i>  EXPERIENCE</a>
 		<a href="#skills" class="w3-bar-item w3-button"><i class="fa fa-plus-square-o "></i>  SKILLS</a>
-      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-folder-o"></i>  Projects</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-folder-o"></i>  PROJECTS</a>
       <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope-o"></i>  CONTACT</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -50,6 +50,7 @@ box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
       <i class="fa fa-bars"></i>
     </a>
   </div>
+
 </div>
 
 <!-- Sidebar on small screens when clicking the menu icon -->
@@ -63,11 +64,32 @@ box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
   <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
 </nav>
 
-<!-- Header with full-height image -->
-<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+<!-- Header with full-height image 
+<header class="bgimg-1 w3-display-container" id="home">
+<video style="width:100%;" autoplay muted loop id="myVideo">
+	<source src="http://sauntic.com/sauntic/images/DemoReal.mp4" type="video/mp4">
+	Your browser does not support HTML5 video.
+	</video>
   <div class="w3-display-left w3-text-white" style="padding:60px">
   </div> 
   <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+  </div>
+  -->
+</header>
+<header class="w3-display-container" style="top:60px;"id="home">
+<div style="background-position:center; top:100px; min-height:50%; width:100%;">
+<video style="width:100%;" autoplay muted loop id="myVideo">
+	<source src="http://sauntic.com/sauntic/images/DemoReal.mp4" type="video/mp4">
+	Your browser does not support HTML5 video.
+	</video>
+	 
+</div>
+
+  <div class="w3-display-middle" style="width:100%; padding:0px">
+ <image style="position:relative: z-index:-1; width:100%;" src="http://sauntic.com/sauntic/images/logoWithTextAndBlur.png"></image>
+  </div> 
+  <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+  
   </div>
 </header>
 
