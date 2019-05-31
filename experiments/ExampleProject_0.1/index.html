@@ -10,6 +10,13 @@
     <script src="Build/UnityLoader.js"></script>
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/ExampleProject_0.1.json", {onProgress: UnityProgress});
+	  
+	  function SendTextToGame{
+	  
+		SendMessage('Cube', 'ChangeText', document.getElementById("InputString").value);
+		
+	  }
+	  
     </script>
   </head>
   <body>
@@ -19,6 +26,8 @@
         <div class="webgl-logo"></div>
         <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
         <div class="title">WebGL Example Project</div>
+		<button onclick="SendTextToGame()">Click me</button>
+		<input type="text" id="InputString" value="Hello World">
       </div>
     </div>
   </body>
