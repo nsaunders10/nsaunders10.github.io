@@ -11,7 +11,7 @@
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/ExampleProject_0.1.json", {onProgress: UnityProgress});
 	  
-	  function SendTextToGame{
+	  function SendTextToGame(){
 	  
 		SendMessage('Cube', 'ChangeText', document.getElementById("InputString").value);
 		
