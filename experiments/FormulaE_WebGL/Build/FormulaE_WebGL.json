@@ -4,7 +4,7 @@
 "dataUrl": "FormulaE_WebGL.data.unityweb",
 "wasmCodeUrl": "FormulaE_WebGL.wasm.code.unityweb",
 "wasmFrameworkUrl": "FormulaE_WebGL.wasm.framework.unityweb",
-"TOTAL_MEMORY": 536870912,
+"TOTAL_MEMORY": 134217728,
 "graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
 "webglContextAttributes": {"preserveDrawingBuffer": false},
 "splashScreenStyle": "Dark",
