@@ -3,133 +3,338 @@
 <title>Sauntic Homepage</title>
 <link rel="icon" type="image/png" href="http://sauntic.com/sauntic/images/logo.png"/>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="TemplateData/style.css">
+<link rel="shortcut icon" href="TemplateData/favicon.ico">  
+
+<script src="TemplateData/UnityProgress.js"></script>
+<script src="Build/UnityLoader.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+var unityInstance = UnityLoader.instantiate("unityContainer", "Build/2019.3WebGLTest.json", {onProgress: UnityProgress});
+
+$(window).load(function () {
+	ChangeSize();
+ /*   $(window).on('scroll resize', function () {
+        var pos = $('#title').offset();
+        $('.holdingBox').each(function () {
+            if (pos.top >= $(this).offset().top) {   
+                var newDescr = $(this).find('.description').text();
+                var oldDescr = $('#title').html();
+                $('#title').html(newDescr);
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $(window).trigger('scroll'); // init the value
+    });*/
+});
+</script>
+
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif; background-color:#add1c1;}
+body{font-family: "Raleway", sans-serif; background-color:#add1c1;}
+h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif;}
+p{
+	font-family: "Raleway", 
+	sans-serif; 
+	font-weight: normal;
+}
 body, html {
     height: 100%;
     line-height: 1.8;
+	margin: 0px;
 }
-.column {
-	float: left;
-	padding: 10px;
-	height: 100%;
+image{
 	box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
 }
-.sideButton{
-	background-color: clear;
-	float: left;
-	padding: 10px;
+
+#body{
 	height: 100%;
-	width: 10%;
-}
-.arrowButton{
-	background-color: white;
-	margin: auto; 
 	width: 100%;
-	position: relative;
-	top: 35%;
+	overflow: hidden;
+}
+
+.topBar{
+	position:fixed;
+	background-color: white;
+	height: 60px;
+	width: 100%;
+}
+
+#title {
+	position: absolute;
+	bottom: 10%;
+	left: 40%;
+	right: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	background: white;
+	font-family: "Raleway", 
+	sans-serif; 
+	font-weight: normal;
+	font-size: 25px;
+	text-align: center;
 	box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
 }
+
+.sideButton{
+	position: absolute;
+	background-color: clear;
+	width: 60px;
+	height: 60px;
+	top: 60px;
+}
+.sideButton:hover{
+	background-color: white;
+	box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
+}
+
+.arrowImg{
+	background-color: clear;
+	width: 100%;
+	height: 100%;
+}
+
+.indicatorHolder{
+	position: absolute;
+	margin: auto;
+	width: 40%;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+}
+
+.topIndicator{
+	width: 12.5%;
+	height: 90%;
+}
+
+.positionIndicator{
+
+}
+
+#circleImg{
+	padding: 10px;
+	height: 60%;
+	opacity: 0.5;
+}
+
+.interactive{
+	background-color: black;
+	width: 100%;
+	height: 100%;
+}
+
+.gifGrid{
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 50% 50%;
+}
+.gifGrid > div{
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.gridHolder{
+	//background-color:white;
+}
+
+.main{
+	position: absolute;
+	width: 800%;
+	height: 100%;
+	top: 120px;
+	z-index: -10;
+	//background-color: green;
+	//background-image: url("http://sauntic.com/sauntic/images/calidrone1.JPG");
+	overflow: hidden;
+}
+
+.contentHolder{
+	height: 100%;
+	//background-color: green;
+	//padding: 0px 10px;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 60% 60%;
+	//grid-gap: 10px;
+}
+
+#whiteBackground{
+	background-color: white;
+	box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
+	position: absolute;
+	right: 0px; 
+	top: 120px;
+}
+
 </style>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="TemplateData/UnityProgress.js"></script>
-    <script src="Build/UnityLoader.js"></script>
-    <script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/2019.3WebGLTest.json", {onProgress: UnityProgress});
-    </script>
-  </head>
-<body>
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-card" style="" id="myNavbar">
-    <a href="#home" class=" w3-button"></a>
-    <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small">
-	  <a href="#home" class="w3-bar-item w3-button"><i><image style="position:relative;width:25px;" src="http://sauntic.com/sauntic/images/logo.png"></i> HOME</a>
-        <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-user-o "></i>  EXPERIENCE</a>
-		<a href="#skills" class="w3-bar-item w3-button"><i class="fa fa-plus-square-o "></i>  SKILLS</a>
-      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-folder-o"></i>  PROJECTS</a>
-      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope-o"></i>  CONTACT</a>
-    </div>
-    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
+
+<body id="body" onresize="ChangeSize()" onload="ChangeSize()">
+
+<div class="topBar">
+<h1 style="margin:0px; padding: 0px 10px;">Nick Saunders</h1>
 </div>
 
+<!--
 <div class="webgl-content">
-<div class="sideButton">
-<image src="http://sauntic.com/sauntic/images/leftArrow.png" class="arrowButton">
+<div id="interact" class="interactive" id="unityContainer"></div>
+<div id="interact" class="interactive"></div>
 </div>
-<div class="column" id="unityContainer" style="width: 80%;"></div>
-<div class="sideButton">
-<image src="http://sauntic.com/sauntic/images/rightArrow.png" class="arrowButton">
-</div>
-</div>
+-->
+<div id='title'>Home</div>
 
-
-
-
-
-
-<!-- Contact Section -->
-<div class="w3-container  w3-light-grey" style="padding:18px 16px" id="contact">
-  <h3 class="w3-center w3-light-grey">CONTACT</h3>
-  <div class="w3-row-padding" style="margin-top:30px">
-    <div class="w3-center">
-	  <p><image src="http://sauntic.com/sauntic/images/headshot.png" style="box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19); width:150px"></p>
-      <p><i class="fa fa fa-user fa-fw "></i> Nicholas Saunders</p>
-	   <p><i class="fa fa-envelope fa-fw"> </i> Email: nsaunderswps@gmail.com</p>
-	   <p><i class="fa fa-phone fa-fw"></i> Phone: 407-579-9971</p>
-	  <p><i class="fa fa-map-marker fa-fw "></i>Venice, California  </p>
-	  <p><i class="fa fa-print fa-fw"></i><a href="http://sauntic.com/NicholasSaunders/NicholasSaundersResume.pdf"> Resume</a></p> 	  
-      <!--  <p>
-          <button class="w3-button w3-black" type="submit">
-            <i class="fa fa-paper-plane"></i> SEND MESSAGE
-          </button>
-        </p>-->
-    </div>
+<div class="positionIndicator">
+<image id="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
 </div>
 
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-</footer>
+<div id="leftButton" class="sideButton">
+<image src="http://sauntic.com/sauntic/images/leftArrow.png" class="arrowImg">
+</div>
+<div class="indicatorHolder">
+<div class="topIndicator">
+<image id="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+</div>
+<div class="topIndicator">
+<image id="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+</div>
+<div class="topIndicator">
+<image id="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+</div>
+<div class="topIndicator">
+<image id="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+</div>
+<div class="topIndicator">
+<image id="circleImg" style="opacity: 1;" src="http://sauntic.com/sauntic/images/logo.png">
+</div>
+<div class="topIndicator">
+<image id="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+</div>
+<div class="topIndicator">
+<image id="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+</div>
+<div class="topIndicator">
+<image id="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+</div>
+<div class="topIndicator">
+<image id="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+</div>
+</div>
+<div id="rightButton" class="sideButton" style="right: 0px">
+<image src="http://sauntic.com/sauntic/images/rightArrow.png" class="arrowImg">
+</div>
+
+<div id="whiteBackground"></div>
+<div class="webgl-content">
+<div id="interact" class="interactive" id="unityContainer"></div>
+</div>
+
+<div class="main">
+<div class="contentHolder">
+
+<div class="gridHolder">
+<div class="gifGrid">
+
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/hololens/AllView.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/hololens/AllView.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/hololens/AllView.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/hololens/AllView.gif');"></div>
+
+</div>
+</div>
+
+<div class="gridHolder">
+<div class="gifGrid">
+
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/hololens/AllView.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/hololens/AllView.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/hololens/AllView.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/hololens/AllView.gif');"></div>
+
+</div>
+</div>
+
+</div>
+</div>
  
 <script>
 
-// Modal Image Gallery
-function onClick(url) {
-window.location = url;
+var contentIndex = 0;
+
+function ChangeSize(){
+
+$(".main").height($("#body").height()- 60);
+$(".contentHolder").width($(".main").width()/8);
+
+$(".webgl-content").width($(".gridHolder").width() - 20);
+$(".webgl-content").height($(".gridHolder").height() - 20);
+
+$("#whiteBackground").width($(".gridHolder").width());
+$("#whiteBackground").height($(".gridHolder").height());
+
+var rowVal = $(".gridHolder").height()/2 - 5;
+var columnVal = $(".gridHolder").width()/2 - 5;	
+$('.gifGrid').css("grid-template-rows", rowVal + "px" + " " + rowVal + "px");
+$('.gifGrid').css("grid-template-columns", columnVal + "px" + " " + columnVal + "px");
+
+$(".main").css("left",  -($(".gridHolder").width() * contentIndex) + "px");
 }
 
 
-// Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
+//Left Button Pressed
+$("#leftButton").click(function(){
 
-function w3_open() {
-    if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-    } else {
-        mySidebar.style.display = 'block';
-    }
+	if(contentIndex >= 0){
+	contentIndex--;
+	}
+	
+	if(contentIndex == -1){
+	contentIndex = 8;
+	}
+	Animate();
+});
+
+
+//Right Button Pressed
+$("#rightButton").click(function(){
+
+	if(contentIndex <= 8){
+	contentIndex++;
+	}
+	
+	if(contentIndex == 9){
+	contentIndex = 0;
+	}
+	Animate();
+	
+});
+
+function Animate(){
+
+	//var 
+	$(".main").animate({left: -($(".gridHolder").width() * contentIndex)});
+
+	if(contentIndex == 0){
+		$('#title').html("Hololens Project");
+	
+	}
+
 }
 
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-}
+$(function() {
+    $("#top").on('click', function() {
+        $("HTML, BODY").animate({
+            scrollTop: 40
+        }, 1000);
+    });
+});
+
 </script>
 </body>
 </html>
