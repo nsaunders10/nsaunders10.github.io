@@ -360,6 +360,10 @@ image{
 
 <script>
 
+function myFunction() {
+  alert("Image loaded: " + document.getElementById("myImg").complete);
+}
+
 var contentIndex = 4;
 
 function ChangeSize(){
@@ -440,7 +444,7 @@ function Animate(){
 	
 	$(".main").animate({left: -($(".gridHolder").width() * contentIndex)});	
 	
-	for(var i=0; i<8; i++){
+	for(var i=0; i<9; i++){
 		if(contentIndex == i){
 		$("#page" + i).css("display", "grid");
 		}
