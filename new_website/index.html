@@ -17,20 +17,6 @@ var unityInstance = UnityLoader.instantiate("unityContainer", "Build/2019.3WebGL
 
 $(window).load(function () {
 	ChangeSize();
- /*   $(window).on('scroll resize', function () {
-        var pos = $('#title').offset();
-        $('.holdingBox').each(function () {
-            if (pos.top >= $(this).offset().top) {   
-                var newDescr = $(this).find('.description').text();
-                var oldDescr = $('#title').html();
-                $('#title').html(newDescr);
-            }
-        });
-    });
-
-    $(document).ready(function () {
-        $(window).trigger('scroll'); // init the value
-    });*/
 });
 </script>
 
@@ -47,6 +33,16 @@ body, html {
     line-height: 1.8;
 	margin: 0px;
 }
+li{
+line-height: .5;
+text-align : center;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 image{
 	box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
 }
@@ -64,20 +60,6 @@ image{
 	width: 100%;
 }
 
-#title {
-	margin: 0;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	font-family: "Raleway", 
-	sans-serif; 
-	font-weight: normal;
-	font-size: 50px;
-	text-align: center;
-	//box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
-}
-
 .indicatorHolder{
 	position: absolute;
 	left: 50%;
@@ -88,7 +70,7 @@ image{
 	grid-gap: 30px;
 	grid-template-columns: auto auto auto auto auto auto auto auto auto;
 	grid-template-rows: auto;
-	//background-color: green;
+	z-index: 2;
 }
 
 .topIndicator{
@@ -110,13 +92,13 @@ image{
 .circleImg:hover{
 	opacity: 1;
 }
-
 .sideButton{
 	position: absolute;
 	background-color: clear;
 	width: 60px;
 	height: 60px;
 	top: 60px;
+	z-index: 2;
 }
 .sideButton:hover{
 	background-color: white;
@@ -135,76 +117,88 @@ image{
 	height: 100%;
 }
 
-.gifGrid{
-//	display: grid;
-//	display: none;
-	grid-gap: 10px;
+#textBoxLeft, #textBoxRight{
+	background-color: white;
+	box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
+	position: absolute;
+	//left: 0px;
+	bottom: 0px;
+	top: 700px;
+	width: 50%;
+	margin: 10px 10px 10px 10px;
+	z-index: 10;
 }
-.gifGrid > div{
-	background-position: center;
-	background-repeat: no-repeat;
+#textBoxLeft > p, #textBoxRight > p{
+	margin: 0px;
+	padding: 0px 10px 0px 20px;
+	font-size: 21px;
+	//text-align: center;
+}
+#textBoxLeft > h2, #textBoxRight > h2{
+	margin: 10px;
+	text-align: center;
+	font-size: 20px;
 }
 
-.gridHolder{
-	//background-color:white;
+#textBoxRight{
+	right: 0px;
+	margin: 10px 10px 10px 5px;
+}
+#textBoxLeft{
+	left: 0px;
+	margin: 10px 5px 10px 10px;
+}
+
+#title {
+	margin: 0;
+	position: absolute;
+	top: 700px;
+	width: 100%;
+	font-family: "Raleway", sans-serif; 
+	font-weight: normal;
+	font-size: 40px;
+	text-align: center;
+	vertical-align: text-top;
+	height: 60px;
+	//box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
 }
 
 .main{
 	position: absolute;
-	width: 800%;
+	width: 100%;
 	height: 100%;
-	top: 120px;
-	//z-index: -10;
-	//background-color: green;
+	top: 60px;
+	//left: 500px;
+	//z-index: 1;
 	//background-image: url("http://sauntic.com/sauntic/images/calidrone1.JPG");
 	overflow: hidden;
-//	pointer-events:none;
 }
 
 .contentHolder{
+	position: absolute;
 	height: 100%;
-	//background-color: green;
-	//padding: 0px 10px;
+	width: 100%;
+	left: -3360px;
 	display: grid;
 	grid-template-columns: 50% 50% 50% 50% 50% 50% 50% 50% 50%;
 	grid-template-rows: 70%;
-	//grid-gap: 10px;
 }
 
-#whiteBackground{
-	background-color: white;
-	//box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 8px 20px 0 rgba(0,0,0,0.19);
-	position: absolute;
-	right: 0px; 
-	top: 120px;
-	z-index: 10;
+.videoContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-#textBox{
-	background-color: white;
-	//box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
-	position: absolute;
-	left: 0px; 
-	top: 690px;
-	width: 678px;
-}
-#textBox > p{
-	padding: 0px 10px;
-	font-size: 20px;
-}
-#titleHolder{
-	background-color: white;
-	//box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24);
-	position: absolute;
-	right: 0px; 
-	top: 690px;
-	width: 678px;
+.backgroundVideo{
+	//opacity: 0.5;
+	z-index: -2;
 }
 
 </style>
 
 
-<body id="body" onresize="ChangeSize()" onload="ChangeSize();">
+<body id="body" onresize="ChangeSize()" onload="ChangeSize()">
 
 <div class="topBar">
 <h1 style="margin:0px; padding: 0px 10px;">Nick Saunders</h1>
@@ -233,166 +227,136 @@ image{
 </div>
 
 <div id="rightButton" class="sideButton" style="right: 0px">
-<image src="http://sauntic.com/sauntic/images/rightArrow.png" class="arrowImg">
+<img src="http://sauntic.com/sauntic/images/rightArrow.png" class="arrowImg">
 </div>
 
 
-<div id="whiteBackground"></div>
 <div class="webgl-content">
-<div id="interact" class="interactive" id="unityContainer"></div>
+<div class="interactive" id="unityContainer"></div>
 </div>
 
-<div id="textBox"><p id="infoText">Weclome to Sauntic. This is my interactive portfolio! On the left you will see pictures an information from past projects. On the right you will see an interactive window to better demonstrate some of the projects, and in some cases part of the project its self!</p>
+<div id="textBoxLeft">
+<p id="infoText"><b>About: </b><a>Weclome to Sauntic. This is my interactive portfolio! On the left you will see pictures an information from past projects. On the right you will see an interactive window to better demonstrate some of the projects, and in some cases part of the project its self!</a></p>
 </div>
 
-<div id="titleHolder">
-<div id="title">Home</div>
+<div id="textBoxRight">
+<h2>  </h2>
+<p><b>Project - </b><a>HoloLens Demo</a><p>
+<p><b>Platform - </b><a>Universal Windows Platform (UWP)</a><p>
+<p><b>Hardware - </b><a>HoloLens</a><p>
+<p><b>Role - </b><a>Software Engineer: R&D</a><p>
+<!--
+<ul>  
+	<li><p><b>Project: </b><a><i class="fa fa fa-user fa-fw "></i> Nicholas Saunders</a><p></li>
+	<li><p><i class="fa fa-envelope fa-fw"> </i> Email: nsaunderswps@gmail.com</p></li>
+	<li><p><i class="fa fa-phone fa-fw"></i> Phone: 407-579-9971</p></li>
+	<li><p><i class="fa fa-map-marker fa-fw "></i>Venice, California  </p></li>
+	<li><p><i class="fa fa-print fa-fw"></i><a href="http://sauntic.com/NicholasSaunders/SaundersResume.pdf"> Resume</a></p></li>
+</ul>
+-->
 </div>
-
 
 <div class="main">
 <div class="contentHolder">
 
-<div class="gridHolder">
-<div id="page0" class="gifGrid">
-
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/hololens/AllView.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/hololens/Truck2.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/hololens/VideoPlayer.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/hololens/SetViewer.gif');"></div>
-
-</div>
-</div>
-
-<div class="gridHolder">
-<div id="page1" class="gifGrid">
-
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/bitcatch/BitCatcher.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/bitcatch/MoneyGrab.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/bitgrab/moneygrab.png');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/bitgrab/bitcatcher.png');"></div>
-
-
-</div>
-</div>
-
-<div class="gridHolder">
-<div id="page2" class="gifGrid">
-
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/ar/OverWorld.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/ar/SolarField.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/ar/SolarTree.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/ar/NightTime.gif');"></div>
-
-</div>
-</div>
-
-<div class="gridHolder">
-<div id="page3" class="gifGrid">
-
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/vrchair/VRCoaster1.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/vrchair/VRDriving1.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/vrchair/VRDriving2.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/vrchair/Chair2.png');"></div>
-
-</div>
-</div>
-
-<div class="gridHolder" >
-<div id="page4">
-<video style="width:100%;" autoplay muted loop id="myVideo">
-<source src="http://sauntic.com/sauntic/images/DemoRealCrop.mp4" type="video/mp4">
+<div class="videoContainer">
+<video class="backgroundVideo" autoplay muted loop>
+<source src="http://sauntic.com/sauntic/images/DemoReel_2.mp4" type="video/mp4">
 </video>
 </div>
+
+<div class="videoContainer">
+<video class="backgroundVideo" autoplay muted loop>
+<source src="http://sauntic.com/sauntic/images/DemoReel_2.mp4" type="video/mp4">
+</video>
 </div>
 
-<div class="gridHolder">
-<div id="page5" class="gifGrid">
+<div class="videoContainer">
+<video class="backgroundVideo" autoplay muted loop>
+<source src="http://sauntic.com/sauntic/images/DemoReel_2.mp4" type="video/mp4">
+</video>
+</div>
 
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/insdrawments/Circle.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/insdrawments/Square.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/insdrawments/Triangle.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/insdrawments/Play.gif');"></div>
+<div class="videoContainer">
+<video class="backgroundVideo" autoplay muted loop>
+<source src="http://sauntic.com/sauntic/images/DemoReel_2.mp4" type="video/mp4">
+</video>
+</div>
 
+<div class="videoContainer">
+<video class="backgroundVideo" autoplay muted loop>
+<source src="http://sauntic.com/sauntic/images/DemoReel_2.mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="videoContainer">
+<video class="backgroundVideo" autoplay muted loop>
+<source src="http://sauntic.com/sauntic/images/DemoReel_2.mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="videoContainer">
+<video class="backgroundVideo" autoplay muted loop>
+<source src="http://sauntic.com/sauntic/images/DemoReel_2.mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="videoContainer">
+<video class="backgroundVideo" autoplay muted loop>
+<source src="http://sauntic.com/sauntic/images/DemoReel_2.mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="videoContainer">
+<video class="backgroundVideo" autoplay muted loop>
+<source src="http://sauntic.com/sauntic/images/DemoReel_2.mp4" type="video/mp4">
+</video>
+</div>
 
 </div>
 </div>
 
-<div class="gridHolder">
-<div id="page6" style="height:600px;">
-<iframe src="https://player.vimeo.com/video/239139703" style="height:100%; width:100%;" alt="Video 1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-</div>
-</div>
 
-
-<div class="gridHolder">
-<div id="page7" class="gifGrid">
-
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/sombri/FirstLevel.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/sombri/SecondLevel.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/sombri/ThirdLevel.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/sombri/FourthLevel.gif');"></div>
-
-
-</div>
-</div>
-
-<div class="gridHolder">
-<div id="page8" class="gifGrid">
-
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/lyle/WakeUp.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/lyle/Leafy.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/lyle/PutOutFire.gif');"></div>
-<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/lyle/ZeroGs.gif');"></div>
-
-</div>
-</div>
-
-</div>
-</div>
+<!--
+<p style="position:absolute; text-shadow: 3px 3px 5px black; left:10px; font-style:bold; color:white; top:80%; font-size: 20px;" id="info"></p>
+<p style="position:absolute; text-shadow: 3px 3px 5px black; left:10xp; font-style:bold; color:white; top:85%; font-size: 20px;" id="info1"></p>
+<div id="title">Home</div>
+-->
 
 <script>
 
-function myFunction() {
-  alert("Image loaded: " + document.getElementById("myImg").complete);
-}
-
 var contentIndex = 4;
 
+$(".backgroundVideo").css({width: "100%"});
+
 function ChangeSize(){
-
-	$(".main").height($("#body").height()- 60);
-	$(".contentHolder").width($(".main").width()/8);
-
-	$(".webgl-content").width($(".gridHolder").width() - 20);
-	$(".webgl-content").height($(".gridHolder").height() - 20);
-
-	$("#whiteBackground").width($(".gridHolder").width());
-	$("#whiteBackground").height($(".gridHolder").height());
-
-	$("#textBox").width($(".gridHolder").width());
-	$("#textBox").offset({ top: $("#whiteBackground").offset().top + $("#whiteBackground").height()});
 	
-	$("#titleHolder").height($("#textBox").height());
-	$("#titleHolder").width($("#textBox").width());
-	$("#titleHolder").offset({ top: $("#textBox").offset().top});
+	$(".main").height($("#body").height() - 60);
+	$(".contentHolder").css({left: -($(".videoContainer").width() * contentIndex)});
+	//$("#title").css({top: $(".videoContainer").height() + 50});
+	$("#textBoxLeft").css({top: $(".videoContainer").height() + 60, width: $(".videoContainer").width() - 20});
+	$("#textBoxRight").css({top: $(".videoContainer").height() + 60, width: $(".videoContainer").width() - 20});
+	
+$("body").find(".videoContainer").each(function(index, element){
 
-	var rowVal = $(".gridHolder").height()/2 - 5;
-	var columnVal = $(".gridHolder").width()/2 - 5;	
-	$('.gifGrid').css("grid-template-rows", rowVal + "px" + " " + rowVal + "px");
-	$('.gifGrid').css("grid-template-columns", columnVal + "px" + " " + columnVal + "px");
 
-	//if(contentIndex == 1){
-	//	$('.gifGrid').css("grid-template-rows", $(".gridHolder").height()/1.3 + "px");
-	//	$('.gifGrid').css("grid-template-columns", "repeat(4, 24.2%)");
-	//}
+	if($(element).width()/1.78 > $(element).height()){
+		$(element).find(".backgroundVideo").css({width: $(element).width()});
+		$(element).find(".backgroundVideo").offset({top: $(element).offset().top -$(element).find(".backgroundVideo").height()/2 +  ($(element).height()/2), left: $(element).left});
+	}
+	
+	if($(element).width()/1.78 < $(element).height()){
+		$(element).find(".backgroundVideo").css({width: $(element).height() * 1.78});
+		$(element).find(".backgroundVideo").offset({top: $(element).offset().top,  left: -$(element).find(".backgroundVideo").width()/2 +  $(element).width()/2 + $(element).offset().left});
+	}
+});
+	$(".webgl-content").width($(".videoContainer").width());
+	$(".webgl-content").height($(".videoContainer").height());
 
-	$(".main").css("left",  -($(".gridHolder").width() * contentIndex) + "px");
+	
 	$("#indexIndicator").css("left", $("#circle" + contentIndex).offset().left + 5);
 	if(contentIndex == 4){
-		$("#indexIndicator").css("left", $("#circle" + contentIndex).offset().left - 5);
-		$("#indexIndicator").css("width", 40);
-		$("#indexIndicator").css("top",70);		
+	$("#indexIndicator").css({left: $("#circle" + contentIndex).offset().left - 5, width: 40, top: 70});
 	}
 }
 
@@ -435,17 +399,15 @@ function IndicatorClicked(index){
 function Animate(){
 
 	
-	$(".main").animate({left: -($(".gridHolder").width() * contentIndex)});	
+	$(".contentHolder").animate({left: -($(".videoContainer").width() * contentIndex)});
 	
-	for(var i=0; i<9; i++){
-		if(contentIndex == i){
-		$("#page" + i).css("display", "grid");
-		}
-		else{
-		$("#page" + i).css("display", "none");
-		}
+	if(contentIndex == 4){
+		$("#indexIndicator").animate({left: $("#circle" + contentIndex).offset().left - 5, width: 40, top: 70});
 	}
-
+	else{
+		$("#indexIndicator").animate({left: $("#circle" + contentIndex).offset().left + 5, width: 20, top: 80});
+	}
+	/*
 	if(contentIndex == 0){
 		$('#title').html("Hololens");
 		$('#infoText').html("This project was to research the Microsoft Hololens and see what it had to offer. In this small demo I created an interactive video player, 3D set viewer, and augmented RC truck. All of these elements were contained in a central place so that the user could see all elements at once."
@@ -493,10 +455,10 @@ function Animate(){
 		$('#title').html("Lyle's Journey");
 		$('#infoText').html("Lyle's Journey is an interactive story driven game that was created as a final project for my Storytelling in Interactive Media class. Lyle's Journey is one of my first completed project and I am very happy with how it turned out despite it's many bugs. Lyle wakes up on an abandoned space ship confused and alone. His only chance to get home is by rebooting the ship's A.I. named LEAFY, but can he be trusted?");
 	}
-	$("#titleHolder").height($("#textBox").height());
-	$("#titleHolder").width($("#textBox").width());
-	$("#titleHolder").offset({ top: $("#textBox").offset().top});
-
+	//$("#titleHolder").height($("#textBox").height());
+	//$("#titleHolder").width($("#textBox").width());
+	//$("#titleHolder").offset({ top: $("#textBox").offset().top});
+	*/
 }
 
 $(function() {

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<title>Sauntic Homepage</title>
+<link rel="icon" type="image/png" href="http://sauntic.com/sauntic/images/logo.png"/>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="TemplateData/style.css">
+
+<script src="TemplateData/UnityProgress.js"></script>
+<script src="Build/UnityLoader.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+var unityInstance = UnityLoader.instantiate("unityContainer", "Build/2019.3WebGLTest.json", {onProgress: UnityProgress});
+
+$(window).load(function () {
+	ChangeSize();
+ /*   $(window).on('scroll resize', function () {
+        var pos = $('#title').offset();
+        $('.holdingBox').each(function () {
+            if (pos.top >= $(this).offset().top) {   
+                var newDescr = $(this).find('.description').text();
+                var oldDescr = $('#title').html();
+                $('#title').html(newDescr);
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $(window).trigger('scroll'); // init the value
+    });*/
+});
+</script>
+
+<style>
+body{font-family: "Raleway", sans-serif; background-color:#add1c1;}
+h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif;}
+p{
+	font-family: "Raleway", 
+	sans-serif; 
+	font-weight: normal;
+}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+	margin: 0px;
+}
+image{
+	box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
+}
+
+#body{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.topBar{
+	position:fixed;
+	background-color: white;
+	height: 60px;
+	width: 100%;
+}
+
+#title {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: "Raleway", 
+	sans-serif; 
+	font-weight: normal;
+	font-size: 50px;
+	text-align: center;
+	//box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
+}
+
+.indicatorHolder{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	top: 75px;
+	height: 30px;
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: auto auto auto auto auto auto auto auto auto;
+	grid-template-rows: auto;
+	//background-color: green;
+}
+
+.topIndicator{
+	width: 100%;
+	height: 100%;
+}
+
+#indexIndicator{
+	width: 20px;
+	position: absolute;
+	top: 80px;
+	left: -100px
+}
+
+.circleImg{
+	height: 100%;
+	opacity: 0.5;
+}
+.circleImg:hover{
+	opacity: 1;
+}
+
+.sideButton{
+	position: absolute;
+	background-color: clear;
+	width: 60px;
+	height: 60px;
+	top: 60px;
+}
+.sideButton:hover{
+	background-color: white;
+	box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
+}
+
+.arrowImg{
+	background-color: clear;
+	width: 100%;
+	height: 100%;
+}
+
+.interactive{
+	background-color: black;
+	width: 100%;
+	height: 100%;
+}
+
+.gifGrid{
+//	display: grid;
+//	display: none;
+	grid-gap: 10px;
+}
+.gifGrid > div{
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.gridHolder{
+	//background-color:white;
+}
+
+.main{
+	position: absolute;
+	width: 800%;
+	height: 100%;
+	top: 120px;
+	//z-index: -10;
+	//background-color: green;
+	//background-image: url("http://sauntic.com/sauntic/images/calidrone1.JPG");
+	overflow: hidden;
+//	pointer-events:none;
+}
+
+.contentHolder{
+	height: 100%;
+	//background-color: green;
+	//padding: 0px 10px;
+	display: grid;
+	grid-template-columns: 50% 50% 50% 50% 50% 50% 50% 50% 50%;
+	grid-template-rows: 70%;
+	//grid-gap: 10px;
+}
+
+#whiteBackground{
+	background-color: white;
+	//box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 8px 20px 0 rgba(0,0,0,0.19);
+	position: absolute;
+	right: 0px; 
+	top: 120px;
+	z-index: 10;
+}
+
+#textBox{
+	background-color: white;
+	//box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
+	position: absolute;
+	left: 0px; 
+	top: 690px;
+	width: 678px;
+}
+#textBox > p{
+	padding: 0px 10px;
+	font-size: 20px;
+}
+#titleHolder{
+	background-color: white;
+	//box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24);
+	position: absolute;
+	right: 0px; 
+	top: 690px;
+	width: 678px;
+}
+
+#backgroundVideo{
+	position: absolute;
+	//width: 100%;
+}
+
+</style>
+
+
+<body id="body" onresize="ChangeSize()" onload="ChangeSize()">
+
+<div class="topBar">
+<h1 style="margin:0px; padding: 0px 10px;">Nick Saunders</h1>
+</div>
+
+<div id="indexIndicator">
+<image style="width:100%" src="http://sauntic.com/sauntic/images/Circle.png">
+</div>
+
+<div id="leftButton" class="sideButton">
+<image src="http://sauntic.com/sauntic/images/leftArrow.png" class="arrowImg">
+</div>
+
+<div class="indicatorHolder">
+
+<image onclick="IndicatorClicked(0)" id="circle0" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<image onclick="IndicatorClicked(1)" id="circle1" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<image onclick="IndicatorClicked(2)" id="circle2" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<image onclick="IndicatorClicked(3)" id="circle3" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<image onclick="IndicatorClicked(4)" id="circle4" class="circleImg" style="opacity: 1;" src="http://sauntic.com/sauntic/images/logo.png">
+<image onclick="IndicatorClicked(5)" id="circle5" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<image onclick="IndicatorClicked(6)" id="circle6" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<image onclick="IndicatorClicked(7)" id="circle7" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<image onclick="IndicatorClicked(8)" id="circle8" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+
+</div>
+
+<div id="rightButton" class="sideButton" style="right: 0px">
+<image src="http://sauntic.com/sauntic/images/rightArrow.png" class="arrowImg">
+</div>
+
+
+<div id="whiteBackground"></div>
+<div class="webgl-content">
+<div id="interact" class="interactive" id="unityContainer"></div>
+</div>
+
+<div id="textBox"><p id="infoText">Weclome to Sauntic. This is my interactive portfolio! On the left you will see pictures an information from past projects. On the right you will see an interactive window to better demonstrate some of the projects, and in some cases part of the project its self!</p>
+</div>
+
+<div id="titleHolder">
+<div id="title">Home</div>
+</div>
+
+
+<div class="main">
+<div class="contentHolder">
+
+<div class="gridHolder">
+<div id="page0" class="gifGrid">
+
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/hololens/AllView.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/hololens/Truck2.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/hololens/VideoPlayer.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/hololens/SetViewer.gif');"></div>
+
+</div>
+</div>
+
+<div class="gridHolder">
+<div id="page1" class="gifGrid">
+
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/bitcatch/BitCatcher.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/bitcatch/MoneyGrab.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/bitgrab/moneygrab.png');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/bitgrab/bitcatcher.png');"></div>
+
+
+</div>
+</div>
+
+<div class="gridHolder">
+<div id="page2" class="gifGrid">
+
+<div style="background-size: 120%; background-image: url('http://sauntic.com/sauntic/images/gifs/ar/OverWorld.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/ar/SolarField.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/ar/SolarTree.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/ar/NightTime.gif');"></div>
+
+</div>
+</div>
+
+<div class="gridHolder">
+<div id="page3" class="gifGrid">
+
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/vrchair/VRCoaster1.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/vrchair/VRDriving1.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/vrchair/VRDriving2.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/vrchair/Chair2.png');"></div>
+
+</div>
+</div>
+
+<div class="gridHolder" >
+<div id="page4" style="overflow:hidden;">
+<div id="videoContainer">
+<video class="backgroundVideo" autoplay muted loop>
+<source src="http://sauntic.com/sauntic/images/DemoReel_2.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+</div>
+
+<div class="gridHolder">
+<div id="page5" class="gifGrid">
+
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/insdrawments/Circle.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/insdrawments/Square.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/insdrawments/Triangle.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/insdrawments/Play.gif');"></div>
+
+
+</div>
+</div>
+
+<div class="gridHolder">
+<div id="page6" style="height:600px;">
+<iframe src="https://player.vimeo.com/video/239139703" style="height:100%; width:100%;" alt="Video 1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+</div>
+
+
+<div class="gridHolder">
+<div id="page7" class="gifGrid">
+
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/sombri/FirstLevel.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/sombri/SecondLevel.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/sombri/ThirdLevel.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/sombri/FourthLevel.gif');"></div>
+
+
+</div>
+</div>
+
+<div class="gridHolder">
+<div id="page8" class="gifGrid">
+
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/lyle/WakeUp.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/lyle/Leafy.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/lyle/PutOutFire.gif');"></div>
+<div style="background-image: url('http://sauntic.com/sauntic/images/gifs/lyle/ZeroGs.gif');"></div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<script>
+
+function myFunction() {
+  alert("Image loaded: " + document.getElementById("myImg").complete);
+}
+
+var contentIndex = 4;
+
+function ChangeSize(){
+
+	$(".main").height($("#body").height()- 60);
+	$(".contentHolder").width($(".main").width()/8);
+
+	$(".webgl-content").width($(".gridHolder").width() - 20);
+	$(".webgl-content").height($(".gridHolder").height() - 20);
+
+	$("#whiteBackground").width($(".gridHolder").width()* 2);
+	$("#whiteBackground").height($(".gridHolder").height());
+
+	$("#textBox").width($(".gridHolder").width()* 2);
+	$("#textBox").offset({ top: $("#whiteBackground").offset().top + $("#whiteBackground").height()});
+	
+	$("#titleHolder").height($("#textBox").height());
+	$("#titleHolder").width($("#textBox").width());
+	$("#titleHolder").offset({ top: $("#textBox").offset().top});
+
+	var rowVal = $(".gridHolder").height()/2 - 5;
+	var columnVal = $(".gridHolder").width()/2 - 5;	
+	$('.gifGrid').css("grid-template-rows", rowVal + "px" + " " + rowVal + "px");
+	$('.gifGrid').css("grid-template-columns", columnVal + "px" + " " + columnVal + "px");
+
+	//if(contentIndex == 1){
+	//	$('.gifGrid').css("grid-template-rows", $(".gridHolder").height()/1.3 + "px");
+	//	$('.gifGrid').css("grid-template-columns", "repeat(4, 24.2%)");
+	//}
+
+	$(".main").css("left",  -($(".gridHolder").width() * contentIndex) + "px");
+	$("#indexIndicator").css("left", $("#circle" + contentIndex).offset().left + 5);
+	if(contentIndex == 4){
+		$("#indexIndicator").css("left", $("#circle" + contentIndex).offset().left - 5);
+		$("#indexIndicator").css("width", 40);
+		$("#indexIndicator").css("top",70);		
+	}
+}
+
+
+//Left Button Pressed
+$("#leftButton").click(function(){
+
+	if(contentIndex >= 0){
+	contentIndex--;
+	}
+	
+	if(contentIndex == -1){
+	contentIndex = 8;
+	}
+	Animate();
+});
+
+
+//Right Button Pressed
+$("#rightButton").click(function(){
+
+	if(contentIndex <= 8){
+	contentIndex++;
+	}
+	
+	if(contentIndex == 9){
+	contentIndex = 0;
+	}
+	Animate();
+	
+});
+
+function IndicatorClicked(index){
+
+	contentIndex = index;
+	Animate();
+
+}
+
+function Animate(){
+
+	
+	$(".main").animate({left: -($(".gridHolder").width() * contentIndex)});	
+	
+	for(var i=0; i<9; i++){
+		if(contentIndex == i){
+		$("#page" + i).css("display", "grid");
+		}
+		else{
+		$("#page" + i).css("display", "none");
+		}
+	}
+
+	if(contentIndex == 0){
+		$('#title').html("Hololens");
+		$('#infoText').html("This project was to research the Microsoft Hololens and see what it had to offer. In this small demo I created an interactive video player, 3D set viewer, and augmented RC truck. All of these elements were contained in a central place so that the user could see all elements at once."
+		);
+		
+	}
+	if(contentIndex == 1){
+		$('#title').html("Kinect");
+		$('#infoText').html("This project uses the Microsoft Kinect to track the hand position of the user. The user has 30 seconds to collect as many of the falling object as they can before the time runs out. This project was designed as a fun way to draw people into trade show booths and has been used several times with great success!"
+		);
+	}
+	if(contentIndex == 2){
+		$('#title').html("Interactive AR");
+		$('#infoText').html("This project was made using the Vuforia plugin for Unity. Once development was completed, this application was installed on tablets in a welcome center. The application was designed to convey information in a fun interactive way."
+		);
+	}
+	if(contentIndex == 3){
+		$('#title').html("Virtual Reality Chair");
+		$('#infoText').html("A large portion of my experience with VR development has come from a virtual reality chair made by Talon Simulations.");
+	}
+	
+	if(contentIndex == 4){
+		$('#title').html("Home");
+		$('#infoText').html("Weclome to Sauntic. This is my interactive portfolio! On the left you will see pictures an information from past projects. On the right you will see an interactive window to better demonstrate some of the projects, and in some cases part of the project its self!"
+		);
+
+		$("#indexIndicator").animate({left: $("#circle" + contentIndex).offset().left - 5, width: 40, top: 70});
+	}
+	else{
+		$("#indexIndicator").animate({left: $("#circle" + contentIndex).offset().left + 5, width: 20, top: 80});
+	}
+	if(contentIndex == 5){
+		$('#title').html("Insdrawments");
+		$('#infoText').html("Insdrawments is a fun little app that I made for Andriod and is available on the Google Play store here! With Insdrawments you can draw three different instruments and then play them. The larger you draw the instrument the deeper the sound.");
+	}
+	if(contentIndex == 6){
+		$('#title').html("Project Vibe: Neighbors VR");
+		$('#infoText').html("Neighbors VR is sandbox tech demo designed for two players on one Vive system where players explore the surroundings to find and combine objects to destroy their neighbors house. This project was made as my final senior project at the Universty of Florida Digital Worlds Institute. This is the final trailer for the game.");
+	}
+	if(contentIndex == 7){
+		$('#title').html("Sombri");
+		$('#infoText').html("Sombri was made in a game jam over 48 hours. In this short amount of time, we came up with a interesting mechanic where the player jams the pole of an umbrella into the wall and spins on it. As the player spins, they gain momentum and can then fling themselfs to traverse the levels.");
+	}
+	if(contentIndex == 8){
+		$('#title').html("Lyle's Journey");
+		$('#infoText').html("Lyle's Journey is an interactive story driven game that was created as a final project for my Storytelling in Interactive Media class. Lyle's Journey is one of my first completed project and I am very happy with how it turned out despite it's many bugs. Lyle wakes up on an abandoned space ship confused and alone. His only chance to get home is by rebooting the ship's A.I. named LEAFY, but can he be trusted?");
+	}
+	$("#titleHolder").height($("#textBox").height());
+	$("#titleHolder").width($("#textBox").width());
+	$("#titleHolder").offset({ top: $("#textBox").offset().top});
+
+}
+
+$(function() {
+    $("#top").on('click', function() {
+        $("HTML, BODY").animate({
+            scrollTop: 40
+        }, 1000);
+    });
+});
+
+</script>
+</body>
+</html>
