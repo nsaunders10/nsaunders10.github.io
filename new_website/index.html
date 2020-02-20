@@ -88,6 +88,7 @@ image{
 .circleImg{
 	height: 100%;
 	opacity: 0.5;
+	filter: invert(50%);
 }
 .circleImg:hover{
 	opacity: 1;
@@ -201,9 +202,34 @@ image{
 <body id="body" onresize="ChangeSize()" onload="ChangeSize()">
 
 <div class="topBar">
-<h1 style="margin:0px; padding: 0px 10px;">Nick Saunders</h1>
+<h1 style="left:60px; position:absolute; margin:0px; padding: 0px 10px;">Nick Saunders</h1>
 </div>
 
+<div id="indexIndicator">
+<image style="width:100%; filter: invert(50%);" src="http://sauntic.com/sauntic/images/Circle.png">
+</div>
+
+<div id="leftButton" class="sideButton">
+<image src="http://sauntic.com/sauntic/images/leftArrow.png" class="arrowImg">
+</div>
+
+<div class="indicatorHolder">
+
+<image onclick="IndicatorClicked(0)" id="circle0" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<image onclick="IndicatorClicked(1)" id="circle1" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<image onclick="IndicatorClicked(2)" id="circle2" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<image onclick="IndicatorClicked(3)" id="circle3" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<image onclick="IndicatorClicked(4)" id="circle4" class="circleImg" style="opacity: 1; 	filter: invert(0%);" src="http://sauntic.com/sauntic/images/logo.png">
+<image onclick="IndicatorClicked(5)" id="circle5" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<image onclick="IndicatorClicked(6)" id="circle6" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<image onclick="IndicatorClicked(7)" id="circle7" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<image onclick="IndicatorClicked(8)" id="circle8" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+
+</div>
+
+<div id="rightButton" class="sideButton" style="right: 0px">
+<img src="http://sauntic.com/sauntic/images/rightArrow.png" class="arrowImg">
+</div>
 
 
 <div class="webgl-content">
@@ -213,10 +239,10 @@ image{
 <div id="textBoxLeft">
 <h2>  </h2>
 <p><b>Project - </b><a id="projectText">HoloLens Demo</a><p>
-<p><b>Platform - </b><a>Universal Windows Platform (UWP)</a><p>
-<p><b>Hardware - </b><a>HoloLens</a><p>
-<p><b>Software - </b><a>HoloLens</a><p>
-<p><b>Role - </b><a>Software Engineer: R&D</a><p>
+<p><b>Platform - </b><a id="platformText">Universal Windows Platform (UWP)</a><p>
+<p><b>Hardware - </b><a id="hardwareText">HoloLens</a><p>
+<p><b>Software - </b><a id="softwareText">HoloLens</a><p>
+<p><b>Role - </b><a id="roleText">Software Engineer: R&D</a><p>
 <!--
 <ul>  
 	<li><p><b>Project: </b><a><i class="fa fa fa-user fa-fw "></i> Nicholas Saunders</a><p></li>
@@ -235,33 +261,6 @@ image{
 </div>
 
 <div class="main">
-
-<div id="indexIndicator">
-<image style="width:100%" src="http://sauntic.com/sauntic/images/Circle.png">
-</div>
-
-<div id="leftButton" class="sideButton">
-<image src="http://sauntic.com/sauntic/images/leftArrow.png" class="arrowImg">
-</div>
-
-<div class="indicatorHolder">
-
-<image onclick="IndicatorClicked(0)" id="circle0" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
-<image onclick="IndicatorClicked(1)" id="circle1" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
-<image onclick="IndicatorClicked(2)" id="circle2" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
-<image onclick="IndicatorClicked(3)" id="circle3" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
-<image onclick="IndicatorClicked(4)" id="circle4" class="circleImg" style="opacity: 1;" src="http://sauntic.com/sauntic/images/logo.png">
-<image onclick="IndicatorClicked(5)" id="circle5" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
-<image onclick="IndicatorClicked(6)" id="circle6" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
-<image onclick="IndicatorClicked(7)" id="circle7" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
-<image onclick="IndicatorClicked(8)" id="circle8" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
-
-</div>
-
-<div id="rightButton" class="sideButton" style="right: 0px">
-<img src="http://sauntic.com/sauntic/images/rightArrow.png" class="arrowImg">
-</div>
-
 
 <div class="contentHolder">
 
@@ -415,48 +414,84 @@ function Animate(){
 	}
 	
 	if(contentIndex == 0){
-		$('#projectText').html("Hololens");
-		$('#infoText').html("This project was to research the Microsoft Hololens and see what it had to offer. In this small demo I created an interactive video player, 3D set viewer, and augmented RC truck. All of these elements were contained in a central place so that the user could see all elements at once."
+		$('#projectText').html("HoloLens Demo");
+		$('#platformText').html("Universal Windows Platform (UWP)");
+		$('#hardwareText').html("Microsoft HoloLens");
+		$('#softwareText').html("Unity, Mixed Reality Toolkit");
+		$('#roleText').html("Software Engineer R&D");
+		$('#infoText').html("This project was to research the Microsoft HoloLens and see what it had to offer. In this small demo I created an interactive video player, 3D set viewer, and augmented RC truck. All of these elements were contained in a central place so that the user could see all elements at once."
 		);
 		
 	}
 	if(contentIndex == 1){
 		$('#projectText').html("Interactive Augmented Reality");
-		$('#infoText').html("This project was made using the Vuforia plugin for Unity. Once development was completed, this application was installed on tablets in a welcome center. The application was designed to convey information in a fun interactive way."
+		$('#platformText').html("Hololens");
+		$('#hardwareText').html("Hololens");
+		$('#softwareText').html("Hololens");
+		$('#roleText').html("Hololens");
+		$('#infoText').html("Once development was completed, this application was installed on tablets in a welcome center. The application was designed to convey information in a fun interactive way."
 		);
 	}
 	if(contentIndex == 2){
 		$('#projectText').html("Virtual Reality Chair");
+		$('#platformText').html("Hololens");
+		$('#hardwareText').html("Hololens");
+		$('#softwareText').html("Hololens");
+		$('#roleText').html("Hololens");
 		$('#infoText').html("A large portion of my experience with VR development has come from a virtual reality chair made by Talon Simulations."
 		);
 	}
 	if(contentIndex == 3){
 		$('#projectText').html("Lyle's Journey");
+		$('#platformText').html("Hololens");
+		$('#hardwareText').html("Hololens");
+		$('#softwareText').html("Hololens");
+		$('#roleText').html("Hololens");
 		$('#infoText').html("Lyle's Journey is an interactive story driven game that was created as a final project for my Storytelling in Interactive Media class. Lyle's Journey is one of my first completed project and I am very happy with how it turned out despite it's many bugs. Lyle wakes up on an abandoned space ship confused and alone. His only chance to get home is by rebooting the ship's A.I. named LEAFY, but can he be trusted?"
 		);
 	}
 	
 	if(contentIndex == 4){
 		$('#projectText').html("Home");
+		$('#platformText').html("Hololens");
+		$('#hardwareText').html("Hololens");
+		$('#softwareText').html("Hololens");
+		$('#roleText').html("Hololens");
 		$('#infoText').html("Weclome to Sauntic. This is my interactive portfolio! On the left you will see pictures an information from past projects. On the right you will see an interactive window to better demonstrate some of the projects, and in some cases part of the project its self!"
 		);
 	}
 	if(contentIndex == 5){
 		$('#projectText').html("Insdrawments");
+		$('#platformText').html("Hololens");
+		$('#hardwareText').html("Hololens");
+		$('#softwareText').html("Hololens");
+		$('#roleText').html("Hololens");
 		$('#infoText').html("Insdrawments is a fun little app that I made for Andriod and is available on the Google Play store here! With Insdrawments you can draw three different instruments and then play them. The larger you draw the instrument the deeper the sound."
 		);
 	}
 	if(contentIndex == 6){
 		$('#projectText').html("Project Vibe: Neighbors VR");
+		$('#platformText').html("Hololens");
+		$('#hardwareText').html("Hololens");
+		$('#softwareText').html("Hololens");
+		$('#roleText').html("Hololens");
 		$('#infoText').html("Neighbors VR is sandbox tech demo designed for two players on one Vive system where players explore the surroundings to find and combine objects to destroy their neighbors house. This project was made as my final senior project at the Universty of Florida Digital Worlds Institute. This is the final trailer for the game."
 		);
 	}
 	if(contentIndex == 7){
 		$('#projectText').html("Sombri");
+		$('#platformText').html("Hololens");
+		$('#hardwareText').html("Hololens");
+		$('#softwareText').html("Hololens");
+		$('#roleText').html("Hololens");
 		$('#infoText').html("Sombri was made in a game jam over 48 hours. In this short amount of time, we came up with a interesting mechanic where the player jams the pole of an umbrella into the wall and spins on it. As the player spins, they gain momentum and can then fling themselfs to traverse the levels."
 		);
 	}
 	if(contentIndex == 8){
+		$('#platformText').html("Hololens");
+		$('#hardwareText').html("Hololens");
+		$('#softwareText').html("Hololens");
+		$('#roleText').html("Hololens");
 		$('#projectText').html("Untitled Fish Game");
 		$('#infoText').html(
 		);
