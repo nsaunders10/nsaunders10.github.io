@@ -126,7 +126,6 @@ image{
 	bottom: 0px;
 	top: 700px;
 	width: 50%;
-	margin: 10px 10px 10px 10px;
 	z-index: 10;
 }
 #textBoxLeft > p, #textBoxRight > p{
@@ -143,25 +142,25 @@ image{
 
 #textBoxRight{
 	right: 0px;
-	margin: 10px 10px 10px 5px;
+	margin: 20px 20px 20px 20px;
 }
 #textBoxLeft{
 	left: 0px;
-	margin: 10px 5px 10px 10px;
+	margin: 20px 20px 20px 20px;
 }
 
-#title {
-	margin: 0;
-	position: absolute;
-	top: 700px;
-	width: 100%;
-	font-family: "Raleway", sans-serif; 
-	font-weight: normal;
-	font-size: 40px;
-	text-align: center;
-	vertical-align: text-top;
-	height: 60px;
-	//box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
+#textBoxLeft > p, #textBoxRight > p{
+	margin: 0px;
+	padding: 0px 10px 0px 20px;
+	font-size: 21px;
+	//text-align: center;
+}
+
+#projectInfo > p, #contactInfo > p, #contactInfo > ul{
+	margin: 0px;
+	padding: 0px 10px 0px 20px;
+	font-size: 21px;
+	//text-align: center;
 }
 
 .main{
@@ -249,26 +248,31 @@ background-color:#add1c1;
 </div>
 
 <div id="textBoxLeft">
+
+<div style="display:none;" id="projectInfo">
 <h2>  </h2>
 <p><b>Project - </b><a id="projectText"></a><p>
 <p><b>Platform - </b><a id="platformText"></a><p>
-<p><b>Hardware - </b><a id="hardwareText"></a><p>
+<p><b id="hardware">Hardware - </b><a id="hardwareText"></a><p>
 <p><b>Software - </b><a id="softwareText"></a><p>
 <p><b>Role - </b><a id="roleText"><p>
-<!--
-<ul>  
-	<li><p><b>Project: </b><a><i class="fa fa fa-user fa-fw "></i> Nicholas Saunders</a><p></li>
-	<li><p><i class="fa fa-envelope fa-fw"> </i> Email: nsaunderswps@gmail.com</p></li>
-	<li><p><i class="fa fa-phone fa-fw"></i> Phone: 407-579-9971</p></li>
-	<li><p><i class="fa fa-map-marker fa-fw "></i>Venice, California  </p></li>
-	<li><p><i class="fa fa-print fa-fw"></i><a href="http://sauntic.com/NicholasSaunders/SaundersResume.pdf"> Resume</a></p></li>
+</div>
+
+<div id="contactInfo">
+<h2>  </h2>
+<p><a><i class="fa fa fa-user fa-fw "></i> Nicholas Saunders</a><p>
+<p><i class="fa fa-envelope fa-fw"> </i> nsaunderswps@gmail.com</p>
+<p><i class="fa fa-phone fa-fw"></i>407-579-9971</p>
+<p><i class="fa fa-map-marker fa-fw "></i>Venice, California  </p>
+<p><i class="fa fa-print fa-fw"></i><a href="http://sauntic.com/NicholasSaunders/SaundersResume.pdf"> Resume</a></p>
 </ul>
--->
+</div>
 
 </div>
 
 <div id="textBoxRight">
-<p><b>About: </b><a id="infoText">Weclome to Sauntic. This is my interactive portfolio! On the left you will see pictures an information from past projects. On the right you will see an interactive window to better demonstrate some of the projects, and in some cases part of the project its self!</a></p>
+<h2>  </h2>
+<p><a id="infoText">Weclome to Sauntic. This is my interactive portfolio! On the left you will see pictures an information from past projects. On the right you will see an interactive window to better demonstrate some of the projects, and in some cases part of the project its self!</a></p>
 
 </div>
 
@@ -363,9 +367,8 @@ function ChangeSize(){
 	
 	$(".main").height($("#body").height() - 60);
 	$(".contentHolder").css({left: -($(".videoContainer").width() * contentIndex)});
-	//$("#title").css({top: $(".videoContainer").height() + 50});
-	$("#textBoxLeft").css({top: $(".videoContainer").height() + 60, width: $(".videoContainer").width() - 20});
-	$("#textBoxRight").css({top: $(".videoContainer").height() + 60, width: $(".videoContainer").width() - 20});
+	$("#textBoxLeft").css({top: $(".videoContainer").height() + 60, width: $(".videoContainer").width() - 40});
+	$("#textBoxRight").css({top: $(".videoContainer").height() + 60, width: $(".videoContainer").width() - 40});
 	
 $("body").find(".videoContainer").each(function(index, element){
 
@@ -423,19 +426,30 @@ function IndicatorClicked(index){
 
 	contentIndex = index;
 	Animate();
-
 }
 
 function Animate(){
 
+	$("#projectInfo").css({opacity: 0});
+	$("#projectInfo").animate({opacity: 1}, 1000);
+	
+	$("#contactInfo").css({opacity: 0});
+	$("#contactInfo").animate({opacity: 1}, 1000);
+	
+	$('#infoText').css({opacity: 0});
+	$('#infoText').animate({opacity: 1}, 1000);
 	
 	$(".contentHolder").animate({left: -($(".videoContainer").width() * contentIndex)});
 	
 	if(contentIndex == 4){
 		$("#indexIndicator").animate({left: $("#circle" + contentIndex).offset().left - 5, width: 40, top: 10});
+		$("#projectInfo").css({display: "none"});
+		$("#contactInfo").css({display: "block"});
 	}
 	else{
 		$("#indexIndicator").animate({left: $("#circle" + contentIndex).offset().left + 5, width: 20, top: 20});
+		$("#projectInfo").css({display: "block"});
+		$("#contactInfo").css({display: "none"});
 	}
 	
 	if(contentIndex == 0){
@@ -446,7 +460,7 @@ function Animate(){
 		$('#roleText').html("Software Engineer R&D");
 		$('#infoText').html("This project was to research the Microsoft HoloLens and see what it had to offer. In this small demo I created an interactive video player, 3D set viewer, and augmented RC truck. All of these elements were contained in a central place so that the user could see all elements at once."
 		);
-		
+		$('#hardware').html("Hardware - ");
 	}
 	if(contentIndex == 1){
 		$('#projectText').html("Interactive Augmented Reality");
@@ -456,15 +470,17 @@ function Animate(){
 		$('#roleText').html("Developer / Technical Artist");
 		$('#infoText').html("Once development was completed, this application was installed on tablets in a welcome center. The application was designed to convey information in a fun interactive way."
 		);
+		$('#hardware').html("Hardware - ");
 	}
 	if(contentIndex == 2){
 		$('#projectText').html("Virtual Reality Chair");
 		$('#platformText').html("PC");
-		$('#hardwareText').html("Talon Simulations VR Chair, Oculus Rift");
+		$('#hardwareText').html("Oculus Rift, Talon Simulations VR Chair");
 		$('#softwareText').html("Unity, Oculus SDK");
 		$('#roleText').html("Developer / Technical Artist");
 		$('#infoText').html("A large portion of my experience with VR development has come from a virtual reality chair made by Talon Simulations."
 		);
+		$('#hardware').html("Hardware - ");
 	}
 	if(contentIndex == 3){
 		$('#projectText').html("Lyle's Journey");
@@ -474,6 +490,7 @@ function Animate(){
 		$('#roleText').html("Developer / Technical Artist");
 		$('#infoText').html("Lyle's Journey is an interactive story driven game that was created as a final project for my Storytelling in Interactive Media class. Lyle's Journey is one of my first completed project and I am very happy with how it turned out despite it's many bugs. Lyle wakes up on an abandoned space ship confused and alone. His only chance to get home is by rebooting the ship's A.I. named LEAFY, but can he be trusted?"
 		);
+		$('#hardware').html("");
 	}
 	
 	if(contentIndex == 4){
@@ -484,6 +501,7 @@ function Animate(){
 		$('#roleText').html("");
 		$('#infoText').html("Weclome to Sauntic. This is my interactive portfolio! On the left you will see pictures an information from past projects. On the right you will see an interactive window to better demonstrate some of the projects, and in some cases part of the project its self!"
 		);
+		$('#hardware').html("");
 	}
 	if(contentIndex == 5){
 		$('#projectText').html("Insdrawments");
@@ -493,6 +511,7 @@ function Animate(){
 		$('#roleText').html("Developer / Technical Artist");
 		$('#infoText').html("Insdrawments is a fun little app that I made for Andriod and is available on the Google Play store here! With Insdrawments you can draw three different instruments and then play them. The larger you draw the instrument the deeper the sound."
 		);
+		$('#hardware').html("Hardware - ");
 	}
 	if(contentIndex == 6){
 		$('#projectText').html("Project Vibe: Neighbors VR");
@@ -502,6 +521,7 @@ function Animate(){
 		$('#roleText').html("Developer / Technical Artist");
 		$('#infoText').html("Neighbors VR is sandbox tech demo designed for two players on one Vive system where players explore the surroundings to find and combine objects to destroy their neighbors house. This project was made as my final senior project at the Universty of Florida Digital Worlds Institute. This is the final trailer for the game."
 		);
+		$('#hardware').html("Hardware - ");
 	}
 	if(contentIndex == 7){
 		$('#projectText').html("Sombri");
@@ -511,6 +531,7 @@ function Animate(){
 		$('#roleText').html("Lead Developer / Technical Artist");
 		$('#infoText').html("Sombri was made in a game jam over 48 hours. In this short amount of time, we came up with a interesting mechanic where the player jams the pole of an umbrella into the wall and spins on it. As the player spins, they gain momentum and can then fling themselfs to traverse the levels."
 		);
+		$('#hardware').html("");
 	}
 	if(contentIndex == 8){
 		$('#projectText').html("Untitled Fish Game");
@@ -520,6 +541,7 @@ function Animate(){
 		$('#roleText').html("Lead Developer / Technical Artist");
 		$('#infoText').html("Fishy game is fun and cute and not finished but I want to finish it and most of the assets were made in VR using Oculus Quill and its cool and cute and vibes bro you know? Its all about those good vibes man...  yeah"
 		);
+		$('#hardware').html("");
 	}
 }
 
