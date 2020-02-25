@@ -425,7 +425,7 @@ $("#rightButton").click(function(){
 function IndicatorClicked(index){
 
 	contentIndex = index;
-	unityInstance.SendMessage('Scene Controller', ' GoToScene', index);
+	unityInstance.SendMessage('Scene Controller', 'GoToScene', index);
 	Animate();
 }
 
