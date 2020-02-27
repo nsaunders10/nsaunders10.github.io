@@ -208,7 +208,7 @@ height: 100%;
 z-index: 100;
 background-color:#add1c1;
 ">
-<image style="  margin:0; position:absolute; top:30%; left:50%; -ms-transform:translate(-50%, -30%); transform:translate(-50%, -30%);" src="http://sauntic.com/sauntic/images/logoLoadingSmall.gif">
+<img style="  margin:0; position:absolute; top:30%; left:50%; -ms-transform:translate(-50%, -30%); transform:translate(-50%, -30%);" src="http://sauntic.com/sauntic/images/logoLoadingSmall.gif">
 <h1 style="  margin:0; position:absolute; top:50%; left:50%; -ms-transform:translate(-50%, -50%); transform:translate(-50%, -50%);" src="http://sauntic.com/sauntic/images/logoLoadingSmall.gif">Loading...</h1>
 </div>
 
@@ -217,24 +217,24 @@ background-color:#add1c1;
 </div>
 
 <div id="indexIndicator">
-<image style="width:100%; filter: invert(50%);" src="http://sauntic.com/sauntic/images/Circle.png">
+<img style="width:100%; filter: invert(50%);" src="http://sauntic.com/sauntic/images/Circle.png">
 </div>
 
 <div id="leftButton" class="sideButton">
-<image src="http://sauntic.com/sauntic/images/leftArrow.png" class="arrowImg">
+<img src="http://sauntic.com/sauntic/images/leftArrow.png" class="arrowImg">
 </div>
 
 <div class="indicatorHolder">
 
-<image onclick="IndicatorClicked(0)" id="circle0" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
-<image onclick="IndicatorClicked(1)" id="circle1" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
-<image onclick="IndicatorClicked(2)" id="circle2" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
-<image onclick="IndicatorClicked(3)" id="circle3" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
-<image onclick="IndicatorClicked(4)" id="circle4" class="circleImg" style="opacity: 1; 	filter: invert(0%);" src="http://sauntic.com/sauntic/images/logo.png">
-<image onclick="IndicatorClicked(5)" id="circle5" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
-<image onclick="IndicatorClicked(6)" id="circle6" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
-<image onclick="IndicatorClicked(7)" id="circle7" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
-<image onclick="IndicatorClicked(8)" id="circle8" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<img onclick="IndicatorClicked(0)" id="circle0" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<img onclick="IndicatorClicked(1)" id="circle1" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<img onclick="IndicatorClicked(2)" id="circle2" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<img onclick="IndicatorClicked(3)" id="circle3" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<img onclick="IndicatorClicked(4)" id="circle4" class="circleImg" style="opacity: 1; 	filter: invert(0%);" src="http://sauntic.com/sauntic/images/logo.png">
+<img onclick="IndicatorClicked(5)" id="circle5" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<img onclick="IndicatorClicked(6)" id="circle6" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<img onclick="IndicatorClicked(7)" id="circle7" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
+<img onclick="IndicatorClicked(8)" id="circle8" class="circleImg" src="http://sauntic.com/sauntic/images/Circle.png">
 
 </div>
 
@@ -255,7 +255,7 @@ background-color:#add1c1;
 <p><b>Platform - </b><a id="platformText"></a><p>
 <p><b id="hardware">Hardware - </b><a id="hardwareText"></a><p>
 <p><b>Software - </b><a id="softwareText"></a><p>
-<p><b>Role - </b><a id="roleText"><p>
+<p><b>Role - </b><a id="roleText"></a></p>
 </div>
 
 <div id="contactInfo">
@@ -265,7 +265,6 @@ background-color:#add1c1;
 <p><i class="fa fa-phone fa-fw"></i>407-579-9971</p>
 <p><i class="fa fa-map-marker fa-fw "></i>Venice, California  </p>
 <p><i class="fa fa-print fa-fw"></i><a href="http://sauntic.com/NicholasSaunders/SaundersResume.pdf"> Resume</a></p>
-</ul>
 </div>
 
 </div>
@@ -404,6 +403,7 @@ $("#leftButton").click(function(){
 	if(contentIndex == -1){
 	contentIndex = 8;
 	}
+	unityInstance.SendMessage('Scene Controller', 'GoToScene', contentIndex);
 	Animate();
 });
 
@@ -418,6 +418,8 @@ $("#rightButton").click(function(){
 	if(contentIndex == 9){
 	contentIndex = 0;
 	}
+	
+	unityInstance.SendMessage('Scene Controller', 'GoToScene', contentIndex);
 	Animate();
 	
 });
