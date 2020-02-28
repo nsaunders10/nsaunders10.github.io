@@ -19,6 +19,7 @@ body{
 .holder{
 	position: absolute;
 	width: 50%;
+	border-radius: 50px;
 	height: 50%;
 	transform: translate(50%,50%);
 	background-color: #ECF0F3;
@@ -101,7 +102,7 @@ body{
 
 $(".circle").each(function(index, element){
 		$(element).mousedown(function(){
-			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px #D1D9E6, inset -3px -3px 5px white"});
+			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 18px 18px 30px #D1D9E6, inset -18px -18px 30px white"});
 		});
 		$(element).mouseup(function(){
 			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px white, inset -3px -3px 5px #D1D9E6"});
