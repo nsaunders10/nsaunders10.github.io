@@ -13,7 +13,7 @@
 
 <style>
 body{
-	background-color: #ECF0F3;
+	background-color: #add1c1;
 }
 
 .holder{
@@ -23,16 +23,17 @@ body{
 	transform: translate(50%,50%);
 	background-color: #ECF0F3;
 	border-radius: 50px;
-	box-shadow:inset 18px 18px 30px #FFF, inset -18px -18px 30px #D1D9E6;
+	box-shadow:inset 18px 18px 30px #FFF, inset -18px -18px 30px #D1D9E6, 18px 18px 30px #9dbdae, -18px -18px 30px #c5eddb;
 }
 
 .circle{
 	position: absolute;
 	width: 100px;
 	height: 100px;
-	top: 100px;
+	top: 50px;
 	border-radius: 500px;
-	box-shadow:inset 18px 18px 30px #FFF, inset -18px -18px 30px #D1D9E6;
+	background-color: #add1c1;
+	box-shadow:inset 18px 18px 30px #c5eddb, inset -18px -18px 30px #9dbdae;
 }
 .innerCircle{
 	position: absolute;
@@ -88,7 +89,6 @@ body{
 
 <body>
 <div class="holder">
-<div class="innerCircle"></div>
 <div class="circle"></div>
 <div class="circle"></div>
 <div class="circle"></div>
@@ -98,20 +98,23 @@ body{
 <div class="circle"></div>
 </div>
 <script>
-
+var light = "#c5eddb";
+var dark = "#9dbdae";
 
 $(".circle").each(function(index, element){
+
+
 		$(element).mousedown(function(){
-			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px #D1D9E6, inset -3px -3px 5px white"});
+			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px "+dark+", inset -3px -3px 5px "+light});
 		});
 		$(element).mouseup(function(){
-			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px white, inset -3px -3px 5px #D1D9E6"});
+			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px "+light+", inset -3px -3px 5px "+dark});
 		});
 		$(element).mouseenter(function(){
-			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px white, inset -3px -3px 5px #D1D9E6"});
+			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px "+light+", inset -3px -3px 5px "+dark});
 		});
 		$(element).mouseleave(function(){
-			$(this).css({boxShadow: "inset 18px 18px 30px #FFF, inset -18px -18px 30px #D1D9E6"});
+			$(this).css({boxShadow: "inset 18px 18px 30px "+light+", inset -18px -18px 30px "+dark});
 		});
 	$(element).css({left: 20 + index*120});
 
