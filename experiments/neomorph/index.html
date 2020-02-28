@@ -33,6 +33,16 @@ body{
 	border-radius: 500px;
 	box-shadow:inset 18px 18px 30px #FFF, inset -18px -18px 30px #D1D9E6;
 }
+.innerCircle{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	top: 25px;
+	left: 25px;
+	border-radius: 500px;
+	box-shadow: 18px 18px 30px #D1D9E6,  -18px -18px 30px white;
+	z-index: 1;
+}
 /*
 .box {
 	position: absolute;
@@ -77,6 +87,7 @@ body{
 
 <body>
 <div class="holder">
+<div class="innerCircle"></div>
 <div class="circle"></div>
 <div class="circle"></div>
 <div class="circle"></div>
@@ -89,21 +100,19 @@ body{
 
 
 $(".circle").each(function(index, element){
-
-$(element).mousedown(function(){
-$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px #D1D9E6, inset -3px -3px 5px white"});
-});
-$(element).mouseup(function(){
-$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px white, inset -3px -3px 5px #D1D9E6"});
-});
-$(element).mouseenter(function(){
-$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px white, inset -3px -3px 5px #D1D9E6"});
-});
-$(element).mouseleave(function(){
-$(this).css({boxShadow: "inset 18px 18px 30px #FFF, inset -18px -18px 30px #D1D9E6"});
-});
-
-$(element).css({left: 20 + index*120});
+		$(element).mousedown(function(){
+			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px #D1D9E6, inset -3px -3px 5px white"});
+		});
+		$(element).mouseup(function(){
+			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px white, inset -3px -3px 5px #D1D9E6"});
+		});
+		$(element).mouseenter(function(){
+			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px white, inset -3px -3px 5px #D1D9E6"});
+		});
+		$(element).mouseleave(function(){
+			$(this).css({boxShadow: "inset 18px 18px 30px #FFF, inset -18px -18px 30px #D1D9E6"});
+		});
+	$(element).css({left: 20 + index*120});
 
 });
 </script>
