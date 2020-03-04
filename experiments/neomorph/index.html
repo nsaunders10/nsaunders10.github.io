@@ -330,7 +330,7 @@ function ChangeSize(){
 	$("#videoHolder").css({margin: 0, left:$("#sideBar").offset().left + $("#sideBar").width() + 40, top: 190, right: 40, bottom: 40});
 	
 	$(".mediaHolderGreen").each(function(index, element){
-		$(element).css({left: 40, bottom: 40, width: $("#videoHolder").width() / 2, top: 120});		
+		$(element).css({left: 40, bottom: 40, width: ($("#videoHolder").width() / 2) - 60, top: 120});		
 	});
 	
 
@@ -338,6 +338,7 @@ function ChangeSize(){
 	
 		$(element).css({left: 20, top: 20, bottom:20, right: 20});
 		
+		//$(element).find(".backgroundVideo").eq(0).css({top:0, width: $(element).width() * 1.77777 });
 		if($(element).width()/1.777777777 > $(element).height()){
 			$(".backgroundVideo").css({width: "100%"});
 			$(".backgroundVideo").offset({top: $(element).offset().top - $(".backgroundVideo").height()/2 + $(element).height()/2, left: $(element).offset().left});
@@ -349,6 +350,11 @@ function ChangeSize(){
 		}	
 		
 	});
+	
+	
+	$(".textHolder").css({position: "absolute", padding: "0px 50px 0px 50px", width: $(".mediaHolderGreen").width() - 100, top: 120, right: 40, bottom: 40});
+	
+	
 }
 
 
