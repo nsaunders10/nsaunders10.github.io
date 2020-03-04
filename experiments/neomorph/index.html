@@ -5,117 +5,250 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Black+Ops+One">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee+Hairline">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Turret+Road">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Megrim">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jua">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Codystar">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Barcode+39">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
+<script src="https://sauntic.com/experiments/2019.3WebGLTest/TemplateData/UnityProgress.js"></script>
+<script src="https://sauntic.com/experiments/2019.3WebGLTest/Build/UnityLoader.js"></script>
 <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "https://sauntic.com/experiments/2019.3WebGLTest/Build/2019.3WebGLTest.json", {onProgress: UnityProgress});
 </script>
 
 <style>
+
+h1,h2,h3,h4,h5,h6,a {
+	font-family: "Varela Round", 
+	sans-serif; 
+	color: #ECF0F3;
+}
+
 body{
 	background-color: #add1c1;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+#page{
+	position: absolute;
+	background-color: #add1c1;
+	margin-bottom: 20px;
+	border-radius: 50px;
+	box-shadow:inset 18px 18px 30px #c5eddb, inset -18px -18px 30px  #9dbdae;
+	left: 20px;
+	right: 20px;
+	top: 20px;
+	bottom: -1500px;
+}
+
+.backgroundVideo{
+	position: absolute;
+	opacity: 1;
 }
 
 .holder{
-	position: absolute;
-	width: 50%;
-	height: 50%;
-	transform: translate(50%,50%);
-	background-color: #ECF0F3;
+	//width: 95%;
 	border-radius: 50px;
+	background-color: #ECF0F3;
 	box-shadow:inset 18px 18px 30px #FFF, inset -18px -18px 30px #D1D9E6, 18px 18px 30px #9dbdae, -18px -18px 30px #c5eddb;
+	margin: 40px;
+	opacity: 1;
+	padding: 0;
 }
 
+.mediaHolderWhite{
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	right: 100px;
+	top: 400px;
+	background-color: #ECF0F3;
+	border-radius: 20px;
+	//box-shadow:inset 18px 18px 30px #D1D9E6, inset -18px -18px 30px #FFF;
+	box-shadow:inset 18px 18px 30px #FFF, inset -18px -18px 30px #D1D9E6, 18px 18px 30px #9dbdae, -18px -18px 30px #c5eddb;
+}
+.mediaHolderGreen{
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	top: 400px;
+	background-color: #add1c1;
+	border-radius: 20px;
+	//box-shadow:inset 18px 18px 30px #D1D9E6, inset -18px -18px 30px #FFF;
+	box-shadow:18px 18px 30px #D1D9E6, -18px -18px 30px white, inset 18px 18px 30px #c5eddb, inset -18px -18px 30px #9dbdae;
+	padding: 0;
+	margin: 0;
+}
+
+.media{
+	position: absolute;
+	width: 80%;
+	height: 80%;
+	overflow: hidden;
+	border-radius: 20px;
+}
+
+img{
+	width: 100%;	
+}
 .circle{
 	position: absolute;
 	width: 100px;
 	height: 100px;
-	top: 50px;
+	top: 400px;
 	border-radius: 500px;
 	background-color: #add1c1;
+	//box-shadow:inset 18px 18px 30px white, inset -18px -18px 30px #D1D9E6, 18px 18px 30px #D1D9E6, -18px -18px 30px white;
 	box-shadow:18px 18px 30px #D1D9E6, -18px -18px 30px white, inset 18px 18px 30px #c5eddb, inset -18px -18px 30px #9dbdae;
 }
-.innerCircle{
-	position: absolute;
+
+.textHolder{
+	background-color: #add1c1;
+	border-radius: 100px;
+	//box-shadow:inset 18px 18px 30px #fff, inset -18px -18px 30px #D1D9E6;
+	box-shadow:18px 18px 30px #D1D9E6, -18px -18px 30px white, inset 18px 18px 30px #c5eddb, inset -18px -18px 30px #9dbdae;
+	text-align: center;
+	padding: 50px;
+	margin: 20px;
+}
+
+.textGreen{
+	margin: 30px;	
+	color: #add1c1;
+	text-shadow: 3px 3px 5px #D1D9E6, -3px -3px 5px white;
+}
+.textWhite{
+	margin: 30px;	
+	color: #ECF0F3;
+	//text-shadow: 3px 3px 5px #9dbdae, -3px -3px 5px #c5eddb;
+}
+
+.navButton{
+	position: fixed;
+	left: 100px;
 	width: 50px;
 	height: 50px;
-	top: 25px;
-	left: 25px;
+	top: 400px;
 	border-radius: 500px;
-	box-shadow: 18px 18px 30px #D1D9E6,  -18px -18px 30px white;
-	z-index: 1;
-}
-/*
-.box {
-	position: absolute;
-	width: 300px;
-	height: 300px;
-	top: 100px;
-	left: 50%;
 	background-color: #ECF0F3;
-	border-radius: 5px;
-	box-shadow:inset 18px 18px 30px white, inset -18px -18px 30px #D1D9E6;
-	border-radius: 5px;
-	-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-	transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+	box-shadow:inset 18px 18px 30px white, inset -18px -18px 30px #D1D9E6, 18px 18px 30px #9dbdae, -18px -18px 30px #c5eddb;
+	z-index: 10;
 }
 
-.box::after {
-	content: "";
-	border-radius: 5px;
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-	opacity: 0;
-	-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-	transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
 
-.box:hover {
-	-webkit-transform: scale(1.25, 1.25);
-	transform: scale(1.25, 1.25);
-}
-
-.box:hover::after {
-	opacity: 1;
-}
-*/
 </style>
 
 
-<body>
-<div class="holder">
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
+<body onload="ChangeSize()" onresize="ChangeSize()">
+<div id="page">
+<div id="unityContainer" style="width: 960px; height: 600px"></div>
+<div style="" name="holder" class="holder">
+<h1 style="font-size: 50px"class="textGreen">Nick Saunders</h1>
 </div>
+
+<div style="padding: 30px; height: 600px;"  class="holder">
+<h1 style="font-size: 50px; margin-top: 0px; text-align:center;" id="title" class="textGreen">Projects</h1>
+
+<div class="mediaHolderGreen">
+<div class="media">
+<video autoplay muted loop class="backgroundVideo">
+<source  src="https://studiosyro.com/images/videos/DemoReel8Mbps.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+<div style="" class="mediaHolderGreen">
+<div class="media">
+<video autoplay muted loop class="backgroundVideo">
+<source  src="https://studiosyro.com/images/videos/DemoReel8Mbps.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+<div style="" class="mediaHolderGreen">
+<div class="media">
+<video autoplay muted loop class="backgroundVideo">
+<source  src="https://studiosyro.com/images/videos/DemoReel8Mbps.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+<div style="" class="mediaHolderGreen">
+<div class="media">
+<video autoplay muted loop class="backgroundVideo">
+<source  src="https://studiosyro.com/images/videos/DemoReel8Mbps.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+</div>
+
+
+
+
+</div>
+
 <script>
-var light = "#c5eddb";
-var dark = "#9dbdae";
+
+var green = "#ECF0F3";
+var lightGreen = "#c5eddb";
+var darkGreen = "#9dbdae";
+
+var grey = "#ECF0F3";
+var darkGrey = "#D1D9E6";
+
+
+
+
+function ChangeSize(){
+	
+	$(".mediaHolderGreen").each(function(index, element){
+		var mediaHolderSize = $(element).parent().width()/4;
+		document.getElementById("title").innerHTML = $(element).parent().width();
+		$(element).css({width: mediaHolderSize, height: mediaHolderSize, left: $(element).parent().offset().left + index * (mediaHolderSize)});
+	});
+	
+	$(".media").each(function(index, element){
+		
+		$(element).find(".backgroundVideo").eq(0).css({width: $(element).width() * 1.77777});
+		$(element).find(".backgroundVideo").eq(0).offset({top: $(element).offset().top, left: $(element).offset().left - $(element).width()/2 + 10});
+		
+		var mediaMargin = $(".mediaHolderGreen").width()/2 - $(".media").width()/2;		
+		$(element).css({left: mediaMargin, top: mediaMargin});
+	});
+	
+}
+
+
+
+
+$(".navButton").each(function(index, element){
+
+	$(element).mouseenter(function(){
+		$(this).css({boxShadow: "inset 18px 18px 30px white, inset -18px -18px 30px #D1D9E6, 18px 18px 30px " + lightGreen +", -18px -18px 30px" + darkGreen});
+	});
+	$(element).mousedown(function(){
+		$(this).css({boxShadow: "inset 18px 18px 30px #D1D9E6, inset -18px -18px 30px white, 18px 18px 30px " + lightGreen +", -18px -18px 30px" + darkGreen});
+	});
+	$(element).mouseup(function(){
+		$(this).css({boxShadow: "inset 18px 18px 30px white, inset -18px -18px 30px #D1D9E6, 18px 18px 30px " + lightGreen +", -18px -18px 30px" + darkGreen});
+	});		
+	$(element).mouseleave(function(){
+		$(this).css({boxShadow: "inset 18px 18px 30px white, inset -18px -18px 30px #D1D9E6, 18px 18px 30px " + darkGreen +", -18px -18px 30px" + lightGreen});
+	});
+});
 
 $(".circle").each(function(index, element){
-
-
-		$(element).mousedown(function(){
-			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px "+dark+", inset -3px -3px 5px "+light});
-		});
-		$(element).mouseup(function(){
-			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px "+light+", inset -3px -3px 5px "+dark});
-		});
-		$(element).mouseenter(function(){
-			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px "+light+", inset -3px -3px 5px "+dark});
-		});
-		$(element).mouseleave(function(){
-			$(this).css({boxShadow: "18px 18px 30px #D1D9E6, -18px -18px 30px white, inset 18px 18px 30px "+light+", inset -18px -18px 30px "+dark});
-		});
 	$(element).css({left: 20 + index*120});
 
 });

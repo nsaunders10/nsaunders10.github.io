@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<title>Neomorph Tests</title>
+<link rel="icon" type="image/png" href=""/>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Black+Ops+One">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee+Hairline">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Turret+Road">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Megrim">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jua">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Codystar">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Barcode+39">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+</script>
+
+<style>
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: "Varela Round", 
+	sans-serif; 
+	color: #ECF0F3;
+}
+
+body{
+	position: absolute;
+	background-color: #add1c1;
+	margin: 0;
+	border-radius: 50px;
+	box-shadow:inset 18px 18px 30px #c5eddb, inset -18px -18px 30px  #9dbdae;
+	left: 20px;
+	right: 20px;
+	top: 20px;
+	bottom: 20px;
+	overflow: hidden;
+}
+
+.holder{
+	position: absolute;
+	width: 95%;
+	border-radius: 50px;
+	background-color: #add1c1;
+	box-shadow:inset 8px 8px 30px #9dbdae, inset -8px -8px 30px  #c5eddb;
+}
+
+.mediaHolder{
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	left: 400px;
+	top: 1000px;
+	background-color: #ECF0F3;
+	border-radius: 20px;
+	box-shadow:inset 18px 18px 30px #D1D9E6, inset -18px -18px 30px #FFF;
+}
+
+.media{
+	position: absolute;
+	width: 80%;
+	height: 80%;
+	overflow: hidden;
+	border-radius: 20px;
+	box-shadow: 18px 18px 15px #D1D9E6, -18px -18px 15px #FFF;
+	background-image: url('https://sauntic.com/Images/karol.gif');
+	//box-shadow:inset 18px 18px 30px #FFF, inset -18px -18px 30px #D1D9E6;
+}
+
+img{
+	width: 100%;	
+}
+.circle{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	top: 400px;
+	border-radius: 500px;
+	background-color: #add1c1;
+	//box-shadow:inset 18px 18px 30px white, inset -18px -18px 30px #D1D9E6, 18px 18px 30px #D1D9E6, -18px -18px 30px white;
+	box-shadow:inset 18px 18px 30px #c5eddb, inset -18px -18px 30px #9dbdae;
+}
+
+.textHolder{
+	width: 50%;
+	transform: translate(50%, 40%);
+	background-color: #add1c1;
+	border-radius: 100px;
+	//box-shadow:inset 18px 18px 30px #fff, inset -18px -18px 30px #D1D9E6;
+	box-shadow:inset 18px 18px 30px #c5eddb, inset -18px -18px 30px #9dbdae;
+	text-align: center;
+
+}
+.text{
+	/*color: transparent;
+	background: #D1D9E6;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+	text-shadow: 3px 3px 3px rgba(255,255,255,0.5);
+	*/
+	padding: 10px;
+	
+	color: #c5eddb;
+	background: clear;
+	text-shadow: 1px 3px 0 #9dbdae, 3px 3px 5px #9dbdae, -3px -3px 5px #c5eddb;
+}
+</style>
+
+
+<body onload="ChangeSize()" onresize="ChangeSize()">
+<div class="holder">
+<div class="textHolder">
+<h1 style="font-size: 50px"class="text">Nick Saunders</h1>
+</div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+
+<div class="mediaHolder">
+<div class="media">
+<img src="https://sauntic.com/Images/karol.gif">
+</div>
+
+</div>
+</div>
+
+
+<script>
+
+var light = "#c5eddb";
+var dark = "#9dbdae";
+
+function ChangeSize(){
+
+	var sideWidth = $("body").width()/2 - $(".holder").width()/2;
+	var mediaMargin = $(".mediaHolder").width()/2 - $(".media").width()/2;
+
+	$(".holder").css({left: sideWidth, top: sideWidth , bottom: sideWidth});
+	
+	$(".media").css({left: mediaMargin, top: mediaMargin});
+	
+	
+}
+
+
+$(".circle").each(function(index, element){
+
+
+		$(element).mousedown(function(){
+			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px "+dark+", inset -3px -3px 5px "+light});
+		});
+		$(element).mouseup(function(){
+			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px "+light+", inset -3px -3px 5px "+dark});
+		});
+		$(element).mouseenter(function(){
+			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px "+light+", inset -3px -3px 5px "+dark});
+		});
+		$(element).mouseleave(function(){
+			$(this).css({boxShadow: "18px 18px 30px #D1D9E6, -18px -18px 30px white, inset 18px 18px 30px "+light+", inset -18px -18px 30px "+dark});
+		});
+	$(element).css({left: 80 + index*120});
+
+});
+</script>
+</body>
+</html>
