@@ -19,11 +19,19 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="https://sauntic.com/experiments/2019.3WebGLTest/TemplateData/UnityProgress.js"></script>
-<script src="https://sauntic.com/experiments/2019.3WebGLTest/Build/UnityLoader.js"></script>
-<script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "https://sauntic.com/experiments/2019.3WebGLTest/Build/2019.3WebGLTest.json", {onProgress: UnityProgress});
-</script>
+
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | WebGL Test</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/2019.3WebGLTest.json", {onProgress: UnityProgress});
+    </script>
+  </head>
 
 <style>
 
@@ -151,7 +159,6 @@ img{
 
 <body onload="ChangeSize()" onresize="ChangeSize()">
 <div id="page">
-<div id="unityContainer" style="width: 960px; height: 600px"></div>
 <div style="" name="holder" class="holder">
 <h1 style="font-size: 50px"class="textGreen">Nick Saunders</h1>
 </div>
@@ -161,17 +168,12 @@ img{
 
 <div class="mediaHolderGreen">
 <div class="media">
-<video autoplay muted loop class="backgroundVideo">
-<source  src="https://studiosyro.com/images/videos/DemoReel8Mbps.mp4" type="video/mp4">
-</video>
+<div id="unityContainer" style="width:100%; height:100%;"></div>
 </div>
 </div>
 
 <div style="" class="mediaHolderGreen">
 <div class="media">
-<video autoplay muted loop class="backgroundVideo">
-<source  src="https://studiosyro.com/images/videos/DemoReel8Mbps.mp4" type="video/mp4">
-</video>
 </div>
 </div>
 
