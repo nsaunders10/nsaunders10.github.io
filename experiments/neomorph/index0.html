@@ -20,58 +20,114 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-<script>
-</script>
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | WebGL Test</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/2019.3WebGLTest.json", {onProgress: UnityProgress});
+    </script>
+  </head>
 
 <style>
 
-h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,h6,a,p,b {
 	font-family: "Varela Round", 
 	sans-serif; 
-	color: #ECF0F3;
+	color: black;
 }
 
 body{
-	position: absolute;
-	background-color: #add1c1;
+	background-color: #949996;
 	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 100%;
+  border-radius: 100px;
+  
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 100px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red; 
+   border-radius: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
+
+#page{
+	position: absolute;
+	background-color: #949996;
+	//margin-bottom: 20px;
 	border-radius: 50px;
-	box-shadow:inset 18px 18px 30px #c5eddb, inset -18px -18px 30px  #9dbdae;
-	left: 20px;
-	right: 20px;
-	top: 20px;
-	bottom: 20px;
+	box-shadow:inset 18px 18px 30px #a1a6a2, inset -18px -18px 30px  #949996;
+	left: 10px;
+	right: 10px;
+	top: 10px;
+	bottom: 10px;
 	overflow: hidden;
+	padding:0;
+}
+
+.backgroundVideo{
+	position: absolute;
+	opacity: 1;
 }
 
 .holder{
-	position: absolute;
-	width: 95%;
+	//width: 95%;
 	border-radius: 50px;
-	background-color: #add1c1;
-	box-shadow:inset 8px 8px 30px #9dbdae, inset -8px -8px 30px  #c5eddb;
+	background-color: #949996;
+	box-shadow:inset 18px 18px 30px #a1a6a2, inset -18px -18px 30px #7c807d;
+	margin: 40px;
+	opacity: 1;
+	padding: 0;
 }
 
-.mediaHolder{
+.mediaHolder#a1a6a2{
 	position: absolute;
 	width: 400px;
 	height: 400px;
-	left: 400px;
-	top: 1000px;
-	background-color: #ECF0F3;
+	right: 100px;
+	top: 400px;
+	background-color: #949996;
 	border-radius: 20px;
-	box-shadow:inset 18px 18px 30px #D1D9E6, inset -18px -18px 30px #FFF;
+	//box-shadow:inset 18px 18px 30px #7c807d, inset -18px -18px 30px #a1a6a2;
+	box-shadow:inset 18px 18px 30px #a1a6a2, inset -18px -18px 30px #7c807d;
+}
+.mediaHolderGreen{
+	position: absolute;
+	top: 400px;
+	background-color: #949996;
+	border-radius: 50px;
+	//box-shadow:inset 18px 18px 30px #7c807d, inset -18px -18px 30px #a1a6a2;
+	box-shadow:inset 18px 18px 30px #a1a6a2, inset -18px -18px 30px #7c807d;
+	padding: 0;
+	margin: 0;
 }
 
 .media{
 	position: absolute;
-	width: 80%;
-	height: 80%;
 	overflow: hidden;
-	border-radius: 20px;
-	box-shadow: 18px 18px 15px #D1D9E6, -18px -18px 15px #FFF;
-	background-image: url('https://sauntic.com/Images/karol.gif');
-	//box-shadow:inset 18px 18px 30px #FFF, inset -18px -18px 30px #D1D9E6;
+	border-radius: 50px;
 }
 
 img{
@@ -79,95 +135,285 @@ img{
 }
 .circle{
 	position: absolute;
-	width: 100px;
-	height: 100px;
-	top: 400px;
 	border-radius: 500px;
-	background-color: #add1c1;
-	//box-shadow:inset 18px 18px 30px white, inset -18px -18px 30px #D1D9E6, 18px 18px 30px #D1D9E6, -18px -18px 30px white;
-	box-shadow:inset 18px 18px 30px #c5eddb, inset -18px -18px 30px #9dbdae;
+	background-color: #949996;
+	box-shadow:inset 18px 18px 30px #a1a6a2, inset -18px -18px 30px #7c807d;
+}
+
+.circleImage{
+	position: absolute;
+	border-radius: 500px;
+	overflow: hidden;
+	box-shadow: 5px 5px 10px #7c807d, -5px -5px 10px #a1a6a2;
 }
 
 .textHolder{
-	width: 50%;
-	transform: translate(50%, 40%);
-	background-color: #add1c1;
-	border-radius: 100px;
-	//box-shadow:inset 18px 18px 30px #fff, inset -18px -18px 30px #D1D9E6;
-	box-shadow:inset 18px 18px 30px #c5eddb, inset -18px -18px 30px #9dbdae;
-	text-align: center;
+	background-color: #949996;
+	border-radius: 50px;
+	//box-shadow:inset 18px 18px 30px #a1a6a2, inset -18px -18px 30px #7c807d;
+	box-shadow:inset 18px 18px 30px #a1a6a2, inset -18px -18px 30px #7c807d;
+	//text-align: center;
+	//padding: 50px;
+	//margin: 20px;
+}
 
+p, a, b{
+	color: black;
+	text-shadow: 3px 3px 5px #7c807d, -3px -3px 5px #a1a6a2;
+	font-size: 30px;
 }
-.text{
-	/*color: transparent;
-	background: #D1D9E6;
-	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	background-clip: text;
-	text-shadow: 3px 3px 3px rgba(255,255,255,0.5);
-	*/
-	padding: 10px;
-	
-	color: #c5eddb;
-	background: clear;
-	text-shadow: 1px 3px 0 #9dbdae, 3px 3px 5px #9dbdae, -3px -3px 5px #c5eddb;
+
+.textGreen{
+	margin: 30px;	
+	color: black;
+	text-shadow: 3px 3px 5px #7c807d, -3px -3px 5px #a1a6a2;
 }
+.text#a1a6a2{
+	margin: 30px;	
+	color: #949996;
+	text-shadow: 3px 3px 5px #7c807d, -3px -3px 5px #a1a6a2;
+}
+
+.navButton{
+	position: fixed;
+	left: 100px;
+	width: 50px;
+	height: 50px;
+	border-radius: 500px;
+	background-color: #949996;
+	box-shadow:inset 18px 18px 30px #a1a6a2, inset -18px -18px 30px #7c807d, 18px 18px 30px #7c807d, -18px -18px 30px #a1a6a2;
+	z-index: 10;
+}
+
+
 </style>
 
 
-<body onload="ChangeSize()" onresize="ChangeSize()">
-<div class="holder">
-<div class="textHolder">
-<h1 style="font-size: 50px"class="text">Nick Saunders</h1>
-</div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
+<body onload="Start()" onresize="ChangeSize()">
+<div id="page">
 
-<div class="mediaHolder">
+<div class="navButton" id="topNav"></div>
+<div class="navButton" id="bottomNav"></div>
+
+<div style="position: absolute; border-radius: 100px;" id="nameHolder" class="holder">
+<h1 style="font-size: 50px"class="textGreen">Nick Saunders</h1>
+</div>
+
+<div style="position: absolute; border-radius: 50px;" id="videoHolder" class="holder">
+<div style="" class="mediaHolderGreen">
 <div class="media">
-<img src="https://sauntic.com/Images/karol.gif">
+<video autoplay muted loop class="backgroundVideo">
+<source  src="https://sauntic.com/sauntic/images/videos/demoReel.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+<div class="textHolder">
+<p><h1 style="font-size: 50px; margin:0;" class="text#a1a6a2">About</h1></p>
+<p><b>Project - </b><a id="projectText"></a>PEE PEE</p>
+<p><b>Platform - </b><a id="platformText"></a>POO POO</p>
+<p><b id="hardware">Hardware - </b><a id="hardwareText"></a>STINKY</p>
+<p><b>Software - </b><a id="softwareText"></a>DOO</p>
+<p><b>Role - </b><a id="roleText"></a> DOO</p>
+
+</div>
+<h1 style="font-size: 50px;" class="textGreen">Project Title</h1>
+</div>
+
+<div style="position:absolute;  border-radius: 100px;" id="sideBar" class="holder">
+<div class="circle"><div class="circleImage"><img src="https://sauntic.com/Images/karol.gif"></div></div>
+<div class="circle"><div class="circleImage"><img src="https://sauntic.com/Images/DigitalMedia/turtleclothes.jpg"></div></div>
+<div class="circle"><div class="circleImage"><img src="https://sauntic.com/Images/Dat_boi.gif"></div></div>
+<div class="circle"><div class="circleImage"><img src="https://sauntic.com/Images/dolphin.gif"></div></div>
+<div class="circle"><div class="circleImage"><img src="https://sauntic.com/sauntic/images/logoLoadingSmall.gif"></div></div>
+<div style="margin-bottom:40px;" class="circle"><div class="circleImage"><img src="https://sauntic.com/sauntic/images/smash.png"></div></div>
+</div>
+
+<div id="info" class="holder">
+
 </div>
 
 </div>
-</div>
-
 
 <script>
 
-var light = "#c5eddb";
-var dark = "#9dbdae";
+var green = "#949996";
+var lightGreen = "#a1a6a2";
+var darkGreen = "#7c807d";
 
-function ChangeSize(){
+var grey = "#949996";
+var darkGrey = "#7c807d";
 
-	var sideWidth = $("body").width()/2 - $(".holder").width()/2;
-	var mediaMargin = $(".mediaHolder").width()/2 - $(".media").width()/2;
+$("#sideBar").css({overflow: "hidden"});
 
-	$(".holder").css({left: sideWidth, top: sideWidth , bottom: sideWidth});
+
+function Start(){
+
+	$(".circleImage").css({left: 5, right: 5, top: 5, bottom: 5});
 	
-	$(".media").css({left: mediaMargin, top: mediaMargin});
+	$("#sideBar").css({padding:0, top: $("#page").offset().top + 110, bottom: "", width: 110});
+	
+	
+	$(".circle").css({width: $("#sideBar").width()/ 1.3 });
+
+	var left = $("#sideBar").width()/2 - $(".circle").width()/2;
+	
+	$(".circle").css({height: $(".circle").width(), left: left});
+	
+	$(".circle").each(function(index, element){
+	
+		$(element).css({top: 30 + index * ($(".circle").height() + 30)});
+	});
+	
+	$("#nameHolder").css({margin: 0, top: 40, left: $("#sideBar").offset().left + $("#sideBar").width(), height: 110, right: 0});
+	
+	$("#topNav").css({opacity: 0, top: $("#nameHolder").offset().top + $("#topNav").height() / 2, left: $("#sideBar").offset().left + ($("#sideBar").width() / 2) - $("#topNav").width() / 2});
+	$("#bottomNav").css({opacity: 0, bottom: $("#nameHolder").offset().top + $("#topNav").height() / 2, top:"", left: $("#sideBar").offset().left + ($("#sideBar").width() / 2) - $("#bottomNav").width() / 2});
+	
+	$("#videoHolder").css({margin: 0, padding:0, left:$("#sideBar").offset().left + $("#sideBar").width() + 40, top: 190, right: 40, bottom: 40, overflow: "hidden", opacity: 1});
+	
+	$(".mediaHolderGreen").each(function(index, element){
+		$(element).css({left: 40, bottom: 40, width: ($("#videoHolder").width() / 2) - 60, top: 120});		
+	});
+	
+
+	$(".media").each(function(index, element){
+	
+		$(element).css({left: 20, top: 20, bottom:20, right: 20});
+		
+		//$(element).find(".backgroundVideo").eq(0).css({top:0, width: $(element).width() * 1.77777 });
+		if($(element).width()/1.777777777 > $(element).height()){
+			$(".backgroundVideo").css({width: "100%"});
+			$(".backgroundVideo").offset({top: $(element).offset().top - $(".backgroundVideo").height()/2 + $(element).height()/2, left: $(element).offset().left});
+		}
+	
+		if($(element).width()/1.777777777 < $(element).height()){
+		$(".backgroundVideo").css({width: $(element).height() * 1.77777777});
+		$(".backgroundVideo").offset({left: $(element).offset().left - $(".backgroundVideo").width()/2 + $(element).width()/2 });
+		}	
+		
+	});
+	
+	
+	$(".textHolder").css({position: "absolute", padding: "0px 50px 0px 50px", width: $(".mediaHolderGreen").width() - 100, top: 120, right: 40, bottom: 40});
+	
+	
+	StartAnimations();
+}
+
+function StartAnimations(){
+	$("#sideBar").animate({bottom: $("#page").offset().top + 110}, 1000);
+	$("#nameHolder").animate({bottom: $("#page").offset().top + 110}, 1000);
+	
+	setTimeout(NavAnimation,1000);
+}
+function NavAnimation(){
+	$("#topNav").animate({opacity: 1});
+	$("#bottomNav").animate({opacity: 1});
+}
+	
+function ChangeSize(){	
+	
+	$(".circleImage").css({left: 5, right: 5, top: 5, bottom: 5});
+	
+	$("#sideBar").css({padding:0, top: $("#page").offset().top + 110, bottom: $("#page").offset().top + 110, width: 110});
+	
+	
+	$(".circle").css({width: $("#sideBar").width()/ 1.3 });
+
+	var left = $("#sideBar").width()/2 - $(".circle").width()/2;
+	
+	$(".circle").css({height: $(".circle").width(), left: left});
+	
+	$(".circle").each(function(index, element){
+	
+		$(element).css({top: 30 + index * ($(".circle").height() + 30)});
+	});
+	
+	$("#nameHolder").css({margin: 0, top: 40, left: $("#sideBar").offset().left + $("#sideBar").width(), height: 110, right: 40});
+	
+	$("#topNav").css({top: $("#nameHolder").offset().top + $("#topNav").height() / 2, left: $("#sideBar").offset().left + ($("#sideBar").width() / 2) - $("#topNav").width() / 2});
+	$("#bottomNav").css({bottom: $("#nameHolder").offset().top + $("#topNav").height() / 2, top:"", left: $("#sideBar").offset().left + ($("#sideBar").width() / 2) - $("#bottomNav").width() / 2});
+	
+	$("#videoHolder").css({margin: 0, left:$("#sideBar").offset().left + $("#sideBar").width() + 40, top: 190, right: 40, bottom: 40});
+	
+	$(".mediaHolderGreen").each(function(index, element){
+		$(element).css({left: 40, bottom: 40, width: ($("#videoHolder").width() / 2) - 60, top: 120});		
+	});
+	
+
+	$(".media").each(function(index, element){
+	
+		$(element).css({left: 20, top: 20, bottom:20, right: 20});
+		
+		//$(element).find(".backgroundVideo").eq(0).css({top:0, width: $(element).width() * 1.77777 });
+		if($(element).width()/1.777777777 > $(element).height()){
+			$(".backgroundVideo").css({width: "100%"});
+			$(".backgroundVideo").offset({top: $(element).offset().top - $(".backgroundVideo").height()/2 + $(element).height()/2, left: $(element).offset().left});
+		}
+	
+		if($(element).width()/1.777777777 < $(element).height()){
+		$(".backgroundVideo").css({width: $(element).height() * 1.77777777});
+		$(".backgroundVideo").offset({left: $(element).offset().left - $(".backgroundVideo").width()/2 + $(element).width()/2 });
+		}	
+		
+	});
+	
+	
+	$(".textHolder").css({position: "absolute", padding: "0px 50px 0px 50px", width: $(".mediaHolderGreen").width() - 100, top: 120, right: 40, bottom: 40});
 	
 	
 }
+
+
+
+$("#topNav").click(function(){
+
+	$("#sideBar").animate({scrollTop: 0});
+	
+});
+
+$("#bottomNav").click(function(){
+	
+	$("#sideBar").animate({scrollTop: 320}, 1000);
+	
+});
 
 
 $(".circle").each(function(index, element){
 
+	$(element).mouseenter(function(){
+		$(this).css({boxShadow: "8px 8px 20px #a1a6a2, -8px -8px 20px #7c807d, inset 18px 18px 30px #a1a6a2, inset -18px -18px 30px #7c807d"});
+	});
+	$(element).mousedown(function(){
+		$(this).css({boxShadow: "8px 8px 20px #a1a6a2, -8px -8px 20px #7c807d, inset 18px 18px 30px #7c807d, inset -18px -18px 30px #a1a6a2"});
+	});
+	$(element).mouseup(function(){
+		$(this).css({boxShadow: "8px 8px 20px #a1a6a2, -8px -8px 20px #7c807d, inset 18px 18px 30px #a1a6a2, inset -18px -18px 30px #7c807d"});
+	});		
+	$(element).mouseleave(function(){
+		$(this).css({boxShadow: "8px 8px 20px #7c807d, -8px -8px 20px #a1a6a2, inset 18px 18px 30px #a1a6a2, inset -18px -18px 30px #7c807d"});
+	});
+});
 
-		$(element).mousedown(function(){
-			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px "+dark+", inset -3px -3px 5px "+light});
-		});
-		$(element).mouseup(function(){
-			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px "+light+", inset -3px -3px 5px "+dark});
-		});
-		$(element).mouseenter(function(){
-			$(this).css({boxShadow: "18px 18px 30px white, -18px -18px 30px #D1D9E6, inset 3px 3px 5px "+light+", inset -3px -3px 5px "+dark});
-		});
-		$(element).mouseleave(function(){
-			$(this).css({boxShadow: "18px 18px 30px #D1D9E6, -18px -18px 30px white, inset 18px 18px 30px "+light+", inset -18px -18px 30px "+dark});
-		});
-	$(element).css({left: 80 + index*120});
+
+$(".navButton").each(function(index, element){
+
+	$(element).mouseenter(function(){
+		$(this).css({boxShadow: "inset 18px 18px 30px #a1a6a2, inset -18px -18px 30px #7c807d, 18px 18px 30px " + lightGreen +", -18px -18px 30px" + darkGreen});
+	});
+	$(element).mousedown(function(){
+		$(this).css({boxShadow: "inset 18px 18px 30px #7c807d, inset -18px -18px 30px #a1a6a2, 18px 18px 30px " + lightGreen +", -18px -18px 30px" + darkGreen});
+	});
+	$(element).mouseup(function(){
+		$(this).css({boxShadow: "inset 18px 18px 30px #a1a6a2, inset -18px -18px 30px #7c807d, 18px 18px 30px " + lightGreen +", -18px -18px 30px" + darkGreen});
+	});		
+	$(element).mouseleave(function(){
+		$(this).css({boxShadow: "inset 18px 18px 30px #a1a6a2, inset -18px -18px 30px #7c807d, 18px 18px 30px " + darkGreen +", -18px -18px 30px" + lightGreen});
+	});
+});
+
+$(".circle").each(function(index, element){
+	$(element).css({left: 20 + index*120});
 
 });
 </script>
