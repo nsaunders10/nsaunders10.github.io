@@ -250,7 +250,7 @@ function Start(){
 
 	$(".circleImage").css({left: 5, right: 5, top: 5, bottom: 5});
 	
-	$("#sideBar").css({padding:0, top: $("#page").offset().top + 110, bottom: $("#page").offset().top + 110, width: 110});
+	$("#sideBar").css({padding:0, top: $("#page").offset().top + 110, bottom: "", width: 110});
 	
 	
 	$(".circle").css({width: $("#sideBar").width()/ 1.3 });
@@ -264,12 +264,12 @@ function Start(){
 		$(element).css({top: 30 + index * ($(".circle").height() + 30)});
 	});
 	
-	$("#nameHolder").css({margin: 0, top: 40, left: $("#sideBar").offset().left + $("#sideBar").width(), height: 110, right: 40});
+	$("#nameHolder").css({margin: 0, top: 40, left: $("#sideBar").offset().left + $("#sideBar").width(), height: 110, right: 0});
 	
-	$("#topNav").css({top: $("#nameHolder").offset().top + $("#topNav").height() / 2, left: $("#sideBar").offset().left + ($("#sideBar").width() / 2) - $("#topNav").width() / 2});
-	$("#bottomNav").css({bottom: $("#nameHolder").offset().top + $("#topNav").height() / 2, top:"", left: $("#sideBar").offset().left + ($("#sideBar").width() / 2) - $("#bottomNav").width() / 2});
+	$("#topNav").css({opacity: 0, top: $("#nameHolder").offset().top + $("#topNav").height() / 2, left: $("#sideBar").offset().left + ($("#sideBar").width() / 2) - $("#topNav").width() / 2});
+	$("#bottomNav").css({opacity: 0, bottom: $("#nameHolder").offset().top + $("#topNav").height() / 2, top:"", left: $("#sideBar").offset().left + ($("#sideBar").width() / 2) - $("#bottomNav").width() / 2});
 	
-	$("#videoHolder").css({margin: 0, left:$("#sideBar").offset().left + $("#sideBar").width() + 40, top: 190, right: 40, bottom: 40});
+	$("#videoHolder").css({margin: 0, padding:0, left:$("#sideBar").offset().left + $("#sideBar").width() + 40, top: 190, right: 40, bottom: 40, overflow: "hidden", opacity: 1});
 	
 	$(".mediaHolderGreen").each(function(index, element){
 		$(element).css({left: 40, bottom: 40, width: ($("#videoHolder").width() / 2) - 60, top: 120});		
@@ -302,6 +302,13 @@ function Start(){
 
 function StartAnimations(){
 	$("#sideBar").animate({bottom: $("#page").offset().top + 110}, 1000);
+	$("#nameHolder").animate({bottom: $("#page").offset().top + 110}, 1000);
+	
+	setTimeout(NavAnimation,1000);
+}
+function NavAnimation(){
+	$("#topNav").animate({opacity: 1});
+	$("#bottomNav").animate({opacity: 1});
 }
 	
 function ChangeSize(){	
