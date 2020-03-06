@@ -4,22 +4,39 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Website</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Test.json", {onProgress: UnityProgress});
     </script>
   </head>
+  
+<style>
+body{
+	padding:0;
+	margin: 0;
+}
+#unityContainer{
+	width: 100%;
+	height: 100%;
+}
+
+.textHolder{
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	right: 100px;
+	top: 200px;
+}
+
+.infoText{
+	color: white;	
+}
+
+</style>
   <body>
-    <div class="webgl-content">
-      <div id="unityContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">Website</div>
-      </div>
-    </div>
+  <div id="unityContainer"></div>
+  <div class="textHolder"><h1 class="infoText">Hello welcome to my website! It's interactive and super cool as you can see. Click a door and you will be taken to a project that i have done in the past! WOOHOO ENJOY HAVE FUN BYE BYE</h1>
+  </div>
   </body>
 </html>
