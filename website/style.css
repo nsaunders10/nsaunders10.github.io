@@ -3,12 +3,12 @@
 	left: 20px;
 	width: 80px;	
 	height: 80px;
-	background-color: #ECF0F3;
+	//background-color: #ECF0F3;
 	cursor: pointer;
 	//box-shadow: -10px -10px 15px #FFF, 10px 10px 15px  #D1D9E6;
-	box-shadow: 10px 10px 15px  rgba(0,0,0,0.19);
+	//box-shadow: 10px 10px 15px  rgba(0,0,0,0.19);
 	border-radius: 10px;
-	overflow: hidden;
+	//overflow: hidden;
 }
 
 .icon{
