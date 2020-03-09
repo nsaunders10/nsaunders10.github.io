@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<title>Studio Syro Homepage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+<link rel="stylesheet" href="style.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+
+<body style="height: 100%; overflow:hidden;" onresize="ChangeSize()" onload=" Start()">
+
+<!-- Background Video -->
+<div id="videoContainer">
+<video autoplay muted loop class="backgroundVideo">
+<source  src="https://sauntic.com/sauntic/images/videos/demoReel.mp4" type="video/mp4">
+</video>
+<video autoplay muted loop id="video1" class="backgroundVideo">
+<source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
+</video>
+<video autoplay muted loop id="video2" class="backgroundVideo">
+<source  src="https://sauntic.com/sauntic/images/videos/vrChair.mp4" type="video/mp4">
+</video>
+<video autoplay muted loop id="video3" class="backgroundVideo">
+<source  src="https://sauntic.com/sauntic/images/videos/finn.mp4" type="video/mp4">
+</video>
+<video autoplay muted loop id="video4" class="backgroundVideo">
+<source  src="https://sauntic.com/sauntic/images/videos/lylesJourney.mp4" type="video/mp4">
+</video>
+</div>
+<!---------------------->
+<div id="bottomHolder">
+<div class="iconHolder">
+<img class="icon"  src = "https://sauntic.com/sauntic/images/logo.png" alt="logo">
+</div>
+
+<div class="iconHolder">
+<img class="icon"  src = "https://sauntic.com/Images/Dat_boi.gif" alt="logo">
+</div>
+
+<div class="iconHolder">
+<img class="icon"  src = "https://sauntic.com/Images/dolphin.gif" alt="logo">
+</div>
+
+<div class="iconHolder">
+<img class="icon"  src = "https://sauntic.com/sauntic/images/vr.png" alt="logo">
+</div>
+
+<div class="iconHolder">
+<img class="icon"  src = "https://sauntic.com/sauntic/images/obj.png" alt="logo">
+</div>
+
+</div>
+
+<script>
+
+var iconSpace = 0;
+var isMobile = false;
+
+$("#videoContainer").find(".backgroundVideo").eq(0).css({width: "100%", opacity: 1});
+
+function ChangeSize(){
+	
+	if($("#videoContainer").width()/1.777777777 > $("#videoContainer").height()){
+		$(".backgroundVideo").css({width: "100%"});
+		$(".backgroundVideo").offset({top: -$(".backgroundVideo").height()/2 +  $("#videoContainer").height()/2 , left: 0});
+	}
+	
+	if($("#videoContainer").width()/1.777777777 < $("#videoContainer").height()){
+		$(".backgroundVideo").css({width: $("#videoContainer").height() * 1.77777777});
+		$(".backgroundVideo").offset({top: 0, left: -$(".backgroundVideo").width()/2 +  $("#videoContainer").width()/2});
+	}
+	
+	
+	
+	
+	if($("#videoContainer").width() < 500){
+	
+	}
+	if($("#videoContainer").width() < 340){
+
+	}	
+	if($("#videoContainer").width() > 500){
+	
+	}
+}
+
+$("#topText").find("p").eq(0).click(function() {
+	window.open("mailto:hello@studiosyro.com");
+});
+
+function Start(){
+	ChangeSize();
+	if($("#videoContainer").width() < 500){
+		iconSpace = 100;
+		isMobile = true;
+	}
+	if($("#videoContainer").width() < 340){
+		iconSpace = 80;
+	}	
+	if($("#videoContainer").width() > 500){
+		iconSpace = 100;
+		isMobile = false;
+	}
+	$("body").find(".iconHolder").each(function(index, element){
+
+		$(element).css({top: 20 + iconSpace * index}, 800);
+		
+	});
+}
+
+$("body").find(".iconHolder").each(function(index, element){
+	
+		if(index > 0){
+			$(element).css({top: 20 + iconSpace * index}, 800);
+		}
+	
+		$(element).click(function(){
+			if($("#videoContainer").width() < 500)
+				isMobile = true;
+			else
+				isMobile = false;
+				
+			if(index == 0){
+				AnimateRotate(this, 360);
+				$("#titleText").css({ display: "none"}); 
+			}
+				if(index == 1){
+					window.open("https://www.youtube.com/watch?v=DFQHD9k5i54");
+				}
+				if(index == 2){
+					window.open("https://www.youtube.com/watch?v=KXYCr2pGTfw");
+				}
+				if(index == 3){
+					window.open("https://www.youtube.com/watch?v=s_CpnMvoNUc");
+				}
+				if(index == 4){
+					window.open("https://www.youtube.com/watch?v=ZKtY6op0Q6M");
+				}
+		});
+		
+		$(element).mouseenter(function() {
+		
+			$("#video" + index).animate({opacity: 1}, 200);
+			if($("#videoContainer").width() < 500)
+				isMobile = true;
+			else
+				isMobile = false;
+			});
+		
+		$(element).mouseleave(function() {
+			$("#video" + index).animate({opacity: 0}, 500);
+
+		});	
+		
+});	
+
+function Animate(){
+
+}
+
+
+</script> 
+</body>
+</html>
