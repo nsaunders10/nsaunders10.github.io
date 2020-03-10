@@ -13,7 +13,7 @@
 
 <style>
 body{font-family: "Raleway", sans-serif; background-color:#add1c1;}
-h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif;}
+h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif; text-align: center;}
 p{
 	font-family: "Raleway", 
 	sans-serif; 
@@ -29,22 +29,27 @@ body, html {
     height: 100%;
     line-height: 1.8;
 	margin: 0px;
+	overflow: auto;
 }
 
-#body{
-	height: 100%;
+img{
 	width: 100%;
 }
 
-.topBar{
+#topBar{
 	position:fixed;
-	background-color: white;
+	background-color: #f1f1f1;
 	height: 60px;
-	width: 100%;
+	width: 500px;
+	z-index: 2;
+	border-radius: 0px 0px 50px 50px;
+	box-shadow: 18px 8px 30px #d9d9d9, -18px -18px 30px #e6e6e6;
+	opacity: 0;
+	
 }
 
 #videoContainer {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
@@ -60,12 +65,74 @@ body, html {
 	opacity: 1;
 }
 
+#bottomHolder{
+	position: absolute;
+	width: 100%;
+	height: 1000px;
+	background-color: #f1f1f1;
+}
+
+#arrowHolder{
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	background-color: #f1f1f1;
+	border-radius: 50px 50px 0px 0px;
+}
+#arrowButton{
+	position: absolute;
+	width: 70%;
+	height: 70%;
+	background-color: #f1f1f1;
+	border-radius: 50px;
+	box-shadow: 3px 3px 6px #d9d9d9, -3px -3px 6px #e6e6e6;
+}
+.workRow{
+	position: absolute;
+	height: 300px;
+	left: 415px;
+}
+.workHolder{
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	background-color: #f1f1f1;
+	border-radius: 20px;
+	box-shadow: 18px 18px 30px #d9d9d9, -18px -18px 30px #e6e6e6;
+	overflow: hidden;
+	z-index: 2;
+}
+.work{
+	position: absolute;
+	margin: 10px;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+}
+.workPreview{
+	position: absolute;
+	top: 0;
+	height: 100%;
+
+}
+.center{
+	position: absolute;
+	width: 80%;
+}
+
+#backgroundHolder{
+	position: absolute;
+	z-index: 1;
+	border-radius: 20px;
+}
+
 </style>
 
 
 <body id="body" onresize="ChangeSize()" onload="ChangeSize()">
 <div id="page">
-<div class="topBar">
+<div id="topBar">
 <h1 style="margin:0px; padding: 0px 10px;">Nick Saunders</h1>
 </div>
 
@@ -75,22 +142,187 @@ body, html {
 </video>
 </div>
 
+<div class="center" style="width: 250px;">
+<img src="https://sauntic.com/sauntic/images/logo.png">
+<h1 style="margin:0px; padding: 0px 0px; text-align: center;">Nick Saunders</h1>
+</div>
+
+<div id="arrowHolder">
+<div id="arrowButton">
+<img src="https://sauntic.com/sauntic/images/downArrow.png">
+</div>
+</div>
+
+<div id="backgroundHolder">
+</div>
+
+<div id="bottomHolder">
+
+
+<!------------------------------------->
+<div class="workRow">
+<div class="workHolder">
+<div class="work">
+<video autoplay muted loop class="workPreview">
+<source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+<div class="workHolder">
+<div class="work">
+<video autoplay muted loop class="workPreview">
+<source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+<div class="workHolder">
+<div class="work">
+<video autoplay muted loop class="workPreview">
+<source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+<div class="workHolder">
+<div class="work">
+<video autoplay muted loop class="workPreview">
+<source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+</div> 
+<!------------------------------------->
+
+<!------------------------------------->
+<div class="workRow">
+<div class="workHolder">
+<div class="work">
+<video autoplay muted loop class="workPreview">
+<source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+<div class="workHolder">
+<div class="work">
+<video autoplay muted loop class="workPreview">
+<source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+<div class="workHolder">
+<div class="work">
+<video autoplay muted loop class="workPreview">
+<source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+<div class="workHolder">
+<div class="work">
+<video autoplay muted loop class="workPreview">
+<source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+</div> 
+<!------------------------------------->
 
 </div>
 
 <script>
-function ChangeSize(){
 
-			if($("#videoContainer").width()/1.777777777 > $("#videoContainer").height()){
-				$(".backgroundVideo").css({width: "100%"});
-				$(".backgroundVideo").offset({top: -$(".backgroundVideo").height()/2 +  $("#videoContainer").height()/2 , left: 0});
-			}
-			
-			if($("#videoContainer").width()/1.777777777 < $("#videoContainer").height()){
-				$(".backgroundVideo").css({width: $("#videoContainer").height() * 1.77777777});
-				$(".backgroundVideo").offset({top: 0, left: -$(".backgroundVideo").width()/2 +  $("#videoContainer").width()/2});
-			}
-			
+var greenMainColor = "#add1c1";
+var greenDarkColor = "#9dbdae";
+var greenLightColor = "#c5eddb";
+
+var darkMainColor = "#616161";
+var darkDarkColor = "#4f4f4f";
+var darkLightColor = "#737373";
+
+var lightMainColor = "#f1f1f1";
+var lightDarkColor = "#d9d9d9";
+var lightLightColor = "#ffff";
+
+var smallShadowBottom = "3px 3px 6px";
+var smallShadowTop = "-3px -3px 6px";
+
+var bigShadowBottom = "18px 18px 30px";
+var bigShadowTop = "-18px -18px 30px";
+
+function ChangeSize(){
+	
+	$("#topBar").css({backgroundColor: darkMainColor, boxShadow: "18px 18px 30px" + darkDarkColor +", -18px -18px 30px" + darkLightColor});	
+	$("#bottomHolder").css({backgroundColor: greenMainColor,});
+	$("#arrowHolder").css({backgroundColor: darkMainColor});
+	$("#arrowButton").css({backgroundColor: darkMainColor, boxShadow: smallShadowBottom + darkDarkColor + "," + smallShadowTop + darkLightColor});
+	$(".workHolder").css({backgroundColor: lightMainColor, boxShadow: smallShadowBottom + lightDarkColor +","+  smallShadowTop + lightLightColor});
+	$(".work").css({backgroundColor: lightMainColor, boxShadow: smallShadowBottom + lightDarkColor +","+  smallShadowTop + lightLightColor});
+	$("#backgroundHolder").css({backgroundColor: lightMainColor, boxShadow: bigShadowBottom + greenDarkColor +","+  bigShadowTop + greenLightColor});
+	
+	$(".center").each(function (index, element){
+		
+		$(element).css({left: $(element).parent().width()/ 2 - $(element).width()/2, top: $(element).parent().height()/ 2 - $(element).height()/2});
+	});
+	
+	if($("#videoContainer").width()/1.777777777 > $("#videoContainer").height()){
+		$(".backgroundVideo").css({width: "100%"});
+		$(".backgroundVideo").offset({top: -$(".backgroundVideo").height()/2 +  $("#videoContainer").height()/2 , left: 0});
+	}
+	
+	if($("#videoContainer").width()/1.777777777 < $("#videoContainer").height()){
+		$(".backgroundVideo").css({width: $("#videoContainer").height() * 1.77777777});
+		$(".backgroundVideo").offset({top: 0, left: -$(".backgroundVideo").width()/2 +  $("#videoContainer").width()/2});
+	}
+	$("#topBar").css({left: $("#videoContainer").width()/2 - $("#topBar").width()/2});
+	$("#bottomHolder").css({top: $("#videoContainer").height()});
+	$("#arrowHolder").css({top: $("#bottomHolder").offset().top - $("#arrowHolder").height(), left: $("#bottomHolder").width()/2 - $("#arrowHolder").width()/2});
+	$("#arrowButton").css({left: $("#arrowHolder").width()/2 - $("#arrowButton").width()/2, top: $("#arrowHolder").height()/2 - $("#arrowButton").height()/2});
+	
+	
+	$(".workRow").each(function(index, element){
+	
+		$(element).css({width: "80%"});
+		$(element).css({left: $(element).parent().width()/ 2 - $(element).width()/ 2, height: $(element).width() * 0.2});
+		
+		var topOffset = 200;
+		if(index == 0){
+		$(element).css({top: topOffset});
+		}
+		if(index == 1){
+		$(element).css({top: $("#bottomHolder").find(".workRow").eq(0).height() + topOffset + ($(element).width() * 0.015)});
+		}
+		
+	});
+	
+	$(".workHolder").css({width: $(".workRow").width() * 0.2});
+	$(".workHolder").css({height: $(".workHolder").width()});
+	$(".work").css({width: $(".workHolder").width() - 20, height: $(".workHolder").height() - 20});
+	$(".workPreview").css({left: (-$(".workPreview").width()/2 +  $(".workHolder").width()/2)});
+	
+	$(".workHolder").each(function(index, element){
+		
+		if(index <= 3){
+		$(element).css({left: (($(".workRow").width() * 0.215)/2.5) + index * ($(".workRow").width() * 0.215)});
+		}
+		if(index > 3){
+		$(element).css({left: (($(".workRow").width() * 0.215)/2.5) + (index - 4) * ($(".workRow").width() * 0.215)});
+		}
+	
+	
+	});
+	
+	$("#backgroundHolder").css({
+		width: $(".workRow").width() - 100,
+		height: $(".workRow").height()* 2 + 150,
+		top: $("#bottomHolder").offset().top + 125,
+	});
+	
+	$("#backgroundHolder").css({left: $("#backgroundHolder").parent().width()/ 2 - $("#backgroundHolder").width()/ 2,});
+		
 }
 </script>
 </body>
