@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html onload="ChangeSize()">
 <title>Sauntic Homepage</title>
 <link rel="icon" type="image/png" href="http://sauntic.com/sauntic/images/logo.png"/>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif; background-color:#add1c1;}
+body,h1,h3,h4,h5,h6 {font-family: "Raleway", sans-serif; background-color:#add1c1;}
+h2 {font-family: "Raleway", sans-serif;}
 body, html {
     height: 100%;
     line-height: 1.8;
@@ -31,8 +32,43 @@ body, html {
 box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
 
 }
+
+#videoContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.backgroundVideo{
+	position: absolute;
+	opacity: 1;
+}
+.textFade{
+	opacity: 0;
+}
+
 </style>
-<body>
+<body onload="ChangeSize(); Loaded()" onresize="ChangeSize()">
+
+<div id="loadingBlock"
+style="
+position: fixed;
+top: 60px;
+width: 100%;
+height: 100%;
+z-index: 100;
+background-color:#add1c1;
+">
+<img style="  margin:0; position:absolute; top:30%; left:50%; -ms-transform:translate(-50%, -30%); transform:translate(-50%, -30%);" src="http://sauntic.com/sauntic/images/logoLoadingSmall.gif">
+<h1 style="  margin:0; position:absolute; top:50%; left:50%; -ms-transform:translate(-50%, -50%); transform:translate(-50%, -50%);" src="http://sauntic.com/sauntic/images/logoLoadingSmall.gif">Loading...</h1>
+</div>
+
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" style="box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);" id="myNavbar">
@@ -63,39 +99,29 @@ box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
   <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
 </nav>
 
-<!-- Header with full-height image 
-<header class="bgimg-1 w3-display-container" id="home">
-<video style="width:100%;" autoplay muted loop id="myVideo">
-	<source src="http://sauntic.com/sauntic/images/DemoReal.mp4" type="video/mp4">
-	Your browser does not support HTML5 video.
-	</video>
-  <div class="w3-display-left w3-text-white" style="padding:60px">
-  </div> 
-  <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
-  </div>
-  -->
 </header>
 <header class="w3-display-container" style="margin:80px; top:0px;"id="home">
-<div style="background-position:center; top:100px; min-height:50%; width:100%;">
-<video style="width:100%;" autoplay muted loop id="myVideo">
-	<source src="http://sauntic.com/sauntic/images/videos/demoReel.mp4" type="video/mp4">
-	Your browser does not support HTML5 video.
-	</video>
-	 
-</div>
-
-  <div class="w3-display-middle" style="width:100%; padding:0px">
- <image style="position:relative: z-index:-1; width:100%;" src="http://sauntic.com/sauntic/images/logoWithTextAndBlur.png"></image>
+  <div id="topLogo">
+	<image style="position:relative: z-index:-1; width:100%;" src="http://sauntic.com/sauntic/images/logoWithTextAndBlur.png"></image>
   </div> 
   <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
   
   </div>
 </header>
 
+<div id="videoContainer">
+<video autoplay muted loop class="backgroundVideo">
+<source  src="https://sauntic.com/sauntic/images/videos/demoReel.mp4" type="video/mp4">
+</video>
+</div>
+
+<div id="allHolder">
 <!-- Experiance Section -->
 <div class="w3-container w3-light-grey" style="padding:60px 30px;" id="about">
-  <h3 class="w3-center" style="box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);">MY EXPERIENCE</h3>
-  <p class="w3-center w3-large">As a software engineer of research and development, I have had many chances to get my hands on a long list of hardware and software. This has allowed me to dig into the latest tech and see what they have to offer. My specialty is virtual and augmented reality development with the Unity 3D engine, but I also enjoy creating any kind of interactive experience for all platforms. </p>
+  <h3 class="w3-center" style="box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);">EXPERIENCE</h3>
+ <!-- <p class="w3-center w3-large">
+  As a software engineer of research and development, I have had many chances to get my hands on a long list of hardware and software. This has allowed me to dig into the latest tech and see what they have to offer. My specialty is virtual and augmented reality development with the Unity 3D engine, but I also enjoy creating any kind of interactive experience for all platforms.
+  </p>-->
   
 <div class="w3-row-padding w3-center" style="margin-top:64px">
     <div class="w3-quarter">
@@ -106,12 +132,12 @@ box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
     <div class="w3-quarter">
       <i class="w3-margin-bottom w3-jumbo"><image style="position:relative;" src="http://sauntic.com/sauntic/images/vr.png"></i>
       <p class="w3-large">Virtual Reality</p>
-      <p>Hands on experience with the Vive / Vive Pro, Oculus, GearVR, and Google Daydream.</p>
+      <p>Hands on experience with the Vive / Vive Pro, Index Controllers, Oculus, GearVR, and Google Daydream.</p>
     </div>
     <div class="w3-quarter">
       <i class="w3-margin-bottom w3-jumbo"><image style="position:relative;" src="http://sauntic.com/sauntic/images/ar.png"></i>
       <p class="w3-large">Augmented Reality</p>
-      <p>Extensive AR development experience with the Vuforia API and the Unity3D engine for all platforms including the Microsoft Hololens.</p>
+      <p>Extensive AR development experience with the Vuforia API and AR Foundation for all platforms including the Microsoft Hololens.</p>
     </div>
     <div class="w3-quarter">
       <i class=" w3-margin-bottom w3-jumbo"><image style="position:relative;" src="http://sauntic.com/sauntic/images/controller.png"></i>
@@ -123,22 +149,24 @@ box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
 
 <!-- Promo Section "Statistics" -->
 <div style="padding:40px 30px;" class="w3-container w3-row w3-center w3-dark-grey">
+
  <div class="w3-quarter">
     <span class="w3-xxlarge">5+</span>
     <br>Years Unity Experience
   </div>
   <div class="w3-quarter">
-    <span class="w3-xxlarge">27+</span>
-    <br>Completed Projects
+    <span class="w3-xxlarge">6+</span>
+    <br>Years Coding Experiance
   </div>
   <div class="w3-quarter">
     <span class="w3-xxlarge">11+</span>
     <br>Different Platforms
   </div>
   <div class="w3-quarter">
-    <span class="w3-xxlarge">280+</span>
-    <br>Games in Steam Library
+    <span class="w3-xxlarge">600+</span>
+    <br>Hours logged in VR
   </div>
+  
 </div>
 
 
@@ -171,7 +199,7 @@ box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
       <div class="w3-grey">
         <div class="w3-container w3-dark-grey w3-center" style="width:70%">70%</div>
       </div>
-      <p class="w3-wide"><i><image style="position:relative;width:30px;" src="http://sauntic.com/sauntic/images/smash.png"></i>     Super Smash Bros Melee</p>
+      <p class="w3-wide"><i><image style="position:relative;width:30px;" src="http://sauntic.com/sauntic/images/smash.png"></i>     Super Smash Bros</p>
       <div class="w3-grey">
         <div class="w3-container w3-dark-grey w3-center" style="width:65%">65%</div>
       </div>
@@ -183,48 +211,11 @@ box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
 </div>
 
 <!-- Work Section -->
-<div class="w3-container" style="padding:60px 30px" id="work">
-  <h3 class="w3-center w3-light-grey" style="box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);">CLIENT PROJECTS</h3>
- <!-- <p class="w3-center w3-large">Work I have done for clients</p>-->
-
-  <div class="w3-row-padding" style="margin-top:30px">
-    <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/gifs/hololens/AllView.gif" style="width:100%" onclick="onClick('http://sauntic.com/hololens.html')" class="w3-hover-opacity" alt="Hololens">
-	  <p class="w3-center w3-large">Hololens Demo</p>
-    </div>
-    <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/gifs/bitcatch/MoneyCatcher.gif" style="width:100%" onclick="onClick('http://sauntic.com/bitgrab.html')" class="w3-hover-opacity" alt="Money Grab">
-	  <p class="w3-center w3-large">Bit Catcher / Money Grab Challenge</p>
-    </div>
-    <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/gifs/ar/SolarTree.gif" style="width:100%" onclick="onClick('http://sauntic.com/ar.html')" class="w3-hover-opacity" alt="AR Interactive Experiance">
-	  <p class="w3-center w3-large">Informational Interactive AR</p>
-    </div>
-    <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/gifs/vrchair/VRDriving2.gif" style="width:100%" onclick="onClick('http://sauntic.com/vrchair.html')" class="w3-hover-opacity" alt="Virtual Reality Chair">
-	  <p class="w3-center w3-large">Virtual Reality Chair</p>
-    </div>
-  </div>
-	<h3 class="w3-center w3-light-grey" style="box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);">PERSONAL PROJECTS</h3>
-<!--	<p class="w3-center w3-large">Work I have done by myself and with friends</p>-->
-  <div class="w3-row-padding w3-section" style="margin-top:30px">
-    <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/gifs/insdrawments/StartScreen.gif" style="width:100%" onclick="onClick('http://sauntic.com/insdrawments.html')" class="w3-hover-opacity" alt="Insdrawments">
-	  <p class="w3-center w3-large">Insdrawments App</p>
-    </div>
-    <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/gifs/Neighbors.gif" style="width:100%" onclick="onClick('http://sauntic.com/neighbors.html')" class="w3-hover-opacity" alt="Neighbors">
-	  <p class="w3-center w3-large">Neighbors VR</p>
-    </div>
-    <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/gifs/sombri/ThirdLevel.gif" style="width:100%" onclick="onClick('http://sauntic.com/sombri.html')" class="w3-hover-opacity" alt="Sombri">
-	  <p class="w3-center w3-large">Game Jam: Sombri</p>
-    </div>
-    <div class="w3-col l3 m6">
-      <img src="http://sauntic.com/sauntic/images/gifs/lyle/PutOutFire.gif" style="width:100%" onclick="onClick('http://sauntic.com/lyle.html')" class="w3-hover-opacity" alt="Lyle's Journey">
-	  <p class="w3-center w3-large">Lyle's Journey</p>
-    </div>
-  </div>
+<div class="w3-container" style="padding:60px 0px" id="work">
+  <h3 class="w3-center w3-light-grey" style="box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);">PROJECTS</h3>
+  
+	<div id="projectHolder">
+	</div>	
 </div>
 
 <!-- Modal for full size images on click-->
@@ -254,6 +245,8 @@ box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
         </p>-->
     </div>
 </div>
+</div>
+
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
@@ -262,7 +255,86 @@ box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 8px 20px 0 rgba(0,0,0,0.19);
   <!--  <i class="fa fa-linkedin w3-hover-opacity"></i>-->
   </div>
 </footer>
- 
+</div>
+
+	<div class="row">
+			<div class="work">
+				<video autoplay muted loop class="workPreview">
+				<source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
+				</video>
+				<div class="textFade">
+				<div style="position: absolute;z-index: 1; top: 0; width: 100%; height:100%; background-color: black; opacity: 0.7;"></div>
+				<h2 style="background-color: clear; position: relative; top: 20%; text-align: center; color: white; z-index: 5;">Informational AR</h2>
+				</div>
+			</div>
+			<div class="work">
+				<video autoplay muted loop class="workPreview">
+				<source  src="https://sauntic.com/sauntic/images/videos/hololens.mp4" type="video/mp4">
+				</video>
+				<div class="textFade">
+				<div style="position: absolute;z-index: 1; top: 0; width: 100%; height:100%; background-color: black; opacity: 0.7;"></div>
+				<h2 style="position: relative; top: 20%; text-align: center; color: white; z-index: 5;">HoloLens Tech Demo</h2>
+				</div>
+			</div>
+			<div class="work">
+				<video autoplay muted loop class="workPreview">
+				<source  src="https://sauntic.com/sauntic/images/videos/finn.mp4" type="video/mp4">
+				</video>
+				<div class="textFade">
+				<div style="position: absolute;z-index: 1; top: 0; width: 100%; height:100%; background-color: black; opacity: 0.7;"></div>
+				<h2 style="position: relative; top: 20%; text-align: center; color: white; z-index: 5;">Coming Soon!</h2>
+				</div>
+			</div>
+			<div class="work">
+				<video autoplay muted loop class="workPreview">
+				<source  src="https://sauntic.com/sauntic/images/videos/neighbors.mp4" type="video/mp4">
+				</video>
+				<div class="textFade">
+				<div style="position: absolute;z-index: 1; top: 0; width: 100%; height:100%; background-color: black; opacity: 0.7;"></div>
+				<h2 style="position: relative; top: 20%; text-align: center; color: white; z-index: 5;">Neighbors!</h2>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="work">
+				<video autoplay muted loop class="workPreview">
+				<source  src="https://sauntic.com/sauntic/images/videos/sombri.mp4" type="video/mp4">
+				</video>
+				<div class="textFade">
+				<div style="position: absolute;z-index: 1; top: 0; width: 100%; height:100%; background-color: black; opacity: 0.7;"></div>
+				<h2 style="position: relative; top: 20%; text-align: center; color: white; z-index: 5;">Game Jam: Sombri</h2>
+				</div>
+			</div>
+			<div class="work">
+				<video autoplay muted loop class="workPreview">
+				<source  src="https://sauntic.com/sauntic/images/videos/vrChair.mp4" type="video/mp4">
+				</video>
+				<div class="textFade">
+				<div style="position: absolute;z-index: 1; top: 0; width: 100%; height:100%; background-color: black; opacity: 0.7;"></div>
+				<h2 style="position: relative; top: 20%; text-align: center; color: white; z-index: 5;">VR Chair</h2>
+				</div>
+			</div>
+			<div class="work">
+				<video autoplay muted loop class="workPreview">
+				<source  src="https://sauntic.com/sauntic/images/videos/insdrawments.mp4" type="video/mp4">
+				</video>
+				<div class="textFade">
+				<div style="position: absolute;z-index: 1; top: 0; width: 100%; height:100%; background-color: black; opacity: 0.7;"></div>
+				<h2 style="position: relative; top: 20%; text-align: center; color: white; z-index: 5;">Insdrawments</h2>
+				</div>
+			</div>
+			<div class="work">
+				<video autoplay muted loop class="workPreview">
+				<source  src="https://sauntic.com/sauntic/images/videos/lylesJourney.mp4" type="video/mp4">
+				</video>
+				<div class="textFade">
+				<div style="position: absolute;z-index: 1; top: 0; width: 100%; height:100%; background-color: black; opacity: 0.7;"></div>
+				<h2 style="position: relative; top: 20%; text-align: center; color: white; z-index: 5;">Lyle's Journey</h2>
+				</div>
+			</div>
+		</div>
+
 <script>
 
 // Modal Image Gallery
@@ -270,6 +342,114 @@ function onClick(url) {
 window.location = url;
 }
 
+function Loaded(){
+
+contentIndex = 4;
+ChangeSize();
+$("#loadingBlock").animate({opacity: 0}, 2000);
+setTimeout(Hide, 2500);
+
+}
+function Hide(){
+$("#loadingBlock").css({display: "none"});
+}
+
+
+function ChangeSize(){
+
+	if($("#videoContainer").width()/1.777777777 > $("#videoContainer").height()){
+		$(".backgroundVideo").css({width: "100%"});
+		$(".backgroundVideo").offset({top: -$(".backgroundVideo").height()/2 +  $("#videoContainer").height()/2 , left: 0});
+	}
+	
+	if($("#videoContainer").width()/1.777777777 < $("#videoContainer").height()){
+		$(".backgroundVideo").css({width: $("#videoContainer").height() * 1.77777777});
+		$(".backgroundVideo").offset({top: 0, left: -$(".backgroundVideo").width()/2 +  $("#videoContainer").width()/2});
+	}
+
+	if(window.innerWidth <= 800){
+	$("#allHolder").css({position: "absolute", top: $("#videoContainer").height(), padding: 20});
+	}
+	
+	if(window.innerWidth > 800){
+	$("#allHolder").css({position: "absolute", top: $("#videoContainer").height(), padding: 100});
+	}
+	$("#topLogo").css({position: "absolute", top: 100});
+	
+	$("#projectHolder").css({width: "100%", height: 400});
+	
+	
+	$(".row").each(function(index, element){
+	
+		$(element).css({position: "absolute", top: $("#projectHolder").offset().top, left:$("#projectHolder").offset().left, width: $("#projectHolder").width(), height:$("#projectHolder").height()/2});
+		if(index == 1){
+		$(element).css({top: $("#projectHolder").offset().top + $("#projectHolder").height()/2 + 18});
+		}
+		
+	});
+	
+	$(".work").css({position: "absolute", width: $(".row").width() * 0.22, height: "100%", overflow: "hidden"});
+	$(".work").each(function(index, element){
+		
+		if(index <= 3){
+		$(element).css({left: (($(".row").width() * 0.215)/4.5) + index * ($(".row").width() * 0.23)});
+		}
+		if(index > 3){
+		$(element).css({left: (($(".row").width() * 0.215)/4.5) + (index - 4) * ($(".row").width() * 0.23)});
+		}
+	
+	});
+	
+	$(".workPreview").css({position: "absolute", height: "100%", left: (-$(".workPreview").width()/2 +  $(".work").width()/2)});
+	GoDINGUS();
+}
+
+$(".work").each(function(index, element){
+		
+		$(element).mouseenter(function(){
+			$(element).find(".textFade").animate({opacity: 1});
+		
+		});
+		
+		$(element).mouseleave(function(){
+			$(element).find(".textFade").animate({opacity: 0});
+		
+		});
+		
+		$(element).click(function(){
+			if(index == 0){
+				window.location.assign("http://www.sauntic.com/ar.html");
+			}
+			if(index == 1){
+				window.location.assign("http://www.sauntic.com/hololens.html");
+			}
+			if(index == 2){
+			//	window.location.assign("http://www.sauntic.com/neighbors.html");
+			}
+			if(index == 3){
+				window.location.assign("http://www.sauntic.com/neighbors.html");
+			}
+			if(index == 4){
+				window.location.assign("http://www.sauntic.com/sombri.html");
+			}
+			if(index == 5){
+				window.location.assign("http://www.sauntic.com/vrchair.html");
+			}
+			if(index == 6){
+				window.location.assign("http://www.sauntic.com/insdrawments.html");
+			}
+			if(index == 7){
+				window.location.assign("http://www.sauntic.com/lyle.html");
+			}
+		
+		});
+	
+});
+	
+function GoDINGUS(){
+	$(".workPreview").css({position: "absolute", height: "100%", left: (-$(".workPreview").width()/2 +  $(".work").width()/2)});
+	
+}
 
 // Toggle between showing and hiding the sidebar when clicking the menu icon
 var mySidebar = document.getElementById("mySidebar");

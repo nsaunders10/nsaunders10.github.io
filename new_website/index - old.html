@@ -12,7 +12,7 @@
 </script>
 
 <style>
-body{font-family: "Raleway", sans-serif; background-color:#add1c1;}
+body{font-family: "Raleway", sans-serif; background-color:#616161;}
 h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif; text-align: center;}
 p{
 	font-family: "Raleway", 
@@ -21,15 +21,20 @@ p{
 }
 
 #page{
-	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
 	width: 100%;
 }
 
 body, html {
+	width: 100%;
     height: 100%;
     line-height: 1.8;
 	margin: 0px;
-	overflow: auto;
+	//overflow: hidden;
 }
 
 img{
@@ -49,7 +54,7 @@ img{
 }
 
 #videoContainer {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
@@ -67,9 +72,11 @@ img{
 
 #bottomHolder{
 	position: absolute;
-	width: 100%;
-	height: 1000px;
+	left: 10px;
+	right: 10px;	
+	height: 2000px;
 	background-color: #f1f1f1;
+	border-radius: 50px;
 }
 
 #arrowHolder{
@@ -86,6 +93,7 @@ img{
 	background-color: #f1f1f1;
 	border-radius: 50px;
 	box-shadow: 3px 3px 6px #d9d9d9, -3px -3px 6px #e6e6e6;
+	cursor: pointer;
 }
 .workRow{
 	position: absolute;
@@ -119,12 +127,42 @@ img{
 .center{
 	position: absolute;
 	width: 80%;
+	cursor: pointer;
 }
 
 #backgroundHolder{
 	position: absolute;
 	z-index: 1;
 	border-radius: 20px;
+}
+.titleHolder{
+	position: absolute;
+	border-radius: 20px;
+	width: 50%;
+	transform: translate(50%);
+	margin: 50px 0px;
+	z-index: 3;
+}
+
+#about{
+	position: absolute;
+	border-radius: 20px;
+
+}
+
+#contact{
+	position: absolute;
+	border-radius: 20px;
+
+}
+
+.textFade{
+	position: absolute;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+
 }
 
 </style>
@@ -142,9 +180,8 @@ img{
 </video>
 </div>
 
-<div class="center" style="width: 250px;">
-<img src="https://sauntic.com/sauntic/images/logo.png">
-<h1 style="margin:0px; padding: 0px 0px; text-align: center;">Nick Saunders</h1>
+<div class="center" style="width: 1000px;">
+<img src="https://sauntic.com/sauntic/images/logoWithTextAndBlur.png">
 </div>
 
 <div id="arrowHolder">
@@ -152,44 +189,72 @@ img{
 <img src="https://sauntic.com/sauntic/images/downArrow.png">
 </div>
 </div>
-
+<!--
 <div id="backgroundHolder">
 </div>
-
+-->
 <div id="bottomHolder">
 
+<div id="bottomLogo" style="position:absolute; width: 150px; top: 0px; border-radius: 100px;">
+<img src="https://sauntic.com/sauntic/images/logo.png">
+</div>
 
+
+<!-- <div id="about">
+<div class="titleHolder">
+<h1 style="margin:0px; padding:0px;">ABOUT</h1>
+</div>
+<p style="margin:0px; padding: 150px 50px;"><a style="font-size: 30px;">My biggest passion is creating interactive experiences. I often find it more rewarding to discover how game mechanics work, than playing the game itself. Most of my experience creating content has been independently or with a small team, making me familiar with every step of the game development process. 
+</a></p>
+</div>-->
 <!------------------------------------->
 <div class="workRow">
-<div class="workHolder">
-<div class="work">
-<video autoplay muted loop class="workPreview">
-<source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
-</video>
-</div>
-</div>
 
 <div class="workHolder">
 <div class="work">
 <video autoplay muted loop class="workPreview">
 <source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
 </video>
+<div class="textFade">
+<div style="position: absolute;z-index: 1; top: 0; width: 100%; height:100%; background-color: black; opacity: 0.7;"></div>
+<h2 style="position: relative; top: 20%; text-align: center; color: white; z-index: 5;">Informational AR</h2>
 </div>
-</div>
-
-<div class="workHolder">
-<div class="work">
-<video autoplay muted loop class="workPreview">
-<source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
-</video>
 </div>
 </div>
 
 <div class="workHolder">
 <div class="work">
 <video autoplay muted loop class="workPreview">
-<source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
+<source  src="https://sauntic.com/sauntic/images/videos/hololens.mp4" type="video/mp4">
 </video>
+<div class="textFade">
+<div style="position: absolute;z-index: 1; top: 0; width: 100%; height:100%; background-color: black; opacity: 0.7;"></div>
+<h2 style="position: relative; top: 20%; text-align: center; color: white; z-index: 5;">HoloLens Tech Demo</h2>
+</div>
+</div>
+</div>
+
+<div class="workHolder">
+<div class="work">
+<video autoplay muted loop class="workPreview">
+<source  src="https://sauntic.com/sauntic/images/videos/finn.mp4" type="video/mp4">
+</video>
+<div class="textFade">
+<div style="position: absolute;z-index: 1; top: 0; width: 100%; height:100%; background-color: black; opacity: 0.7;"></div>
+<h2 style="position: relative; top: 20%; text-align: center; color: white; z-index: 5;">Coming Soon!</h2>
+</div>
+</div>
+</div>
+
+<div class="workHolder">
+<div class="work">
+<video autoplay muted loop class="workPreview">
+<source  src="https://sauntic.com/sauntic/images/videos/neighbors.mp4" type="video/mp4">
+</video>
+<div class="textFade">
+<div style="position: absolute;z-index: 1; top: 0; width: 100%; height:100%; background-color: black; opacity: 0.7;"></div>
+<h2 style="position: relative; top: 20%; text-align: center; color: white; z-index: 5;">Neighbors!</h2>
+</div>
 </div>
 </div>
 </div> 
@@ -200,39 +265,55 @@ img{
 <div class="workHolder">
 <div class="work">
 <video autoplay muted loop class="workPreview">
-<source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
+<source  src="https://sauntic.com/sauntic/images/videos/sombri.mp4" type="video/mp4">
 </video>
+<div class="textFade">
+<div style="position: absolute;z-index: 1; top: 0; width: 100%; height:100%; background-color: black; opacity: 0.7;"></div>
+<h2 style="position: relative; top: 20%; text-align: center; color: white; z-index: 5;">Game Jam: Sombri</h2>
+</div>
 </div>
 </div>
 
 <div class="workHolder">
 <div class="work">
 <video autoplay muted loop class="workPreview">
-<source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
+<source  src="https://sauntic.com/sauntic/images/videos/vrChair.mp4" type="video/mp4">
 </video>
+<div class="textFade">
+<div style="position: absolute;z-index: 1; top: 0; width: 100%; height:100%; background-color: black; opacity: 0.7;"></div>
+<h2 style="position: relative; top: 20%; text-align: center; color: white; z-index: 5;">VR Chair</h2>
+</div>
 </div>
 </div>
 
 <div class="workHolder">
 <div class="work">
 <video autoplay muted loop class="workPreview">
-<source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
+<source  src="https://sauntic.com/sauntic/images/videos/insdrawments.mp4" type="video/mp4">
 </video>
+<div class="textFade">
+<div style="position: absolute;z-index: 1; top: 0; width: 100%; height:100%; background-color: black; opacity: 0.7"></div>
+<h2 style="position: relative; top: 20%; text-align: center; color: white; z-index: 5;">Insdrawments</h2>
+</div>
 </div>
 </div>
 
 <div class="workHolder">
 <div class="work">
 <video autoplay muted loop class="workPreview">
-<source  src="https://sauntic.com/sauntic/images/videos/AR.mp4" type="video/mp4">
+<source  src="https://sauntic.com/sauntic/images/videos/lylesJourney.mp4" type="video/mp4">
 </video>
+<div class="textFade">
+<div style="position: absolute;z-index: 1; top: 0; width: 100%; height:100%; background-color: black; opacity: 0.7"></div>
+<h2 style="position: relative; top: 20%; text-align: center; color: white; z-index: 5;">Lyle's Journey</h2>
+</div>
 </div>
 </div>
 </div> 
 <!------------------------------------->
 
 </div>
-
+</div>
 <script>
 
 var greenMainColor = "#add1c1";
@@ -241,7 +322,7 @@ var greenLightColor = "#c5eddb";
 
 var darkMainColor = "#616161";
 var darkDarkColor = "#4f4f4f";
-var darkLightColor = "#737373";
+var darkLightColor = "#999999";
 
 var lightMainColor = "#f1f1f1";
 var lightDarkColor = "#d9d9d9";
@@ -256,17 +337,22 @@ var bigShadowTop = "-18px -18px 30px";
 function ChangeSize(){
 	
 	$("#topBar").css({backgroundColor: darkMainColor, boxShadow: "18px 18px 30px" + darkDarkColor +", -18px -18px 30px" + darkLightColor});	
-	$("#bottomHolder").css({backgroundColor: greenMainColor,});
+	$("#bottomHolder").css({backgroundColor: greenMainColor, boxShadow: smallShadowBottom + darkDarkColor +","+  smallShadowTop + darkLightColor});
 	$("#arrowHolder").css({backgroundColor: darkMainColor});
 	$("#arrowButton").css({backgroundColor: darkMainColor, boxShadow: smallShadowBottom + darkDarkColor + "," + smallShadowTop + darkLightColor});
-	$(".workHolder").css({backgroundColor: lightMainColor, boxShadow: smallShadowBottom + lightDarkColor +","+  smallShadowTop + lightLightColor});
+	$(".workHolder").css({backgroundColor: lightMainColor, boxShadow: smallShadowBottom + greenDarkColor +","+  smallShadowTop + greenLightColor});
 	$(".work").css({backgroundColor: lightMainColor, boxShadow: smallShadowBottom + lightDarkColor +","+  smallShadowTop + lightLightColor});
 	$("#backgroundHolder").css({backgroundColor: lightMainColor, boxShadow: bigShadowBottom + greenDarkColor +","+  bigShadowTop + greenLightColor});
+	$("#about").css({backgroundColor: lightMainColor, boxShadow: bigShadowBottom + greenDarkColor +","+  bigShadowTop + greenLightColor});
+	$(".titleHolder").css({backgroundColor: greenMainColor, boxShadow: bigShadowBottom + lightDarkColor +","+  bigShadowTop + lightLightColor});
+	//$("#bottomLogo").css({backgroundColor: greenMainColor, boxShadow: bigShadowBottom + lightDarkColor +","+  bigShadowTop + lightLightColor});
 	
 	$(".center").each(function (index, element){
 		
 		$(element).css({left: $(element).parent().width()/ 2 - $(element).width()/2, top: $(element).parent().height()/ 2 - $(element).height()/2});
 	});
+	
+	$("#videoContainer").css({top: 0});
 	
 	if($("#videoContainer").width()/1.777777777 > $("#videoContainer").height()){
 		$(".backgroundVideo").css({width: "100%"});
@@ -278,8 +364,8 @@ function ChangeSize(){
 		$(".backgroundVideo").offset({top: 0, left: -$(".backgroundVideo").width()/2 +  $("#videoContainer").width()/2});
 	}
 	$("#topBar").css({left: $("#videoContainer").width()/2 - $("#topBar").width()/2});
-	$("#bottomHolder").css({top: $("#videoContainer").height()});
-	$("#arrowHolder").css({top: $("#bottomHolder").offset().top - $("#arrowHolder").height(), left: $("#bottomHolder").width()/2 - $("#arrowHolder").width()/2});
+	$("#bottomHolder").css({top: $("#videoContainer").height() + 10});
+	$("#arrowHolder").css({top: $("#bottomHolder").offset().top - $("#arrowHolder").height(), left: ($("#bottomHolder").width()/2 - $("#arrowHolder").width()/2)+ 10});
 	$("#arrowButton").css({left: $("#arrowHolder").width()/2 - $("#arrowButton").width()/2, top: $("#arrowHolder").height()/2 - $("#arrowButton").height()/2});
 	
 	
@@ -306,23 +392,84 @@ function ChangeSize(){
 	$(".workHolder").each(function(index, element){
 		
 		if(index <= 3){
-		$(element).css({left: (($(".workRow").width() * 0.215)/2.5) + index * ($(".workRow").width() * 0.215)});
+		$(element).css({left: (($(".workRow").width() * 0.215)/2.75) + index * ($(".workRow").width() * 0.215)});
 		}
 		if(index > 3){
-		$(element).css({left: (($(".workRow").width() * 0.215)/2.5) + (index - 4) * ($(".workRow").width() * 0.215)});
+		$(element).css({left: (($(".workRow").width() * 0.215)/2.75) + (index - 4) * ($(".workRow").width() * 0.215)});
 		}
-	
 	
 	});
 	
 	$("#backgroundHolder").css({
-		width: $(".workRow").width() - 100,
-		height: $(".workRow").height()* 2 + 150,
-		top: $("#bottomHolder").offset().top + 125,
+		width: $(".workRow").width() - 200,
+		height: $(".workRow").height()* 2 + 50,
+		top: $("#bottomHolder").find(".workRow").eq(0).offset().top - 10,
 	});
 	
 	$("#backgroundHolder").css({left: $("#backgroundHolder").parent().width()/ 2 - $("#backgroundHolder").width()/ 2,});
+	$("#about").css({width: $("#backgroundHolder").width(), top: $("#backgroundHolder").height() + 100, left: $("#backgroundHolder").parent().width()/ 2 - $("#backgroundHolder").width()/ 2,});
+	$("#bottomLogo").css({left: $("#bottomHolder").width()/ 2 - $("#bottomLogo").width()/ 2, top: 20});
+	//$("#contact").css({width: $("#backgroundHolder").width(), top: 50, left: $("#backgroundHolder").parent().width()/ 2 - $("#backgroundHolder").width()/ 2,});
+	
 		
+}
+$(".workHolder").each(function(index, element){
+		
+		$(element).mouseenter(function(){
+			$(element).find(".textFade").animate({opacity: 1});
+		
+		});
+		
+		$(element).mouseleave(function(){
+			$(element).find(".textFade").animate({opacity: 0});
+		
+		});
+		
+		$(element).click(function(){
+			if(index == 0){
+				window.location.assign("http://www.sauntic.com/ar.html");
+			}
+			if(index == 1){
+				window.location.assign("http://www.sauntic.com/hololens.html");
+			}
+			if(index == 2){
+			//	window.location.assign("http://www.sauntic.com/neighbors.html");
+			}
+			if(index == 3){
+				window.location.assign("http://www.sauntic.com/neighbors.html");
+			}
+			if(index == 4){
+				window.location.assign("http://www.sauntic.com/sombri.html");
+			}
+			if(index == 5){
+				window.location.assign("http://www.sauntic.com/vrchair.html");
+			}
+			if(index == 6){
+				window.location.assign("http://www.sauntic.com/insdrawments.html");
+			}
+			if(index == 7){
+				window.location.assign("http://www.sauntic.com/lyle.html");
+			}
+		
+		});
+	
+});
+	
+$(".center").click(function(){
+	AnimateScroll();
+});
+
+$("#arrowButton").click(function(){
+	AnimateScroll();
+});
+
+$("#bottomLogo").click(function(){
+	$('html, body').animate({scrollTop:  0}, 1000);
+});
+
+function AnimateScroll(){
+
+	$('html, body').animate({scrollTop:  $("#videoContainer").height()}, 1000);
 }
 </script>
 </body>
